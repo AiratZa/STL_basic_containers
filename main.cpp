@@ -1,4 +1,7 @@
-#include "headers/vector.hpp"
+#include "headers/list.hpp"
+#include <list>
+
+#include <iostream>
 
 // 1. Placement new
 // new (ptr) T();
@@ -15,6 +18,16 @@
 
 
 int main(void) {
+
+    // ft::list<int> hey;
+    ft::list<int> hey1(3, 100);
+    std::list<int> hey2(3, 100);
+
+    // std::list<int>::iterator it;
+
+    for(std::list<int>::iterator i = hey2.begin(); i != hey2.end(); i++ ) {
+        std::cout << *i << std::endl;
+    }
 
     return (0);
 }
