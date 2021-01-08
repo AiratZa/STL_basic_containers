@@ -19,15 +19,20 @@
 
 int main(void) {
 
-    // ft::list<int> hey;
-    ft::list<int> hey1(3, 100);
-    std::list<int> hey2(3, 100);
+//    ft::list<int> hey;
+    ft::list<int> hey2(5, 4);
+
+//    std::cout << hey2.size() << std::endl;
+    // ft::list<int> hey1(3, 100);
+//    std::list<int> hey2(3, 100);
 
     // std::list<int>::iterator it;
 
-    for(std::list<int>::iterator i = hey2.begin(); i != hey2.end(); i++ ) {
-        std::cout << *i << std::endl;
-    }
-
+//    for(std::list<int>::iterator i = hey2.begin(); i != hey2.end(); i++ ) {
+//        std::cout << *i << std::endl;
+//    }
+    std::cout << hey2.size() << std::endl;
+    hey2.push_back(10);
+    std::cout << hey2.size() << std::endl;
     return (0);
 }
