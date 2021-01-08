@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 // 1. Placement new
 // new (ptr) T();
 
@@ -34,5 +35,11 @@ int main(void) {
     std::cout << hey2.size() << std::endl;
     hey2.push_back(10);
     std::cout << hey2.size() << std::endl;
+
+    std::list<int> hey;
+    std::cout << "SIZE" << hey.size() << std::endl;
+    hey.push_back(1);
+    std::cout << "SIZE" << hey.size() << std::endl;
+
     return (0);
 }

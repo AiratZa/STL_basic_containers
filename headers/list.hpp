@@ -98,33 +98,12 @@ list<T, Alloc>::list(const list<T, Alloc>::allocator_type& alloc)
 
 template<class T, class Alloc>
 list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_type &alloc)
-    : _size(n), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
-    this->_allocate_n_contruct_chunk(val);
-}
-
-template<class T, class Alloc>
-void list<T, Alloc>::_allocate_n_contruct_chunk(const value_type &val) {
-    pointer ptr;
-    list_node_pointer ptrLN;
-    list_node_pointer tmpPrev = NULL;
-
-    for (unsigned int i = 0; i < _size; i++) {
-        ptr = _allocator.allocate(1);
-        ptrLN = _listNodeAllocator.allocate(1);
-        _allocator.construct(ptr, val);
-        _listNodeAllocator.construct(ptrLN, ListNode<value_type>(tmpPrev, NULL, ptr));
-        if (tmpPrev) {
-            tmpPrev->_ptrNext = ptrLN;
-        }
-        tmpPrev = ptrLN;
-        if (i == 0) {
-            _head = tmpPrev;
-        } else if (i == _size - 1) {
-            _tail = tmpPrev;
-        }
+    : _size(0), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
+    for (unsigned int i = 0; i < n; i++) {
+        this->push_back(val);
     }
-
 }
+
 
     template<class T, class Alloc>
     typename list<T, Alloc>::size_type list<T, Alloc>::size() const {
@@ -138,8 +117,13 @@ void list<T, Alloc>::push_back(const value_type &val) {
     list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
     _allocator.construct(ptr, val);
     _listNodeAllocator.construct(ptrLN, ListNode<value_type>(_tail, NULL, ptr));
-    _tail->_ptrNext = ptrLN;
+    if (_tail) {
+        _tail->_ptrNext = ptrLN;
+    }
     _tail = ptrLN;
+    if (_head == NULL) {
+        _head = ptrLN;
+    }
     _size++;
 }
 
