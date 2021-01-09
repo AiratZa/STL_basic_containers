@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/gdrake/CLionProjects/untitled/main.cpp
+/Users/gdrake/CLionProjects/containers/main.cpp
 iostream
 -
 list
 -
 source/list.hpp
-/Users/gdrake/CLionProjects/untitled/source/list.hpp
+/Users/gdrake/CLionProjects/containers/source/list.hpp
 
-/Users/gdrake/CLionProjects/untitled/source/list.hpp
+/Users/gdrake/CLionProjects/containers/source/list.hpp
 memory
 -
 iostream
