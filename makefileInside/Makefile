@@ -14,7 +14,7 @@ NAME = ft_containers
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp 
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -22,7 +22,7 @@ MAKE_DEPS = $(SRCS:.cpp=.d)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -I./ -o $(NAME)
 
 clean:

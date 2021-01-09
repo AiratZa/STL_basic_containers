@@ -1,3 +1,7 @@
+//
+// Created by Great Drake on 1/9/21.
+//
+
 #ifndef LIST_HPP
 # define LIST_HPP
 
@@ -9,8 +13,8 @@ namespace ft {
 
 
 
-template < class T, class Alloc = std::allocator <T> >
-class list {
+    template < class T, class Alloc = std::allocator <T> >
+    class list {
 
     public:
         typedef T value_type;
@@ -26,18 +30,18 @@ class list {
 
         explicit list(const allocator_type& alloc = allocator_type());
         explicit list (size_type n, const value_type& val = value_type(),
-            const allocator_type& alloc = allocator_type());
+                       const allocator_type& alloc = allocator_type());
 
         ~list() {
-//            list_node_pointer tmp = _head;
-//            for(unsigned int i = 0; i < _size; i++) {
-//                list_node_pointer next = tmp->_ptrNext;
-//                _allocator.destroy(tmp->_data);
-//                _listNodeAllocator.destroy(tmp);
-//                _allocator.deallocate(tmp->_data, 1);
-//                _listNodeAllocator.deallocate(tmp, 1);
-//                tmp = next;
-//            }
+            list_node_pointer tmp = _head;
+            for(unsigned int i = 0; i < _size; i++) {
+                list_node_pointer next = tmp->_ptrNext;
+                _allocator.destroy(tmp->_data);
+                _listNodeAllocator.destroy(tmp);
+                _allocator.deallocate(tmp->_data, 1);
+                _listNodeAllocator.deallocate(tmp, 1);
+                tmp = next;
+            }
 
         }
 
@@ -45,12 +49,12 @@ class list {
 
         void push_back (const value_type& val);
 
-private:
+    private:
         template < typename value_type >
         struct ListNode {
             ListNode() : _ptrPrev(NULL), _ptrNext(NULL), _data(NULL) { };
             ListNode(ListNode<value_type>* ptrPrev, ListNode<value_type>* ptrNext, value_type* data)
-                : _ptrPrev(ptrPrev), _ptrNext(ptrNext), _data(data) { };
+                    : _ptrPrev(ptrPrev), _ptrNext(ptrNext), _data(data) { };
             ~ListNode() { };
 
             typedef typename std::allocator < ListNode<T> >  list_node_allocator_type;
@@ -84,25 +88,25 @@ private:
 
 
 
-};
+    };
 
 
 /**
  *  @brief  Creates a %list with no elements.
  *  @param  __a  An allocator object.
  */
-template < class T, class Alloc>
-list<T, Alloc>::list(const list<T, Alloc>::allocator_type& alloc)
-    : _size(0), _allocator(alloc), _head(NULL), _tail(NULL) {
-}
-
-template<class T, class Alloc>
-list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_type &alloc)
-    : _size(0), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
-    for (unsigned int i = 0; i < n; i++) {
-        this->push_back(val);
+    template < class T, class Alloc>
+    list<T, Alloc>::list(const list<T, Alloc>::allocator_type& alloc)
+            : _size(0), _allocator(alloc), _head(NULL), _tail(NULL) {
     }
-}
+
+    template<class T, class Alloc>
+    list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_type &alloc)
+            : _size(0), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
+        for (unsigned int i = 0; i < n; i++) {
+            this->push_back(val);
+        }
+    }
 
 
     template<class T, class Alloc>
@@ -110,22 +114,22 @@ list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_t
         return this->_size;
     }
 
-template<class T, class Alloc>
-void list<T, Alloc>::push_back(const value_type &val) {
+    template<class T, class Alloc>
+    void list<T, Alloc>::push_back(const value_type &val) {
 
-    pointer ptr = _allocator.allocate(1);
-    list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
-    _allocator.construct(ptr, val);
-    _listNodeAllocator.construct(ptrLN, ListNode<value_type>(_tail, NULL, ptr));
-    if (_tail) {
-        _tail->_ptrNext = ptrLN;
+        pointer ptr = _allocator.allocate(1);
+        list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
+        _allocator.construct(ptr, val);
+        _listNodeAllocator.construct(ptrLN, ListNode<value_type>(_tail, NULL, ptr));
+        if (_tail) {
+            _tail->_ptrNext = ptrLN;
+        }
+        _tail = ptrLN;
+        if (_head == NULL) {
+            _head = ptrLN;
+        }
+        _size++;
     }
-    _tail = ptrLN;
-    if (_head == NULL) {
-        _head = ptrLN;
-    }
-    _size++;
-}
 
 
 

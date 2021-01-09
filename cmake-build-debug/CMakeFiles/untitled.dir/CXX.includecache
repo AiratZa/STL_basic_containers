@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/gdrake/CLionProjects/untitled/main.cpp
+iostream
+-
+list
+-
+source/list.hpp
+/Users/gdrake/CLionProjects/untitled/source/list.hpp
+
+/Users/gdrake/CLionProjects/untitled/source/list.hpp
+memory
+-
+iostream
+-
+
