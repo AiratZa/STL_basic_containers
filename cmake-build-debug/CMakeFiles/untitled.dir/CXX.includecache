@@ -14,9 +14,15 @@ list
 source/list.hpp
 /Users/gdrake/CLionProjects/containers/source/list.hpp
 
+/Users/gdrake/CLionProjects/containers/source/iterators.hpp
+memory
+-
+
 /Users/gdrake/CLionProjects/containers/source/list.hpp
 memory
 -
 iostream
 -
+iterators.hpp
+/Users/gdrake/CLionProjects/containers/source/iterators.hpp
 

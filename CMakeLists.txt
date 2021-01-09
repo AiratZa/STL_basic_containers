@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(untitled main.cpp source/list.hpp)
+add_executable(untitled main.cpp source/list.hpp source/iterators.hpp)

@@ -36,10 +36,13 @@ int main(void) {
     hey2.push_back(10);
     std::cout << hey2.size() << std::endl;
 
-    std::list<int> hey;
-    std::cout << "SIZE" << hey.size() << std::endl;
-    hey.push_back(1);
-    std::cout << "SIZE" << hey.size() << std::endl;
+//    std::list<int> hey;
+//    std::cout << "SIZE" << hey.size() << std::endl;
+    hey2.push_back(1);
+//    std::cout << "SIZE" << hey.size() << std::endl;
+    ;
+    std::cout << "BEGIN" << *hey2.begin() << std::endl;
+    std::cout << "END" << *hey2.end() << std::endl;
 
     return (0);
 }

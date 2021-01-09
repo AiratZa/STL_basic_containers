@@ -9,8 +9,36 @@
 
 # include <iostream>
 
+
+
 namespace ft {
 
+    #include "iterators.hpp"
+
+
+    template < typename value_type >
+    struct ListNode {
+        ListNode() : _ptrPrev(NULL), _ptrNext(NULL), _data(NULL) { };
+        ListNode(ListNode<value_type>* ptrPrev, ListNode<value_type>* ptrNext, value_type* data)
+                : _ptrPrev(ptrPrev), _ptrNext(ptrNext), _data(data) { };
+        ~ListNode() { };
+
+        typedef typename std::allocator < ListNode<value_type> >  list_node_allocator_type;
+        typedef typename std::allocator < ListNode<value_type> >::pointer  list_node_pointer;
+
+        void setPrev(ListNode<value_type>* ptr) {
+            _ptrPrev = ptr;
+        }
+        void setNext(ListNode<value_type>* ptr) {
+            _ptrNext = ptr;
+        }
+        void setData(ListNode<value_type>* value) {
+            _data = value;
+        }
+        list_node_pointer _ptrPrev;
+        list_node_pointer _ptrNext;
+        value_type* _data;
+    };
 
 
     template < class T, class Alloc = std::allocator <T> >
@@ -23,6 +51,11 @@ namespace ft {
         typedef typename allocator_type::const_reference const_reference;
         typedef typename allocator_type::pointer pointer;
         typedef typename allocator_type::const_pointer const_pointer;
+
+
+        typedef OwnInputIterator<value_type> iterator;
+        typedef OwnInputIterator< const value_type> const_iterator;
+
         typedef typename std::ptrdiff_t difference_type;
         typedef typename std::size_t size_type;
 
@@ -49,34 +82,17 @@ namespace ft {
 
         void push_back (const value_type& val);
 
+        iterator begin();
+        const_iterator begin() const;
+
+        iterator end();
+        const_iterator end() const;
+
+
     private:
-        template < typename value_type >
-        struct ListNode {
-            ListNode() : _ptrPrev(NULL), _ptrNext(NULL), _data(NULL) { };
-            ListNode(ListNode<value_type>* ptrPrev, ListNode<value_type>* ptrNext, value_type* data)
-                    : _ptrPrev(ptrPrev), _ptrNext(ptrNext), _data(data) { };
-            ~ListNode() { };
-
-            typedef typename std::allocator < ListNode<T> >  list_node_allocator_type;
-            typedef typename std::allocator < ListNode<T> >::pointer  list_node_pointer;
-
-            void setPrev(ListNode<value_type>* ptr) {
-                _ptrPrev = ptr;
-            }
-            void setNext(ListNode<value_type>* ptr) {
-                _ptrNext = ptr;
-            }
-            void setData(ListNode<value_type>* value) {
-                _data = value;
-            }
-            list_node_pointer _ptrPrev;
-            list_node_pointer _ptrNext;
-            value_type* _data;
-        };
 
         typedef typename std::allocator < ListNode<T> >  list_node_allocator_type;
         typedef typename std::allocator < ListNode<T> >::pointer  list_node_pointer;
-        void _allocate_n_contruct_chunk(const value_type &val);
 
 
 
@@ -89,6 +105,7 @@ namespace ft {
 
 
     };
+
 
 
 /**
@@ -130,6 +147,27 @@ namespace ft {
         }
         _size++;
     }
+
+    template<class T, class Alloc>
+    typename list<T, Alloc>::iterator list<T, Alloc>::begin() {
+        return iterator(_head->_data);
+    }
+
+    template<class T, class Alloc>
+    typename list<T, Alloc>::const_iterator list<T, Alloc>::begin() const {
+        return const_iterator(_head->_data);
+    }
+
+    template<class T, class Alloc>
+    typename list<T, Alloc>::iterator list<T, Alloc>::end() {
+        return iterator(_tail->_data);
+    }
+
+    template<class T, class Alloc>
+    typename list<T, Alloc>::const_iterator list<T, Alloc>::end() const {
+        return const_iterator(_tail->_data);
+    }
+
 
 
 
