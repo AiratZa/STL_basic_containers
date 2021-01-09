@@ -65,21 +65,11 @@ namespace ft {
         explicit list (size_type n, const value_type& val = value_type(),
                        const allocator_type& alloc = allocator_type());
 
-        ~list() {
-            list_node_pointer tmp = _head;
-            for(unsigned int i = 0; i < _size; i++) {
-                list_node_pointer next = tmp->_ptrNext;
-                _allocator.destroy(tmp->_data);
-                _listNodeAllocator.destroy(tmp);
-                _allocator.deallocate(tmp->_data, 1);
-                _listNodeAllocator.deallocate(tmp, 1);
-                tmp = next;
-            }
-
-        }
+        ~list();
 
         size_type size() const;
 
+        void push_front (const value_type& val);
         void push_back (const value_type& val);
 
         iterator begin();
@@ -102,11 +92,7 @@ namespace ft {
         list_node_pointer _tail;
         list_node_allocator_type _listNodeAllocator;
 
-
-
     };
-
-
 
 /**
  *  @brief  Creates a %list with no elements.
@@ -149,6 +135,22 @@ namespace ft {
     }
 
     template<class T, class Alloc>
+    void list<T, Alloc>::push_front(const value_type &val) {
+        pointer ptr = _allocator.allocate(1);
+        list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
+        _allocator.construct(ptr, val);
+        _listNodeAllocator.construct(ptrLN, ListNode<value_type>(NULL, _head, ptr));
+        if (_head) {
+            _head->_ptrPrev = ptrLN;
+        }
+        _head = ptrLN;
+        if (_tail == NULL) {
+            _tail = ptrLN;
+        }
+        _size++;
+    }
+
+    template<class T, class Alloc>
     typename list<T, Alloc>::iterator list<T, Alloc>::begin() {
         return iterator(_head->_data);
     }
@@ -168,21 +170,20 @@ namespace ft {
         return const_iterator(_tail->_data);
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    template<class T, class Alloc>
+    list<T, Alloc>::~list() {
+        list_node_pointer tmp = _head;
+        for(unsigned int i = 0; i < _size; i++) {
+            list_node_pointer next = tmp->_ptrNext;
+            _allocator.destroy(tmp->_data);
+            _listNodeAllocator.destroy(tmp);
+            _allocator.deallocate(tmp->_data, 1);
+            _listNodeAllocator.deallocate(tmp, 1);
+            tmp = next;
+        }
+    }
 
 
 }
-
-
 
 #endif
