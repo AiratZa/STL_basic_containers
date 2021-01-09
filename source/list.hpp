@@ -79,6 +79,8 @@ namespace ft {
         const_iterator end() const;
 
 
+
+
     private:
 
         typedef typename std::allocator < ListNode<T> >  list_node_allocator_type;
@@ -90,6 +92,7 @@ namespace ft {
         allocator_type _allocator;
         list_node_pointer _head;
         list_node_pointer _tail;
+        list_node_pointer _extra_one;
         list_node_allocator_type _listNodeAllocator;
 
     };
@@ -152,12 +155,20 @@ namespace ft {
 
     template<class T, class Alloc>
     typename list<T, Alloc>::iterator list<T, Alloc>::begin() {
-        return iterator(_head->_data);
+        if (_head) {
+            return iterator(_head->_data);
+        } else {
+            return iterator(_extra_one->_data);
+        }
     }
 
     template<class T, class Alloc>
     typename list<T, Alloc>::const_iterator list<T, Alloc>::begin() const {
-        return const_iterator(_head->_data);
+        if (_head) {
+            return const_iterator(_head->_data);
+        } else {
+            return const_iterator(&T());
+        }
     }
 
     template<class T, class Alloc>

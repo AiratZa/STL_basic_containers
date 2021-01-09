@@ -59,38 +59,51 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/gdrake/CLionProjects/containers
+CMAKE_SOURCE_DIR = /home/airat/projects/STL_basic_containers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/gdrake/CLionProjects/containers/cmake-build-debug
+CMAKE_BINARY_DIR = /home/airat/projects/STL_basic_containers/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -98,11 +111,44 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/var/lib/snapd/snap/clion/138/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gdrake/CLionProjects/containers/cmake-build-debug/CMakeFiles /Users/gdrake/CLionProjects/containers/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles /home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gdrake/CLionProjects/containers/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,44 +177,204 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled
+# Target rules for targets named ft_containers
 
 # Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
+ft_containers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ft_containers
+.PHONY : ft_containers
 
 # fast build rule for target.
-untitled/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+ft_containers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/build
+.PHONY : ft_containers/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named gmock_main
 
-.PHONY : main.o
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make google_tests/lib/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make google_tests/lib/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+tests/test_list/test_list_begin.o: tests/test_list/test_list_begin.cpp.o
+
+.PHONY : tests/test_list/test_list_begin.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.o
-.PHONY : main.cpp.o
+tests/test_list/test_list_begin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o
+.PHONY : tests/test_list/test_list_begin.cpp.o
 
-main.i: main.cpp.i
+tests/test_list/test_list_begin.i: tests/test_list/test_list_begin.cpp.i
 
-.PHONY : main.i
+.PHONY : tests/test_list/test_list_begin.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.i
-.PHONY : main.cpp.i
+tests/test_list/test_list_begin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.i
+.PHONY : tests/test_list/test_list_begin.cpp.i
 
-main.s: main.cpp.s
+tests/test_list/test_list_begin.s: tests/test_list/test_list_begin.cpp.s
 
-.PHONY : main.s
+.PHONY : tests/test_list/test_list_begin.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.s
-.PHONY : main.cpp.s
+tests/test_list/test_list_begin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.s
+.PHONY : tests/test_list/test_list_begin.cpp.s
+
+tests/test_list/test_list_push_back.o: tests/test_list/test_list_push_back.cpp.o
+
+.PHONY : tests/test_list/test_list_push_back.o
+
+# target to build an object file
+tests/test_list/test_list_push_back.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o
+.PHONY : tests/test_list/test_list_push_back.cpp.o
+
+tests/test_list/test_list_push_back.i: tests/test_list/test_list_push_back.cpp.i
+
+.PHONY : tests/test_list/test_list_push_back.i
+
+# target to preprocess a source file
+tests/test_list/test_list_push_back.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.i
+.PHONY : tests/test_list/test_list_push_back.cpp.i
+
+tests/test_list/test_list_push_back.s: tests/test_list/test_list_push_back.cpp.s
+
+.PHONY : tests/test_list/test_list_push_back.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_push_back.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.s
+.PHONY : tests/test_list/test_list_push_back.cpp.s
+
+tests/test_list/test_list_push_front.o: tests/test_list/test_list_push_front.cpp.o
+
+.PHONY : tests/test_list/test_list_push_front.o
+
+# target to build an object file
+tests/test_list/test_list_push_front.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o
+.PHONY : tests/test_list/test_list_push_front.cpp.o
+
+tests/test_list/test_list_push_front.i: tests/test_list/test_list_push_front.cpp.i
+
+.PHONY : tests/test_list/test_list_push_front.i
+
+# target to preprocess a source file
+tests/test_list/test_list_push_front.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.i
+.PHONY : tests/test_list/test_list_push_front.cpp.i
+
+tests/test_list/test_list_push_front.s: tests/test_list/test_list_push_front.cpp.s
+
+.PHONY : tests/test_list/test_list_push_front.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_push_front.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.s
+.PHONY : tests/test_list/test_list_push_front.cpp.s
+
+tests/test_list/test_list_siize.o: tests/test_list/test_list_siize.cpp.o
+
+.PHONY : tests/test_list/test_list_siize.o
+
+# target to build an object file
+tests/test_list/test_list_siize.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.o
+.PHONY : tests/test_list/test_list_siize.cpp.o
+
+tests/test_list/test_list_siize.i: tests/test_list/test_list_siize.cpp.i
+
+.PHONY : tests/test_list/test_list_siize.i
+
+# target to preprocess a source file
+tests/test_list/test_list_siize.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.i
+.PHONY : tests/test_list/test_list_siize.cpp.i
+
+tests/test_list/test_list_siize.s: tests/test_list/test_list_siize.cpp.s
+
+.PHONY : tests/test_list/test_list_siize.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_siize.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.s
+.PHONY : tests/test_list/test_list_siize.cpp.s
+
+tests/tests_vector.o: tests/tests_vector.cpp.o
+
+.PHONY : tests/tests_vector.o
+
+# target to build an object file
+tests/tests_vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.o
+.PHONY : tests/tests_vector.cpp.o
+
+tests/tests_vector.i: tests/tests_vector.cpp.i
+
+.PHONY : tests/tests_vector.i
+
+# target to preprocess a source file
+tests/tests_vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.i
+.PHONY : tests/tests_vector.cpp.i
+
+tests/tests_vector.s: tests/tests_vector.cpp.s
+
+.PHONY : tests/tests_vector.s
+
+# target to generate assembly for a file
+tests/tests_vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.s
+.PHONY : tests/tests_vector.cpp.s
 
 # Help Target
 help:
@@ -177,11 +383,31 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... untitled"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... ft_containers"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... tests/test_list/test_list_begin.o"
+	@echo "... tests/test_list/test_list_begin.i"
+	@echo "... tests/test_list/test_list_begin.s"
+	@echo "... tests/test_list/test_list_push_back.o"
+	@echo "... tests/test_list/test_list_push_back.i"
+	@echo "... tests/test_list/test_list_push_back.s"
+	@echo "... tests/test_list/test_list_push_front.o"
+	@echo "... tests/test_list/test_list_push_front.i"
+	@echo "... tests/test_list/test_list_push_front.s"
+	@echo "... tests/test_list/test_list_siize.o"
+	@echo "... tests/test_list/test_list_siize.i"
+	@echo "... tests/test_list/test_list_siize.s"
+	@echo "... tests/tests_vector.o"
+	@echo "... tests/tests_vector.i"
+	@echo "... tests/tests_vector.s"
 .PHONY : help
 
 

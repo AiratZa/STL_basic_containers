@@ -20,10 +20,25 @@ public:
 
     bool operator!=(OwnInputIterator const& other) const { return _p != other._p; };
     bool operator==(OwnInputIterator const& other) const { return _p == other._p; };
-    typename OwnInputIterator::reference operator*() const { return *_p; };
+    typename OwnInputIterator::reference operator*() const {
+        return *_p;
+    };
     OwnInputIterator& operator++() { ++_p; return *this;}
 private:
     T* _p;
-};
+    };
 
 #endif //UNTITLED_ITERATORS_HPP
+
+
+
+
+
+
+
+
+
+
+
+
+
