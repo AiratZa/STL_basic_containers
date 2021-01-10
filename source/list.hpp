@@ -13,7 +13,7 @@
 
 namespace ft {
 
-    #include "iterators.hpp"
+//    #include "iterators.hpp"
 
 
     template < typename value_type >
@@ -40,6 +40,28 @@ namespace ft {
         value_type* _data;
     };
 
+    template<class T >
+    class ListBidirectionalIterator: public std::iterator< std::bidirectional_iterator_tag, T>
+    {
+        template <class, class Alloc>
+        friend class list;
+
+//        typedef ListNode<T>
+
+    private:
+        ListBidirectionalIterator(T* p) : _p(p) { };
+    public:
+        ListBidirectionalIterator(const ListBidirectionalIterator &it) : _p(it._p) { };
+
+        bool operator!=(ListBidirectionalIterator const& other) const { return _p != other._p; };
+        bool operator==(ListBidirectionalIterator const& other) const { return _p == other._p; };
+        typename ListBidirectionalIterator::reference operator*() const {
+            return *_p;
+        };
+        ListBidirectionalIterator& operator++() { ++_p; return *this;}
+    private:
+        T* _p;
+    };
 
     template < class T, class Alloc = std::allocator <T> >
     class list {
@@ -53,8 +75,12 @@ namespace ft {
         typedef typename allocator_type::const_pointer const_pointer;
 
 
-        typedef OwnInputIterator<value_type> iterator;
-        typedef OwnInputIterator< const value_type> const_iterator;
+        typedef ListBidirectionalIterator<value_type> iterator;
+        typedef ListBidirectionalIterator< const value_type> const_iterator;
+//        typedef std::reverse_iterator<OwnInputIterator<value_type>> reverse_iterator;
+//        typedef std::reverse_iterator<OwnInputIterator<const value_type>> const_reverse_iterator;
+
+
 
         typedef typename std::ptrdiff_t difference_type;
         typedef typename std::size_t size_type;
@@ -78,6 +104,12 @@ namespace ft {
         iterator end();
         const_iterator end() const;
 
+//        reverse_iterator rbegin();
+//        const_reverse_iterator rbegin() const;
+//
+//        reverse_iterator rend();
+//        const_reverse_iterator rend() const;
+
 
 
 
@@ -87,15 +119,17 @@ namespace ft {
         typedef typename std::allocator < ListNode<T> >::pointer  list_node_pointer;
 
 
-
+        void increment_size(void)  { this->_size++; (*(_end->_data))++; }
         size_type _size;
         allocator_type _allocator;
         list_node_pointer _head;
         list_node_pointer _tail;
-        list_node_pointer _extra_one;
+        list_node_pointer _end;
         list_node_allocator_type _listNodeAllocator;
 
     };
+
+
 
 /**
  *  @brief  Creates a %list with no elements.
@@ -104,11 +138,16 @@ namespace ft {
     template < class T, class Alloc>
     list<T, Alloc>::list(const list<T, Alloc>::allocator_type& alloc)
             : _size(0), _allocator(alloc), _head(NULL), _tail(NULL) {
+                T* tmp = new T();
+                _end = new ListNode<value_type>(NULL, NULL, tmp);
     }
 
     template<class T, class Alloc>
     list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_type &alloc)
             : _size(0), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
+        T* tmp = new T(_size);
+        _end = new ListNode<value_type>(NULL, NULL, tmp);
+
         for (unsigned int i = 0; i < n; i++) {
             this->push_back(val);
         }
@@ -134,7 +173,7 @@ namespace ft {
         if (_head == NULL) {
             _head = ptrLN;
         }
-        _size++;
+        increment_size();
     }
 
     template<class T, class Alloc>
@@ -150,7 +189,7 @@ namespace ft {
         if (_tail == NULL) {
             _tail = ptrLN;
         }
-        _size++;
+        increment_size();
     }
 
     template<class T, class Alloc>
@@ -158,7 +197,7 @@ namespace ft {
         if (_head) {
             return iterator(_head->_data);
         } else {
-            return iterator(_extra_one->_data);
+            return iterator(_end->_data);
         }
     }
 
@@ -167,18 +206,18 @@ namespace ft {
         if (_head) {
             return const_iterator(_head->_data);
         } else {
-            return const_iterator(&T());
+            return const_iterator(_end->_data);
         }
     }
 
     template<class T, class Alloc>
     typename list<T, Alloc>::iterator list<T, Alloc>::end() {
-        return iterator(_tail->_data);
+        return iterator(_end->_data);
     }
 
     template<class T, class Alloc>
     typename list<T, Alloc>::const_iterator list<T, Alloc>::end() const {
-        return const_iterator(_tail->_data);
+        return const_iterator(_end->_data);
     }
 
     template<class T, class Alloc>
@@ -192,8 +231,39 @@ namespace ft {
             _listNodeAllocator.deallocate(tmp, 1);
             tmp = next;
         }
+//        delete _end->_data;
+//        delete _end;
     }
 
+//    template<class T, class Alloc>
+//    typename list<T, Alloc>::reverse_iterator list<T, Alloc>::rbegin() {
+//        return reverse_iterator (end());
+////        if (_tail) {
+////            return reverse_iterator (_tail->_data);
+////        } else {
+////            return reverse_iterator(_end->_data);
+////        }
+//    }
+//
+//    template<class T, class Alloc>
+//    typename list<T, Alloc>::const_reverse_iterator list<T, Alloc>::rbegin() const {
+//        return const_reverse_iterator (end());
+////        if (_tail) {
+////            return const_reverse_iterator(_tail->_data);
+////        } else {
+////            return const_reverse_iterator (_end->_data);
+////        }
+//    }
+//
+//    template<class T, class Alloc>
+//    typename list<T, Alloc>::reverse_iterator list<T, Alloc>::rend() {
+//        return reverse_iterator(_end->_data);
+//    }
+//
+//    template<class T, class Alloc>
+//    typename list<T, Alloc>::const_reverse_iterator list<T, Alloc>::rend() const {
+//        return const_reverse_iterator(_end->_data);
+//    }
 
 }
 
