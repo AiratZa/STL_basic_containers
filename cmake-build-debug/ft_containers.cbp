@@ -365,9 +365,6 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/tests/tests_vector.cpp">
-			<Option target="ft_containers"/>
-		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -340,35 +340,7 @@ list
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_begin.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_back.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_front.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/tests_vector.cpp
-list
--
-../source/list.hpp
-/home/airat/projects/STL_basic_containers/source/list.hpp
-gtest/gtest.h
--
 

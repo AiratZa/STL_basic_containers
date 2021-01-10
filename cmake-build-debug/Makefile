@@ -403,33 +403,6 @@ tests/test_list/test_list_siize.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.s
 .PHONY : tests/test_list/test_list_siize.cpp.s
 
-tests/tests_vector.o: tests/tests_vector.cpp.o
-
-.PHONY : tests/tests_vector.o
-
-# target to build an object file
-tests/tests_vector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.o
-.PHONY : tests/tests_vector.cpp.o
-
-tests/tests_vector.i: tests/tests_vector.cpp.i
-
-.PHONY : tests/tests_vector.i
-
-# target to preprocess a source file
-tests/tests_vector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.i
-.PHONY : tests/tests_vector.cpp.i
-
-tests/tests_vector.s: tests/tests_vector.cpp.s
-
-.PHONY : tests/tests_vector.s
-
-# target to generate assembly for a file
-tests/tests_vector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/tests_vector.cpp.s
-.PHONY : tests/tests_vector.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -465,9 +438,6 @@ help:
 	@echo "... tests/test_list/test_list_siize.o"
 	@echo "... tests/test_list/test_list_siize.i"
 	@echo "... tests/test_list/test_list_siize.s"
-	@echo "... tests/tests_vector.o"
-	@echo "... tests/tests_vector.i"
-	@echo "... tests/tests_vector.s"
 .PHONY : help
 
 
