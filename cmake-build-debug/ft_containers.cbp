@@ -338,6 +338,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/iterators.hpp">
 			<Option target="ft_containers"/>
 		</Unit>

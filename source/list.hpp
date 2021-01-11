@@ -9,57 +9,12 @@
 
 # include <iostream>
 
-
-
-
-
-//template<typename _Alloc>
-//struct __alloc_traits
-//
-//{
-//    typedef _Alloc allocator_type;
-//    typedef typename _Alloc::pointer                pointer;
-//    typedef typename _Alloc::const_pointer          const_pointer;
-//    typedef typename _Alloc::value_type             value_type;
-//    typedef typename _Alloc::reference              reference;
-//    typedef typename _Alloc::const_reference        const_reference;
-//    typedef typename _Alloc::size_type              size_type;
-//    typedef typename _Alloc::difference_type        difference_type;
-//
-//    static pointer
-//    allocate(_Alloc& __a, size_type __n)
-//    { return __a.allocate(__n); }
-//
-//    static void deallocate(_Alloc& __a, pointer __p, size_type __n)
-//    { __a.deallocate(__p, __n); }
-//
-//    template<typename _Tp>
-//    static void construct(_Alloc& __a, pointer __p, const _Tp& __arg)
-//    { __a.construct(__p, __arg); }
-//
-//    static void destroy(_Alloc& __a, pointer __p)
-//    { __a.destroy(__p); }
-//
-//    static size_type max_size(const _Alloc& __a)
-//    { return __a.max_size(); }
-//
-//    static const _Alloc& _S_select_on_copy(const _Alloc& __a) { return __a; }
-//
-//    static void _S_on_swap(_Alloc& __a, _Alloc& __b)
-//    {
-//        // _GLIBCXX_RESOLVE_LIB_DEFECTS
-//        // 431. Swapping containers with unequal allocators.
-//        std::__alloc_swap<_Alloc>::_S_do_it(__a, __b);
-//    }
-//
-//    template<typename _Tp>
-//    struct rebind
-//    { typedef typename _Alloc::template rebind<_Tp>::other other; };
-//};
-
-
+#include "allocator_trairs_wrapper.hpp"
 
 namespace ft {
+
+
+    // INSIDE REALIZTION STARTS
 
 
     namespace __detail {
@@ -68,16 +23,24 @@ namespace ft {
         struct _ListNodeBase {
             _ListNodeBase* _ptrPrev;
             _ListNodeBase* _ptrNext;
+
+            void _link(_ListNodeBase* _ptr) {
+                this->_ptrNext = _ptr;
+                this->_ptrPrev = _ptr->_ptrPrev;
+                _ptr->_ptrPrev->_ptrNext = this;
+                _ptr->_ptrPrev = this;
+            }
         };
 
         struct _ListNodeHeader : public _ListNodeBase {
-            _ListNodeHeader() {
+            _ListNodeHeader() : _size(0) {
                 _initHead();
             }
 
             void _initHead() {
                 this->_ptrPrev = this->_ptrNext = this;
             }
+            std::size_t _size;
 
         private:
             _ListNodeBase* _getBasePtr() { return this; };
@@ -94,21 +57,12 @@ namespace ft {
         class _ListBase {
         protected:
 
-//            typedef typename __gnu_cxx::__alloc_traits<Alloc>::template
-//            rebind<value_type>::other				_VT_alloc_type;
-//            typedef __gnu_cxx::__alloc_traits<_VT_alloc_type>	_VT_alloc_traits;
-//            typedef typename _VT_alloc_traits::template
-//            rebind<_ListNode<value_type> >::other _Node_alloc_type;
-//            typedef __gnu_cxx::__alloc_traits<_Node_alloc_type> _Node_alloc_traits;
-
-
-            typedef typename Alloc::template
+            typedef typename __custom::alloc_traits_wrapper<Alloc>::template
             rebind<value_type>::other				_VT_alloc_type;
-            typedef _VT_alloc_type	_VT_alloc_traits;
+            typedef __custom::alloc_traits_wrapper<_VT_alloc_type>	_VT_alloc_traits;
             typedef typename _VT_alloc_traits::template
             rebind<_ListNode<value_type> >::other _Node_alloc_type;
-            typedef _Node_alloc_type _Node_alloc_traits;
-
+            typedef __custom::alloc_traits_wrapper<_Node_alloc_type> _Node_alloc_traits;
 
             static std::size_t _distanceBetweenNodeBases(const _ListNodeBase* _first, const _ListNodeBase* _second) {
                 std::size_t count = 0;
@@ -129,12 +83,13 @@ namespace ft {
             };
 
             _ListNodeAllocation _base;
+
             std::size_t _Base_get_size() { return 0; };
 
 
 
             std::size_t _countNodes() const {
-                return _distanceBetweenNodeBases(_base._node->_ptrNext, std::addressof(_base._node));
+                return _distanceBetweenNodeBases(_base._node._ptrNext, std::addressof(_base._node));
             }
 
             typename _Node_alloc_traits::pointer _allocateListNode() {
@@ -142,16 +97,20 @@ namespace ft {
             };
 
             void _deallocateListNode(typename _Node_alloc_traits::pointer _ptr) {
-                return  _Node_alloc_traits::allocate(_base, _ptr, 1);
+                return  _Node_alloc_traits::deallocate(_base, _ptr, 1);
             };
+
+            void _plusToSize(std::size_t _n) {
+                _base._node._size += _n;
+            }
 
         public:
             typedef Alloc allocator_type;
 
-            _Node_alloc_type& getNodeAllocator() { return this->_base; };
-            const _Node_alloc_type& getNodeAllocator() const { return this->_base; };
+//            _Node_alloc_type& getNodeAllocator() { return this->_base; };
+//            const _Node_alloc_type& getNodeAllocator() const { return this->_base; };
 
-            _ListBase() { };
+            _ListBase()  { };
 
             _ListBase(const _Node_alloc_type& _allocator) : _base(_allocator) { };
 
@@ -165,9 +124,13 @@ namespace ft {
 
 
     }
+    // INSIDE REALIZTION ENDS
 
 
-template<class VT >
+
+    // CUSTOM ITERATORS STARTS
+
+    template<class VT >
 struct _ListIterator
 {
     typedef _ListIterator<VT>		_Self;
@@ -188,7 +151,7 @@ struct _ListIterator
     explicit _ListIterator(__detail::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
 
 //        _Self
-//        _M_const_cast() const _GLIBCXX_NOEXCEPT
+//        _M_const_cast() const
 //        { return *this; }
 
     reference
@@ -245,8 +208,8 @@ struct _ListIterator
     struct _ListConstIterator
     {
         typedef _ListConstIterator<VT>		_Self;
-        typedef __detail::_ListNode<VT>			_Node;
-        typedef _ListIterator<VT>			_Iterator;
+        typedef const __detail::_ListNode<VT>			_Node;
+        typedef _ListIterator<VT>			iterator;
 
         typedef std::ptrdiff_t				difference_type;
         typedef std::bidirectional_iterator_tag	iterator_category;
@@ -259,19 +222,21 @@ struct _ListIterator
 
     _ListConstIterator() : _nodeBase() { }
 
-    explicit _ListConstIterator(__detail::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
+    explicit _ListConstIterator(const __detail::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
 
-//        _Self
-//        _M_const_cast() const _GLIBCXX_NOEXCEPT
-//        { return *this; }
+    explicit _ListConstIterator(const iterator& _it) : _nodeBase(_it._nodeBase) { };
+
+//        iterator
+//        _M_const_cast() const
+//        { return iterator(const_cast<__detail::_ListNodeBase*>(_nodeBase)); }
 
     reference
     operator*() const
-    { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr()); }
+    { return (*(static_cast<_Node*>(_nodeBase)->_getDataPtr())); }
 
     pointer
     operator->() const
-    { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr());  }
+    { return static_cast<_Node*>(_nodeBase)->_getDataPtr();  }
 
     _Self&
     operator++()
@@ -314,8 +279,12 @@ struct _ListIterator
 
 };
 
+    // CUSTOM ITERATORS ENDS
 
-template < class T, class Alloc = std::allocator <T> >
+
+    // LIST ITSELF STARTS
+
+    template < class T, class Alloc = std::allocator <T> >
 class list : protected __detail::_ListBase<T, Alloc> {
     typedef typename __detail::_ListBase<T, Alloc> _Base;
 
@@ -341,8 +310,100 @@ class list : protected __detail::_ListBase<T, Alloc> {
         typedef std::reverse_iterator<_ListIterator<value_type>> reverse_iterator;
         typedef std::reverse_iterator<_ListConstIterator<const value_type>> const_reverse_iterator;
 
+    protected:
+        typedef typename __detail::_ListNode<value_type> _Node;
 
+    using __detail::_ListBase<value_type , allocator_type >::_allocateListNode;
+    using __detail::_ListBase<value_type , allocator_type >::_deallocateListNode;
+    using __detail::_ListBase<value_type , allocator_type >::_plusToSize;
+    using __detail::_ListBase<value_type , allocator_type >::_base; //AllocatorObject
+
+
+        _Node* _createNode(const value_type& _val) {
+            _Node* _ptr = _allocateListNode();
+            try
+            {
+                _VT_alloc_type _allocator(_base);
+                _allocator.construct(_ptr->_getDataPtr(), _val);
+            }
+            catch(...)
+            {
+                _deallocateListNode(_ptr);
+                throw;
+            }
+            return _ptr;
+        }
+
+private:
         list() { };
+
+    public:
+        //1. default
+        explicit list (const allocator_type& alloc = allocator_type()) : _Base(_Node_alloc_type(alloc)) { };
+
+        //2. fill
+        explicit list (size_type n, const value_type& val = value_type(),
+                       const allocator_type& alloc = allocator_type()) : _Base(_Node_alloc_type(alloc)) {
+            _fill_with_given_value(n, val);
+        }
+
+
+        size_type size() const { return this->_countNodes(); };
+
+        iterator begin() {
+            return iterator (((this->_base)._node._ptrNext));
+        }
+
+        const_iterator begin() const {
+            return const_iterator ((this->_base)._node._ptrNext);
+        }
+
+        iterator end() {
+            return iterator (&(this->_base)._node);
+        }
+
+        const_iterator end() const {
+            return const_iterator (&(this->_base)._node);
+        }
+
+        reverse_iterator rbegin() {
+            return reverse_iterator (end());
+        }
+
+        const_reverse_iterator rbegin() const {
+            return const_reverse_iterator (end());
+        }
+
+        reverse_iterator rend() {
+            return reverse_iterator (begin());
+        }
+
+        const_reverse_iterator rend() const {
+            return const_reverse_iterator (begin());
+        }
+
+
+
+
+        void push_back (const value_type& val) {
+            _insertValueToIterator(end(), val);
+        }
+
+    private:
+        void _fill_with_given_value(size_type _n, const value_type& _val) {
+            for( ; _n; --_n ) {
+                this->push_back(_val);
+            }
+        }
+
+        void _insertValueToIterator(iterator _it, const value_type& _val) {
+            _Node* _ptr = _createNode(_val);
+            _ptr->_link(_it._nodeBase);
+            _plusToSize(1);
+        }
+
+
+
 
 //        explicit list(const allocator_type& alloc = allocator_type());
 //        explicit list (size_type n, const value_type& val = value_type(),
@@ -509,7 +570,12 @@ class list : protected __detail::_ListBase<T, Alloc> {
 //        return const_reverse_iterator(_end->_data);
 //    }
 
-}
+    // LIST ITSELF ENDS
+
+
+
+
+}//namespace ft
 
 
 
