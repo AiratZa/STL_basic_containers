@@ -155,6 +155,58 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.s
 
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../tests/test_list/tests_list_empty_clear_max_size.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o -c /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp
+
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp > CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.i
+
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.s
+
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../tests/test_list/tests_list_front_back.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o -c /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp
+
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp > CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.i
+
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.s
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../tests/test_list/test_list_insert.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o -c /home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp > CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.i
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.s
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../tests/test_list/test_list_resize.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o -c /home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp > CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.i
+
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.s
+
 # Object files for target ft_containers
 ft_containers_OBJECTS = \
 "CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o" \
@@ -162,7 +214,11 @@ ft_containers_OBJECTS = \
 "CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.o" \
 "CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o" \
 "CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o" \
-"CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o"
+"CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o"
 
 # External object files for target ft_containers
 ft_containers_EXTERNAL_OBJECTS =
@@ -173,12 +229,16 @@ ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/build.make
 ft_containers: lib/libgtestd.a
 ft_containers: lib/libgtest_maind.a
 ft_containers: lib/libgtestd.a
 ft_containers: CMakeFiles/ft_containers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ft_containers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ft_containers"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_containers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

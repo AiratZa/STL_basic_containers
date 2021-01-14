@@ -114,7 +114,22 @@ namespace ft {
 
             _ListBase(const _Node_alloc_type& _allocator) : _base(_allocator) { };
 
-            ~_ListBase() { };
+            void _clearAllNodes() {
+                typedef _ListNode<value_type>  _Node;
+                __detail::_ListNodeBase* __cur = _base._node._ptrNext;
+                while (__cur != &_base._node)
+                {
+                    _Node* __tmp = static_cast<_Node*>(__cur);
+                    __cur = __tmp->_ptrNext;
+                    value_type* __val = __tmp->_getDataPtr();
+                    _VT_alloc_type(_base).destroy(__val);//destructs an object in allocated storage
+                    _deallocateListNode(__tmp);
+                }
+            }
+
+            ~_ListBase() {
+                _clearAllNodes();
+            };
 
             void _BaseInit() {
                 (this->_base)._node._initHead();
@@ -150,9 +165,9 @@ struct _ListIterator
 
     explicit _ListIterator(__detail::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
 
-//        _Self
-//        _M_const_cast() const
-//        { return *this; }
+    _Self
+    _getIteratorCopy() const
+    { return *this; }
 
     reference
     operator*() const
@@ -334,7 +349,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
             return _ptr;
         }
 
-private:
+    private:
         list() { };
 
     public:
@@ -348,7 +363,9 @@ private:
         }
 
 
-        size_type size() const { return this->_countNodes(); };
+        //All destruction inside ListBase
+        ~list() { };
+
 
         iterator begin() {
             return iterator (((this->_base)._node._ptrNext));
@@ -383,18 +400,54 @@ private:
         }
 
 
+// Capacity:
 
+        size_type size() const { return this->_countNodes(); };
 
-        void push_back (const value_type& val) {
-            _insertValueToIterator(end(), val);
+        bool empty() const {
+                return ((this->_base)._node._ptrNext == &(this->_base)._node);
+            }
+
+        size_type max_size() const {
+            return _Node_alloc_traits::max_size(this->_base); //returns the largest supported allocation size
         }
+
+//Element access:
+
+        // front Returns a reference to the first element in the list container.
+        // Calling this function on an empty container causes undefined behavior.
+
+        reference front() {
+            return *(this->begin());
+        }
+
+        const_reference front() const {
+            return *(this->begin());
+        }
+
+        // back Returns a reference to the last element in the list container.
+        //Calling this function on an empty container causes undefined behavior.
+
+        reference back() {
+            iterator tmp = end();
+            --tmp;
+            return *tmp;
+        }
+
+        const_reference back() const {
+            const_iterator tmp = end();
+            --tmp;
+            return *tmp;
+        }
+
+
+//Modifiers:
+
+
+
+
 
     private:
-        void _fill_with_given_value(size_type _n, const value_type& _val) {
-            for( ; _n; --_n ) {
-                this->push_back(_val);
-            }
-        }
 
         void _insertValueToIterator(iterator _it, const value_type& _val) {
             _Node* _ptr = _createNode(_val);
@@ -402,31 +455,126 @@ private:
             _plusToSize(1);
         }
 
+    public:
 
+        void push_front (const value_type& val) {
+            _insertValueToIterator(begin(), val);
+        }
 
+        void push_back (const value_type& val) {
+            _insertValueToIterator(end(), val);
+        }
 
-//        explicit list(const allocator_type& alloc = allocator_type());
-//        explicit list (size_type n, const value_type& val = value_type(),
-//                       const allocator_type& alloc = allocator_type());
+        //The container is extended by inserting new elements before the element at the specified position.
+
+        // Returns An iterator that points to the first of the newly inserted elements.
+        //single element (1)
+        iterator insert (iterator position, const value_type& val) {
+            _Node* _ptr = _createNode(val);
+            _ptr->_link(position._nodeBase);
+            _plusToSize(1);
+            return iterator (_ptr);
+        }
+
+        //fill (2)
+        void insert (iterator position, size_type n, const value_type& val) {
+            size_type tmp = 0;
+            iterator iterTmp = position;
+
+            while (tmp < n) {
+                iterTmp = insert(iterTmp, val);
+                tmp++;
+            }
+        }
+
+        //range (3)
+//        template <class InputIterator>
+//        void insert (iterator position, InputIterator first, InputIterator last) {
 //
-//        ~list();
-//
-//        size_type size() const;
-//
-//        void push_front (const value_type& val);
-//        void push_back (const value_type& val);
+//        }
 
-//        iterator begin();
-//        const_iterator begin() const;
 
-//        iterator end();
-//        const_iterator end() const;
 
-//        reverse_iterator rbegin();
-//        const_reverse_iterator rbegin() const;
+
+
+        // Removes from the list container either a single element (position) or a range of elements ([first,last)).
+
+//        iterator erase (iterator position) {
+//            __detail::_ListNodeBase* prev = (position)._nodeBase->ptrPrev;
+//            __detail::_ListNodeBase* next = (position)._nodeBase->_ptrNext;
+//            _Node* _tmp = static_cast<_Node*>(*position);
 //
-//        reverse_iterator rend();
-//        const_reverse_iterator rend() const;
+//            value_type* __val = _tmp->_getDataPtr();
+//            _VT_alloc_type(_base).destroy(__val);//destructs an object in allocated storage
+//            _deallocateListNode(_tmp);
+//            prev->_link(next);
+//
+//        }
+//
+//        iterator erase (iterator first, iterator last) {
+//            __detail::_ListNodeBase* __cur = _base._node._ptrNext;
+//            while (__cur != &_base._node)
+//            {
+//                _Node* __tmp = static_cast<_Node*>(__cur);
+//                __cur = __tmp->_ptrNext;
+//                value_type* __val = __tmp->_getDataPtr();
+//                _VT_alloc_type(_base).destroy(__val);//destructs an object in allocated storage
+//                _deallocateListNode(__tmp);
+//            }
+//        }
+
+
+    private:
+        const_iterator _findBorderIteratorToResize(size_type& _newSize) const
+        {
+            const_iterator iter;
+            size_type curLen = 0;
+            for (iter = begin(); iter != end() && curLen < _newSize; ++iter, ++curLen)
+                ;
+            _newSize -= curLen;
+            return iter;
+        }
+
+    public:
+
+//        void resize (size_type n, value_type val = value_type()) {
+//            const_iterator iter = _findBorderIteratorToResize(n);//returns iterator that consider current length and end of list ofc
+//            // and change 'n' (newSize) value
+//            if (n > 0) {
+//                insert(end(), n, val);
+//            } else {
+//                erase(iter, end());
+//            }
+//        }
+
+//TODO
+// finish erase
+// test erase
+// test resize
+// finish and test third type of insert
+
+
+
+
+
+        void clear() {
+            _Base::_clearAllNodes();
+            _Base::_BaseInit();
+        }
+
+        private:
+            void _fill_with_given_value(size_type _n, const value_type& _val) {
+                for( ; _n; --_n ) {
+                    this->push_back(_val);
+                }
+            }
+
+
+
+
+
+
+
 
 
 
@@ -447,98 +595,9 @@ private:
 //                _end = new ListNode<value_type>(NULL, NULL, tmp);
 //    }
 
-//    template<class T, class Alloc>
-//    list<T, Alloc>::list(list::size_type n, const value_type &val, const allocator_type &alloc)
-//            : _size(0), _allocator(alloc), _head(NULL), _tail(NULL), _listNodeAllocator(list_node_allocator_type()) {
-//        T* tmp = new T(_size);
-//        _end = new ListNode<value_type>(NULL, NULL, tmp);
-//
-//        for (unsigned int i = 0; i < n; i++) {
-//            this->push_back(val);
-//        }
-//    }
-//
-//
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::size_type list<T, Alloc>::size() const {
-//        return this->_size;
-//    }
-//
-//    template<class T, class Alloc>
-//    void list<T, Alloc>::push_back(const value_type &val) {
-//
-//        pointer ptr = _allocator.allocate(1);
-//        list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
-//        _allocator.construct(ptr, val);
-//        _listNodeAllocator.construct(ptrLN, ListNode<value_type>(_tail, NULL, ptr));
-//        if (_tail) {
-//            _tail->_ptrNext = ptrLN;
-//        }
-//        _tail = ptrLN;
-//        if (_head == NULL) {
-//            _head = ptrLN;
-//        }
-//        increment_size();
-//    }
-//
-//    template<class T, class Alloc>
-//    void list<T, Alloc>::push_front(const value_type &val) {
-//        pointer ptr = _allocator.allocate(1);
-//        list_node_pointer ptrLN = _listNodeAllocator.allocate(1);
-//        _allocator.construct(ptr, val);
-//        _listNodeAllocator.construct(ptrLN, ListNode<value_type>(NULL, _head, ptr));
-//        if (_head) {
-//            _head->_ptrPrev = ptrLN;
-//        }
-//        _head = ptrLN;
-//        if (_tail == NULL) {
-//            _tail = ptrLN;
-//        }
-//        increment_size();
-//    }
 
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::iterator list<T, Alloc>::begin() {
-//        if (_head) {
-//            return iterator(_head);
-//        } else {
-//            return iterator(_end);
-//        }
-//    }
 
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::const_iterator list<T, Alloc>::begin() const {
-//        if (_head) {
-//            return const_iterator(_head);
-//        } else {
-//            return const_iterator(_end);
-//        }
-//    }
 
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::iterator list<T, Alloc>::end() {
-//        return iterator(_end->_data);
-//    }
-//
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::const_iterator list<T, Alloc>::end() const {
-//        return const_iterator(_end->_data);
-//    }
-
-//    template<class T, class Alloc>
-//    list<T, Alloc>::~list() {
-//        list_node_pointer tmp = _head;
-//        for(unsigned int i = 0; i < _size; i++) {
-//            list_node_pointer next = tmp->_ptrNext;
-//            _allocator.destroy(tmp->_data);
-//            _listNodeAllocator.destroy(tmp);
-//            _allocator.deallocate(tmp->_data, 1);
-//            _listNodeAllocator.deallocate(tmp, 1);
-//            tmp = next;
-//        }
-//        delete _end->_data;
-//        delete _end;
-//    }
 
 //    template<class T, class Alloc>
 //    typename list<T, Alloc>::reverse_iterator list<T, Alloc>::rbegin() {

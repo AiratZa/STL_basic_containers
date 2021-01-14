@@ -356,6 +356,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_back.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
@@ -365,7 +368,16 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/CMakeLists.txt">
