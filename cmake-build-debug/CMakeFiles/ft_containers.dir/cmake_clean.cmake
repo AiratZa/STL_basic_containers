@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o"

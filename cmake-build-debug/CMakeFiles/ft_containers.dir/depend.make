@@ -51,6 +51,31 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../source/list
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../tests/test_list/test_list_end.cpp
 
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-death-test.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-matchers.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-message.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-param-test.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-printers.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-test-part.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-typed-test.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest_pred_impl.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest_prod.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/custom/gtest-port.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/custom/gtest-printers.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-death-test-internal.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-filepath.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-internal.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-param-util.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-port-arch.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-port.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-string.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../source/allocator_trairs_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../source/list.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../tests/test_list/test_list.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../tests/test_list/test_list_erase.cpp
+
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-matchers.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-message.h
@@ -151,29 +176,6 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../source/l
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../tests/test_list/test_list_rbegin.cpp
 
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-death-test.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-matchers.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-message.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-param-test.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-printers.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-test-part.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-typed-test.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest_pred_impl.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest_prod.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/custom/gtest-port.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/custom/gtest-printers.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-death-test-internal.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-filepath.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-internal.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-param-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-port-arch.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-port.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-string.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_tests/lib/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../source/allocator_trairs_wrapper.hpp
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../source/list.hpp
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../tests/test_list/test_list_resize.cpp
 
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.o: ../google_tests/lib/googletest/include/gtest/gtest-death-test.h

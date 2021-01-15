@@ -356,6 +356,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_erase.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp">
 			<Option target="ft_containers"/>
 		</Unit>

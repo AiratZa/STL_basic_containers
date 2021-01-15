@@ -295,6 +295,33 @@ tests/test_list/test_list_end.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.s
 .PHONY : tests/test_list/test_list_end.cpp.s
 
+tests/test_list/test_list_erase.o: tests/test_list/test_list_erase.cpp.o
+
+.PHONY : tests/test_list/test_list_erase.o
+
+# target to build an object file
+tests/test_list/test_list_erase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o
+.PHONY : tests/test_list/test_list_erase.cpp.o
+
+tests/test_list/test_list_erase.i: tests/test_list/test_list_erase.cpp.i
+
+.PHONY : tests/test_list/test_list_erase.i
+
+# target to preprocess a source file
+tests/test_list/test_list_erase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.i
+.PHONY : tests/test_list/test_list_erase.cpp.i
+
+tests/test_list/test_list_erase.s: tests/test_list/test_list_erase.cpp.s
+
+.PHONY : tests/test_list/test_list_erase.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_erase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.s
+.PHONY : tests/test_list/test_list_erase.cpp.s
+
 tests/test_list/test_list_insert.o: tests/test_list/test_list_insert.cpp.o
 
 .PHONY : tests/test_list/test_list_insert.o
@@ -534,6 +561,9 @@ help:
 	@echo "... tests/test_list/test_list_end.o"
 	@echo "... tests/test_list/test_list_end.i"
 	@echo "... tests/test_list/test_list_end.s"
+	@echo "... tests/test_list/test_list_erase.o"
+	@echo "... tests/test_list/test_list_erase.i"
+	@echo "... tests/test_list/test_list_erase.s"
 	@echo "... tests/test_list/test_list_insert.o"
 	@echo "... tests/test_list/test_list_insert.i"
 	@echo "... tests/test_list/test_list_insert.s"

@@ -333,6 +333,8 @@ bits/allocator.h
 /home/airat/projects/STL_basic_containers/source/list.hpp
 memory
 -
+cstdlib
+-
 iostream
 -
 allocator_trairs_wrapper.hpp
@@ -354,6 +356,10 @@ test_list.hpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list_erase.cpp
+test_list.hpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
@@ -369,10 +375,6 @@ test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 

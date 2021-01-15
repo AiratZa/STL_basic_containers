@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_begin.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o"
+  "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_erase.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_back.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_front.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o"
