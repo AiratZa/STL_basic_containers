@@ -19,7 +19,7 @@ TEST(List_insert, first_insert_to_few_elements) {
 
     ASSERT_EQ(l1.size(), l2.size());
 
-    l2.push_back(654);
+    l1.push_back(654);
     l2.push_back(654);
 
     ft::list<int>::iterator it1 = l1.begin();
@@ -28,7 +28,7 @@ TEST(List_insert, first_insert_to_few_elements) {
     ite1 = l1.end();
     ite2 = l2.end();
 
-    while ((it1 != ite1) && (it2 != ite2)) {
+    while ((it1 != ite1) || (it2 != ite2)) {
         ASSERT_EQ(*it1, *it2);
         ++it1;
         ++it2;
@@ -71,7 +71,7 @@ TEST(List_insert, first_insert_to_more_elements) {
     ite1 = l1.end();
     ite2 = l2.end();
 
-    while ((it1 != ite1) && (it2 != ite2)) {
+    while ((it1 != ite1) || (it2 != ite2)) {
         ASSERT_EQ(*it1, *it2);
         ++it1;
         ++it2;
@@ -97,7 +97,7 @@ TEST(List_insert, second_insert_to_few_elements) {
 
     ASSERT_EQ(l1.size(), l2.size());
 
-    l2.push_back(778855);
+    l1.push_back(778855);
     l2.push_back(778855);
 
     ft::list<int>::iterator it1 = l1.begin();
@@ -106,7 +106,7 @@ TEST(List_insert, second_insert_to_few_elements) {
     ite1 = l1.end();
     ite2 = l2.end();
 
-    while ((it1 != ite1) && (it2 != ite2)) {
+    while ((it1 != ite1) || (it2 != ite2)) {
         ASSERT_EQ(*it1, *it2);
         ++it1;
         ++it2;
@@ -145,7 +145,7 @@ TEST(List_insert, second_insert_to_more_elements) {
     ite1 = l1.end();
     ite2 = l2.end();
 
-    while ((it1 != ite1) && (it2 != ite2)) {
+    while ((it1 != ite1) || (it2 != ite2)) {
         ASSERT_EQ(*it1, *it2);
         ++it1;
         ++it2;

@@ -21,9 +21,8 @@ TEST(List_end, SHOULD_BE_DELETED) {
     std::list<int> l2(100);
 
     ASSERT_EQ(*l1.end(), *l2.end());
-    auto i1 = l1.end();
-    auto i2 = l2.end();
-    //std::cout <<  *i1 << " " << *i2 << std::endl;
+    ft::list<int>::iterator i1 = l1.end();
+    std::list<int>::iterator i2 = l2.end();
     ASSERT_EQ(l1.size(), l2.size());
 }
 

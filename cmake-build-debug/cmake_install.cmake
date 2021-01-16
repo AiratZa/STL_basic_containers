@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/cmake_install.cmake")
+  include("/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

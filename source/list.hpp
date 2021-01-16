@@ -69,6 +69,7 @@ namespace ft {
 
             void _initHead() {
                 this->_ptrPrev = this->_ptrNext = this;
+                this->_size = 0;
             }
             std::size_t _size;
 
@@ -79,8 +80,8 @@ namespace ft {
         template < typename value_type >
         struct _ListNode : _ListNodeBase {
             value_type _data;
-            value_type* _getDataPtr() { return std::addressof(_data); };
-            value_type const* _getDataPtr() const { return std::addressof(_data); };
+            value_type* _getDataPtr() { return &_data; };
+            value_type const* _getDataPtr() const { return &_data; };
         };
 
         template <typename value_type, typename Alloc>
@@ -119,7 +120,7 @@ namespace ft {
 
 
             std::size_t _countNodes() const {
-                return _distanceBetweenNodeBases(_base._node._ptrNext, std::addressof(_base._node));
+                return _distanceBetweenNodeBases(_base._node._ptrNext, &(_base._node));
             }
 
             typename _Node_alloc_traits::pointer _allocateListNode() {
@@ -135,11 +136,15 @@ namespace ft {
             }
 
             void _decrementSize(std::size_t _n) {
-                _base._node._size += _n;
+                _base._node._size = _base._node._size - _n;
             }
 
             void _setSize(std::size_t _n) {
                 _base._node._size = _n;
+            }
+
+            std::size_t _getSize(void) const{
+                return _base._node._size;
             }
 
         public:
@@ -360,8 +365,8 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
         typedef _ListIterator<value_type> iterator;
         typedef _ListConstIterator< const value_type> const_iterator;
-        typedef std::reverse_iterator<_ListIterator<value_type>> reverse_iterator;
-        typedef std::reverse_iterator<_ListConstIterator<const value_type>> const_reverse_iterator;
+        typedef std::reverse_iterator< _ListIterator<value_type> > reverse_iterator;
+        typedef std::reverse_iterator< _ListConstIterator<const value_type> > const_reverse_iterator;
 
     protected:
         typedef typename __detail::_ListNode<value_type> _Node;
@@ -441,7 +446,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
 // Capacity:
 
-        size_type size() const { return this->_countNodes(); };
+        size_type size() const { return _Base::_getSize(); };
 
         bool empty() const {
                 return ((this->_base)._node._ptrNext == &(this->_base)._node);
@@ -496,7 +501,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
         // Erases element at position given
         void _eraseInIteratorPos(iterator _it) {
-            _decrementSize(-1);
+            _decrementSize(1);
             (_it._nodeBase)->_unlink();
             _Node* _tmp = static_cast<_Node*>(_it._nodeBase);
             value_type* __val = _tmp->_getDataPtr();
@@ -521,7 +526,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
         iterator insert (iterator position, const value_type& val) {
             _Node* _ptr = _createNode(val);
             _ptr->_link(position._nodeBase);
-            _decrementSize(1);
+            _incrementSize(1);
             return iterator (_ptr);
         }
 
@@ -567,9 +572,9 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
 
     private:
-        const_iterator _findBorderIteratorToResize(size_type& _newSize) const
+        iterator _findBorderIteratorToResize(size_type& _newSize)
         {
-            const_iterator iter;
+            iterator iter;
             size_type curLen = 0;
             for (iter = begin(); iter != end() && curLen < _newSize; ++iter, ++curLen)
                 ;
@@ -580,7 +585,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
     public:
 
         void resize (size_type n, value_type val = value_type()) {
-            const_iterator iter = _findBorderIteratorToResize(n);//returns iterator that consider current length and end of list ofc
+            iterator iter = _findBorderIteratorToResize(n);//returns iterator that consider current length and end of list ofc
             // and change 'n' (newSize) value
             if (n > 0) {
                 insert(end(), n, val);
@@ -662,22 +667,16 @@ class list : protected __detail::_ListBase<T, Alloc> {
         //element range (3)
         //The third version (3) transfers the range [first,last) from x into the container.
         void splice (iterator position, list& x, iterator first, iterator last) {
-            iterator tmpNext = first._nodeBase->_ptrNext;
-            while (tmpNext != last)
-
-
             if (first != last)
             {
                 if (this != std::__addressof(x))
-                    _M_check_equal_allocators(x);
+                    _throw_if_non_equal_allocators(x);
 
-                size_t __n = _Base::_distanceBetweenNodeBases(first, last);
+                size_t __n = _Base::_distanceBetweenNodeBases(first._nodeBase, last._nodeBase);
                 this->_incrementSize(__n);
                 x._decrementSize(__n);
 
-                this->_M_transfer(position,
-                                  first,
-                                  last);
+                (position._nodeBase)->_relinkElementsIteratorBefore(first._nodeBase, last._nodeBase);
             }
         }
 

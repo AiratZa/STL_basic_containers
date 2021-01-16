@@ -5,7 +5,7 @@
 		<Option title="ft_containers"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\google_tests\;CMake Files\google_tests\lib\;CMake Files\google_tests\lib\googlemock\;CMake Files\google_tests\lib\googlemock\cmake\;CMake Files\google_tests\lib\googletest\;CMake Files\google_tests\lib\googletest\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\google_test\;CMake Files\google_test\googlemock\;CMake Files\google_test\googlemock\cmake\;CMake Files\google_test\googletest\;CMake Files\google_test\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug"/>
@@ -44,8 +44,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -68,8 +68,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -126,16 +126,16 @@
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -145,23 +145,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main/fast">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -171,23 +171,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -197,23 +197,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock/fast">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googlemock"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -223,21 +223,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -247,21 +247,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -271,21 +271,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -295,21 +295,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
-				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest"/>
+				<Option output="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/include"/>
-					<Add directory="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest/include"/>
+					<Add directory="/home/airat/projects/STL_basic_containers/google_test/googletest"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
@@ -319,29 +319,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_tests/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/airat/projects/STL_basic_containers/cmake-build-debug/google_test/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/src/gmock-all.cc">
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/src/gmock_main.cc">
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googlemock/src/gmock_main.cc">
 			<Option target="gmock_main"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/src/gtest-all.cc">
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/src/gtest_main.cc">
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp">
+		<Unit filename="/home/airat/projects/STL_basic_containers/main.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/source/iterators.hpp">
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/list.hpp">
@@ -389,32 +389,32 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\google_tests\lib\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\google_test\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\google_tests\lib\googlemock\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\google_test\googlemock\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/cmake/gmock.pc.in">
-			<Option virtualFolder="CMake Files\google_tests\lib\googlemock\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\google_test\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googlemock/cmake/gmock_main.pc.in">
-			<Option virtualFolder="CMake Files\google_tests\lib\googlemock\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\google_test\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\google_tests\lib\googletest\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\google_test\googletest\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\google_tests\lib\googletest\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\google_test\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\google_tests\lib\googletest\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\google_test\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\google_tests\lib\googletest\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\google_test\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/google_tests/lib/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\google_tests\lib\googletest\cmake\"/>
+		<Unit filename="/home/airat/projects/STL_basic_containers/google_test/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\google_test\googletest\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

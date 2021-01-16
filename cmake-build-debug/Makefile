@@ -199,7 +199,7 @@ gmock_main: cmake_check_build_system
 
 # fast build rule for target.
 gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build.make google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/build
+	$(MAKE) $(MAKESILENT) -f google_test/googlemock/CMakeFiles/gmock_main.dir/build.make google_test/googlemock/CMakeFiles/gmock_main.dir/build
 .PHONY : gmock_main/fast
 
 #=============================================================================
@@ -212,7 +212,7 @@ gmock: cmake_check_build_system
 
 # fast build rule for target.
 gmock/fast:
-	$(MAKE) $(MAKESILENT) -f google_tests/lib/googlemock/CMakeFiles/gmock.dir/build.make google_tests/lib/googlemock/CMakeFiles/gmock.dir/build
+	$(MAKE) $(MAKESILENT) -f google_test/googlemock/CMakeFiles/gmock.dir/build.make google_test/googlemock/CMakeFiles/gmock.dir/build
 .PHONY : gmock/fast
 
 #=============================================================================
@@ -225,7 +225,7 @@ gtest_main: cmake_check_build_system
 
 # fast build rule for target.
 gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build
+	$(MAKE) $(MAKESILENT) -f google_test/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make google_test/googlemock/gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
 #=============================================================================
@@ -238,8 +238,35 @@ gtest: cmake_check_build_system
 
 # fast build rule for target.
 gtest/fast:
-	$(MAKE) $(MAKESILENT) -f google_tests/lib/googletest/CMakeFiles/gtest.dir/build.make google_tests/lib/googletest/CMakeFiles/gtest.dir/build
+	$(MAKE) $(MAKESILENT) -f google_test/googlemock/gtest/CMakeFiles/gtest.dir/build.make google_test/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 tests/test_list/test_list_begin.o: tests/test_list/test_list_begin.cpp.o
 
@@ -582,6 +609,9 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... tests/test_list/test_list_begin.o"
 	@echo "... tests/test_list/test_list_begin.i"
 	@echo "... tests/test_list/test_list_begin.s"
