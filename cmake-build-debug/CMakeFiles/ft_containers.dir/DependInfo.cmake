@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.o"
+  "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o"
   )

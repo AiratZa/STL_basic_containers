@@ -623,7 +623,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
         void
         _throw_if_non_equal_allocators(list& __x)
         {
-            if (std::__alloc_neq<typename _Base::_Node_alloc_type>::_S_do_it(this->_base, __x.base))
+            if (std::__alloc_neq<typename _Base::_Node_alloc_type>::_S_do_it(this->_base, __x._base))
                 abort();
         }
 
@@ -635,7 +635,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
             if (!x.empty()) {
                 _throw_if_non_equal_allocators(x);
 
-                (position._nodeBase)->_relinkElementsIteratorBefore(x.begin(), x.end());
+                (position._nodeBase)->_relinkElementsIteratorBefore(x.begin()._nodeBase, x.end()._nodeBase);
 
                 this->_incrementSize(x.size());
                 _Base::_setSize(0);
@@ -653,7 +653,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
             if (this != std::__addressof(x))
                 _throw_if_non_equal_allocators(x);
 
-            (position._nodeBase)->_relinkElementsIteratorBefore(i, __j);
+            (position._nodeBase)->_relinkElementsIteratorBefore(i._nodeBase, __j._nodeBase);
 
             this->_incrementSize(1);
             x._decrementSize(1);

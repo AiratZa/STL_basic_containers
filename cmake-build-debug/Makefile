@@ -484,6 +484,33 @@ tests/test_list/test_list_siize.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.s
 .PHONY : tests/test_list/test_list_siize.cpp.s
 
+tests/test_list/test_list_splice.o: tests/test_list/test_list_splice.cpp.o
+
+.PHONY : tests/test_list/test_list_splice.o
+
+# target to build an object file
+tests/test_list/test_list_splice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o
+.PHONY : tests/test_list/test_list_splice.cpp.o
+
+tests/test_list/test_list_splice.i: tests/test_list/test_list_splice.cpp.i
+
+.PHONY : tests/test_list/test_list_splice.i
+
+# target to preprocess a source file
+tests/test_list/test_list_splice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.i
+.PHONY : tests/test_list/test_list_splice.cpp.i
+
+tests/test_list/test_list_splice.s: tests/test_list/test_list_splice.cpp.s
+
+.PHONY : tests/test_list/test_list_splice.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_splice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.s
+.PHONY : tests/test_list/test_list_splice.cpp.s
+
 tests/test_list/tests_list_empty_clear_max_size.o: tests/test_list/tests_list_empty_clear_max_size.cpp.o
 
 .PHONY : tests/test_list/tests_list_empty_clear_max_size.o
@@ -582,6 +609,9 @@ help:
 	@echo "... tests/test_list/test_list_siize.o"
 	@echo "... tests/test_list/test_list_siize.i"
 	@echo "... tests/test_list/test_list_siize.s"
+	@echo "... tests/test_list/test_list_splice.o"
+	@echo "... tests/test_list/test_list_splice.i"
+	@echo "... tests/test_list/test_list_splice.s"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.o"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.i"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.s"

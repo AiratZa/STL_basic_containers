@@ -377,6 +377,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
