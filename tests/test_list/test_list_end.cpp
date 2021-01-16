@@ -4,29 +4,7 @@
 //
 #include "test_list.hpp"
 
-// 1. Placement new
-// new (ptr) T();
-
-// 2. Явный вызов деструктора
-// p->~T();
-
-// 3. Перегрузка оператора new
-// static void* operator new(size_t n) {
-//     ::operator new( );
-// }
-
-
-TEST(List_end, SHOULD_BE_DELETED) {
-    ft::list<int> l1(100);
-    std::list<int> l2(100);
-
-    ASSERT_EQ(*l1.end(), *l2.end());
-    ft::list<int>::iterator i1 = l1.end();
-    std::list<int>::iterator i2 = l2.end();
-    ASSERT_EQ(l1.size(), l2.size());
-}
-
-TEST(List_end, begin_0_elements) {
+TEST(List_end, end_0_elements) {
     ft::list<int> l1(0);
     std::list<int> l2(0);
 

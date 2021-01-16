@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o"

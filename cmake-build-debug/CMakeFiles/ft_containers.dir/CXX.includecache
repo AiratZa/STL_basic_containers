@@ -308,11 +308,7 @@ list
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_assign.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list_relational_operators.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 

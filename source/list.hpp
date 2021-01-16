@@ -96,7 +96,11 @@ namespace ft {
         };
 
         template < typename value_type >
-        struct _ListNode : _ListNodeBase {
+        struct _ListNode : public _ListNodeBase {
+            _ListNode() : _ListNodeBase(), _data(value_type()) {
+
+            }
+
             value_type _data;
             value_type* _getDataPtr() { return &_data; };
             value_type const* _getDataPtr() const { return &_data; };
@@ -795,12 +799,64 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
 
 
+// relational operators (list)
+    template <class T, class Alloc>
+    bool operator== (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        typedef typename list<T, Alloc>::const_iterator const_iterator;
+
+        const_iterator it1 = lhs.begin();
+        const_iterator it2 = rhs.begin();
+
+        const_iterator ite1 = lhs.end();
+        const_iterator ite2 = rhs.end();
+
+        while (it1 != ite1 && it2 != ite2 && *it1 == *it2)
+        {
+            ++it1;
+            ++it2;
+        }
+        return it1 == ite1 && it2 == ite2;
+    }
+
+    template <class T, class Alloc>
+    bool operator!= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        return !(lhs == rhs);
+    }
+
+    //// The elements are compared using operator<
+    template <class T, class Alloc>
+    bool operator<  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        return std::lexicographical_compare(lhs.begin(), lhs.end(),
+                                            rhs.begin(), rhs.end());
+    }
+
+    template <class T, class Alloc>
+    bool operator<= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        return !( rhs < lhs);
+    }
+
+    template <class T, class Alloc>
+    bool operator>  (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        return (rhs < lhs);
+    }
+
+    template <class T, class Alloc>
+    bool operator>= (const list<T,Alloc>& lhs, const list<T,Alloc>& rhs) {
+        return !( lhs < rhs);
+    }
+
+
+    /* This is an overload of the generic algorithm swap that improves its performance by mutually transferring
+     * ownership over their assets to the other container (i.e., the containers exchange references to their data,
+     * without actually performing any element copy or movement): It behaves as if x.swap(y) was called.
+    */
+    template <class T, class Alloc>
+    void swap (list<T,Alloc>& x, list<T,Alloc>& y) {
+        x.swap(y);
+    }
+
+
 }//namespace ft
-
-
-
-
-
 
 
 

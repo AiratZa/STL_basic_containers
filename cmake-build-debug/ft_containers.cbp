@@ -374,6 +374,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_relational_operators.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
