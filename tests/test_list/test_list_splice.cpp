@@ -15,18 +15,15 @@ TEST(List_splice, splice_entire_list ) {
     ft::list<int>::iterator it1;
     std::list<int>::iterator it2;
 
-    for (int i=1; i<=4; ++i)
+    for (int i = 1; i <= 4; ++i) {
         l1_1.push_back(i);      // l1_1: 1 2 3 4
-
-    for (int i=1; i<=3; ++i)
-        l1_2.push_back(i*10);   // l1_2: 10 20 30
-
-
-    for (int i=1; i<=4; ++i)
         l2_1.push_back(i);      // l2_1: 1 2 3 4
+    }
 
-    for (int i=1; i<=3; ++i)
-        l2_2.push_back(i*10);   // l2_2: 10 20 30
+    for (int i = 1; i <= 3; ++i) {
+        l1_2.push_back(i * 10);   // l1_2: 10 20 30
+        l2_2.push_back(i * 10);   // l2_2: 10 20 30
+    }
 
     it1 = l1_1.begin();
     it2 = l2_1.begin();
@@ -63,18 +60,16 @@ TEST(List_splice, splice_single_element_bag) {
     ft::list<int>::iterator it1;
     std::list<int>::iterator it2;
 
-    for (int i=1; i<=4; ++i)
+    for (int i=1; i<=4; ++i) {
         l1_1.push_back(i);      // l1_1: 1 2 3 4
-
-    for (int i=1; i<=3; ++i)
-        l1_2.push_back(i*10);   // l1_2: 10 20 30
-
-
-    for (int i=1; i<=4; ++i)
         l2_1.push_back(i);      // l2_1: 1 2 3 4
+    }
 
-    for (int i=1; i<=3; ++i)
-        l2_2.push_back(i*10);   // l2_2: 10 20 30
+    for (int i=1; i<=3; ++i) {
+        l1_2.push_back(i * 10);   // l1_2: 10 20 30
+        l2_2.push_back(i * 10);   // l2_2: 10 20 30
+    }
+
 
     it1 = l1_1.begin();
     it2 = l2_1.begin();
@@ -115,18 +110,15 @@ TEST(List_splice, splice_single_element) {
     ft::list<int>::iterator it1;
     std::list<int>::iterator it2;
 
-    for (int i=1; i<=4; ++i)
+    for (int i = 1; i <= 4; ++i) {
         l1_1.push_back(i);      // l1_1: 1 2 3 4
-
-    for (int i=1; i<=3; ++i)
-        l1_2.push_back(i*10);   // l1_2: 10 20 30
-
-
-    for (int i=1; i<=4; ++i)
         l2_1.push_back(i);      // l2_1: 1 2 3 4
+    }
 
-    for (int i=1; i<=3; ++i)
-        l2_2.push_back(i*10);   // l2_2: 10 20 30
+    for (int i=1; i<=3; ++i) {
+        l1_2.push_back(i * 10);   // l1_2: 10 20 30
+        l2_2.push_back(i * 10);   // l2_2: 10 20 30
+    }
 
     it1 = l1_1.begin();
     it2 = l2_1.begin();

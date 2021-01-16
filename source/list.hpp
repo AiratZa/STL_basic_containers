@@ -9,7 +9,7 @@
 # include <cstdlib>
 # include <iostream>
 
-#include "allocator_trairs_wrapper.hpp"
+#include "allocator_traits_wrapper.hpp"
 
 namespace ft {
 
@@ -41,8 +41,8 @@ namespace ft {
             }
 
             // Moves the elements from [first,last) before position.
-            void _relinkElementsIteratorBefore(_ListNodeBase * const __first,
-            _ListNodeBase * const __last)
+            void _relinkElementsBefore(_ListNodeBase * const __first,
+                                       _ListNodeBase * const __last)
             {
                 if (this != __last)
                 {
@@ -542,7 +542,57 @@ class list : protected __detail::_ListBase<T, Alloc> {
             _deallocateListNode(_tmp);
         }
 
+        void _fill_with_assignation(size_type __n, const value_type& __val)
+        {
+            iterator __i = begin();
+            for (; __i != end() && __n > 0; ++__i, --__n)
+                *__i = __val;
+            if (__n > 0)
+                insert(end(), __n, __val);
+            else
+                erase(__i, end());
+        }
+
+
+        template<typename _Integer>
+        void
+        _assign_dispatch(_Integer __n, _Integer __val, std::__true_type)
+        { this->_fill_with_assignation(__n, __val); }
+
+        // Called by the range assign to implement [23.1.1]/9
+        template<typename InputIterator>
+        void
+        _assign_dispatch(InputIterator first, InputIterator last,
+                           std::__false_type) {
+
+            iterator __curFirst1 = begin();
+            iterator __curLast1 = end();
+            for (; __curFirst1 != __curLast1 && first != last;
+                   ++__curFirst1, (void)++first)
+                *__curFirst1 = *first;
+            if (first == last)
+                erase(__curFirst1, __curLast1); //erase elements if given range shorter or equal to current size(begin - end range)
+            else
+                insert(__curLast1, first, last);
+        }
+
     public:
+
+        // range (1)
+        // In the range version (1), the new contents are elements constructed from each of the elements in the range between first and last, in the same order.
+
+        template <class InputIterator>
+        void assign (InputIterator first, InputIterator last) {
+            // Check whether it's an integral type.  If so, it's not an iterator.
+            typedef typename std::__is_integer<InputIterator>::__type _Integral;
+            _assign_dispatch(first, last, _Integral());
+
+        }
+
+        // fill (2)
+        void assign (size_type n, const value_type& val) {
+            _fill_with_assignation(n, val);
+        }
 
         void push_front (const value_type& val) {
             _insertValueToIterator(begin(), val);
@@ -655,7 +705,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
             if (!x.empty()) {
                 _throw_if_non_equal_allocators(x);
 
-                (position._nodeBase)->_relinkElementsIteratorBefore(x.begin()._nodeBase, x.end()._nodeBase);
+                (position._nodeBase)->_relinkElementsBefore(x.begin()._nodeBase, x.end()._nodeBase);
 
                 this->_incrementSize(x.size());
                 x._Base::_setSize(0);
@@ -673,7 +723,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
             if (this != std::__addressof(x))
                 _throw_if_non_equal_allocators(x);
 
-            (position._nodeBase)->_relinkElementsIteratorBefore(i._nodeBase, __j._nodeBase);
+            (position._nodeBase)->_relinkElementsBefore(i._nodeBase, __j._nodeBase);
 
             this->_incrementSize(1);
             x._decrementSize(1);
@@ -691,7 +741,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
                 this->_incrementSize(__n);
                 x._decrementSize(__n);
 
-                (position._nodeBase)->_relinkElementsIteratorBefore(first._nodeBase, last._nodeBase);
+                (position._nodeBase)->_relinkElementsBefore(first._nodeBase, last._nodeBase);
             }
         }
 

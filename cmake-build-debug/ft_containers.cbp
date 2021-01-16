@@ -341,13 +341,16 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/main.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp">
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/list.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_assign.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_begin.cpp">
@@ -374,7 +377,7 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp">
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_size.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp">

@@ -286,7 +286,7 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp
+/home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
 bits/allocator.h
 -
 
@@ -297,8 +297,8 @@ cstdlib
 -
 iostream
 -
-allocator_trairs_wrapper.hpp
-/home/airat/projects/STL_basic_containers/source/allocator_trairs_wrapper.hpp
+allocator_traits_wrapper.hpp
+/home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
 
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 list
@@ -308,53 +308,7 @@ list
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_begin.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_erase.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_back.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_front.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_siize.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-
-/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list_assign.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 

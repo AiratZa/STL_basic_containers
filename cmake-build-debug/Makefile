@@ -268,6 +268,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/test_list/test_list_assign.o: tests/test_list/test_list_assign.cpp.o
+
+.PHONY : tests/test_list/test_list_assign.o
+
+# target to build an object file
+tests/test_list/test_list_assign.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o
+.PHONY : tests/test_list/test_list_assign.cpp.o
+
+tests/test_list/test_list_assign.i: tests/test_list/test_list_assign.cpp.i
+
+.PHONY : tests/test_list/test_list_assign.i
+
+# target to preprocess a source file
+tests/test_list/test_list_assign.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.i
+.PHONY : tests/test_list/test_list_assign.cpp.i
+
+tests/test_list/test_list_assign.s: tests/test_list/test_list_assign.cpp.s
+
+.PHONY : tests/test_list/test_list_assign.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_assign.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.s
+.PHONY : tests/test_list/test_list_assign.cpp.s
+
 tests/test_list/test_list_begin.o: tests/test_list/test_list_begin.cpp.o
 
 .PHONY : tests/test_list/test_list_begin.o
@@ -484,32 +511,32 @@ tests/test_list/test_list_resize.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.s
 .PHONY : tests/test_list/test_list_resize.cpp.s
 
-tests/test_list/test_list_siize.o: tests/test_list/test_list_siize.cpp.o
+tests/test_list/test_list_size.o: tests/test_list/test_list_size.cpp.o
 
-.PHONY : tests/test_list/test_list_siize.o
+.PHONY : tests/test_list/test_list_size.o
 
 # target to build an object file
-tests/test_list/test_list_siize.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.o
-.PHONY : tests/test_list/test_list_siize.cpp.o
+tests/test_list/test_list_size.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o
+.PHONY : tests/test_list/test_list_size.cpp.o
 
-tests/test_list/test_list_siize.i: tests/test_list/test_list_siize.cpp.i
+tests/test_list/test_list_size.i: tests/test_list/test_list_size.cpp.i
 
-.PHONY : tests/test_list/test_list_siize.i
+.PHONY : tests/test_list/test_list_size.i
 
 # target to preprocess a source file
-tests/test_list/test_list_siize.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.i
-.PHONY : tests/test_list/test_list_siize.cpp.i
+tests/test_list/test_list_size.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.i
+.PHONY : tests/test_list/test_list_size.cpp.i
 
-tests/test_list/test_list_siize.s: tests/test_list/test_list_siize.cpp.s
+tests/test_list/test_list_size.s: tests/test_list/test_list_size.cpp.s
 
-.PHONY : tests/test_list/test_list_siize.s
+.PHONY : tests/test_list/test_list_size.s
 
 # target to generate assembly for a file
-tests/test_list/test_list_siize.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_siize.cpp.s
-.PHONY : tests/test_list/test_list_siize.cpp.s
+tests/test_list/test_list_size.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.s
+.PHONY : tests/test_list/test_list_size.cpp.s
 
 tests/test_list/test_list_splice.o: tests/test_list/test_list_splice.cpp.o
 
@@ -612,6 +639,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/test_list/test_list_assign.o"
+	@echo "... tests/test_list/test_list_assign.i"
+	@echo "... tests/test_list/test_list_assign.s"
 	@echo "... tests/test_list/test_list_begin.o"
 	@echo "... tests/test_list/test_list_begin.i"
 	@echo "... tests/test_list/test_list_begin.s"
@@ -636,9 +666,9 @@ help:
 	@echo "... tests/test_list/test_list_resize.o"
 	@echo "... tests/test_list/test_list_resize.i"
 	@echo "... tests/test_list/test_list_resize.s"
-	@echo "... tests/test_list/test_list_siize.o"
-	@echo "... tests/test_list/test_list_siize.i"
-	@echo "... tests/test_list/test_list_siize.s"
+	@echo "... tests/test_list/test_list_size.o"
+	@echo "... tests/test_list/test_list_size.i"
+	@echo "... tests/test_list/test_list_size.s"
 	@echo "... tests/test_list/test_list_splice.o"
 	@echo "... tests/test_list/test_list_splice.i"
 	@echo "... tests/test_list/test_list_splice.s"
