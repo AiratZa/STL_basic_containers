@@ -18,6 +18,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o"
   "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o"
+  "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_pop_front_back.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o"
+  "/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp" "/home/airat/projects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

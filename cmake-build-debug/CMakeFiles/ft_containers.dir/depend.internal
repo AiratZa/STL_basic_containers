@@ -376,3 +376,57 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o
+ ../google_test/googletest/include/gtest/gtest-death-test.h
+ ../google_test/googletest/include/gtest/gtest-message.h
+ ../google_test/googletest/include/gtest/gtest-param-test.h
+ ../google_test/googletest/include/gtest/gtest-printers.h
+ ../google_test/googletest/include/gtest/gtest-test-part.h
+ ../google_test/googletest/include/gtest/gtest-typed-test.h
+ ../google_test/googletest/include/gtest/gtest.h
+ ../google_test/googletest/include/gtest/gtest_pred_impl.h
+ ../google_test/googletest/include/gtest/gtest_prod.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../google_test/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-filepath.h
+ ../google_test/googletest/include/gtest/internal/gtest-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-linked_ptr.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util-generated.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util.h
+ ../google_test/googletest/include/gtest/internal/gtest-port-arch.h
+ ../google_test/googletest/include/gtest/internal/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/gtest-string.h
+ ../google_test/googletest/include/gtest/internal/gtest-tuple.h
+ ../google_test/googletest/include/gtest/internal/gtest-type-util.h
+ /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/list.hpp
+ /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+ /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_pop_front_back.cpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o
+ ../google_test/googletest/include/gtest/gtest-death-test.h
+ ../google_test/googletest/include/gtest/gtest-message.h
+ ../google_test/googletest/include/gtest/gtest-param-test.h
+ ../google_test/googletest/include/gtest/gtest-printers.h
+ ../google_test/googletest/include/gtest/gtest-test-part.h
+ ../google_test/googletest/include/gtest/gtest-typed-test.h
+ ../google_test/googletest/include/gtest/gtest.h
+ ../google_test/googletest/include/gtest/gtest_pred_impl.h
+ ../google_test/googletest/include/gtest/gtest_prod.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../google_test/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-filepath.h
+ ../google_test/googletest/include/gtest/internal/gtest-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-linked_ptr.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util-generated.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util.h
+ ../google_test/googletest/include/gtest/internal/gtest-port-arch.h
+ ../google_test/googletest/include/gtest/internal/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/gtest-string.h
+ ../google_test/googletest/include/gtest/internal/gtest-tuple.h
+ ../google_test/googletest/include/gtest/internal/gtest-type-util.h
+ /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/list.hpp
+ /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+ /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp

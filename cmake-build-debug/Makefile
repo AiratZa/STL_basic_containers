@@ -619,6 +619,60 @@ tests/test_list/tests_list_front_back.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.s
 .PHONY : tests/test_list/tests_list_front_back.cpp.s
 
+tests/test_list/tests_list_pop_front_back.o: tests/test_list/tests_list_pop_front_back.cpp.o
+
+.PHONY : tests/test_list/tests_list_pop_front_back.o
+
+# target to build an object file
+tests/test_list/tests_list_pop_front_back.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o
+.PHONY : tests/test_list/tests_list_pop_front_back.cpp.o
+
+tests/test_list/tests_list_pop_front_back.i: tests/test_list/tests_list_pop_front_back.cpp.i
+
+.PHONY : tests/test_list/tests_list_pop_front_back.i
+
+# target to preprocess a source file
+tests/test_list/tests_list_pop_front_back.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.i
+.PHONY : tests/test_list/tests_list_pop_front_back.cpp.i
+
+tests/test_list/tests_list_pop_front_back.s: tests/test_list/tests_list_pop_front_back.cpp.s
+
+.PHONY : tests/test_list/tests_list_pop_front_back.s
+
+# target to generate assembly for a file
+tests/test_list/tests_list_pop_front_back.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.s
+.PHONY : tests/test_list/tests_list_pop_front_back.cpp.s
+
+tests/test_list/tests_list_swap.o: tests/test_list/tests_list_swap.cpp.o
+
+.PHONY : tests/test_list/tests_list_swap.o
+
+# target to build an object file
+tests/test_list/tests_list_swap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o
+.PHONY : tests/test_list/tests_list_swap.cpp.o
+
+tests/test_list/tests_list_swap.i: tests/test_list/tests_list_swap.cpp.i
+
+.PHONY : tests/test_list/tests_list_swap.i
+
+# target to preprocess a source file
+tests/test_list/tests_list_swap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.i
+.PHONY : tests/test_list/tests_list_swap.cpp.i
+
+tests/test_list/tests_list_swap.s: tests/test_list/tests_list_swap.cpp.s
+
+.PHONY : tests/test_list/tests_list_swap.s
+
+# target to generate assembly for a file
+tests/test_list/tests_list_swap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s
+.PHONY : tests/test_list/tests_list_swap.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -678,6 +732,12 @@ help:
 	@echo "... tests/test_list/tests_list_front_back.o"
 	@echo "... tests/test_list/tests_list_front_back.i"
 	@echo "... tests/test_list/tests_list_front_back.s"
+	@echo "... tests/test_list/tests_list_pop_front_back.o"
+	@echo "... tests/test_list/tests_list_pop_front_back.i"
+	@echo "... tests/test_list/tests_list_pop_front_back.s"
+	@echo "... tests/test_list/tests_list_swap.o"
+	@echo "... tests/test_list/tests_list_swap.i"
+	@echo "... tests/test_list/tests_list_swap.s"
 .PHONY : help
 
 

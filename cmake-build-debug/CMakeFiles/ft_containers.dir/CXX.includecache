@@ -312,3 +312,7 @@ gtest/gtest.h
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 
+/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp
+test_list.hpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+

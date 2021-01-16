@@ -59,6 +59,24 @@ namespace ft {
                 }
             }
 
+            static void _swapNodeBases(_ListNodeBase& first, _ListNodeBase& second) {
+                _ListNodeBase* tmpFirst = first._ptrNext;
+
+                first._ptrNext = second._ptrNext;
+                second._ptrNext = tmpFirst;
+
+                (first._ptrNext)->_ptrPrev = &first;
+                (second._ptrNext)->_ptrPrev = &second;
+
+                tmpFirst = first._ptrPrev;
+
+                first._ptrPrev = second._ptrPrev;
+                second._ptrPrev = tmpFirst;
+
+                (first._ptrPrev)->_ptrNext = &first;
+                (second._ptrPrev)->_ptrNext = &second;
+            }
+
 
         };
 
@@ -576,6 +594,8 @@ class list : protected __detail::_ListBase<T, Alloc> {
                 insert(__curLast1, first, last);
         }
 
+
+
     public:
 
         // range (1)
@@ -598,8 +618,18 @@ class list : protected __detail::_ListBase<T, Alloc> {
             _insertValueToIterator(begin(), val);
         }
 
+        void pop_front() {
+            this->_eraseInIteratorPos(begin());
+        }
+
         void push_back (const value_type& val) {
             _insertValueToIterator(end(), val);
+        }
+
+        void pop_back() {
+            iterator tmpEnd = this->end();
+            --tmpEnd;
+            this->_eraseInIteratorPos(tmpEnd);
         }
 
         //The container is extended by inserting new elements before the element at the specified position.
@@ -615,14 +645,14 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
         //fill (2)
         void insert (iterator position, size_type n, const value_type& val) {
-            list _tmpList(n, val, _Base::_base);
+            list _tmpList(n, val, _base);
             splice(position, _tmpList);
         }
 
         //range (3)
         template <class InputIterator>
         void insert (iterator position, InputIterator first, InputIterator last) {
-            list _tmpList(first, last, _Base::_base);
+            list _tmpList(first, last, _base);
             splice(position, _tmpList);
         }
 
@@ -643,6 +673,19 @@ class list : protected __detail::_ListBase<T, Alloc> {
                 first = erase(first);
             }
             return first;
+        }
+
+
+        void swap (list& x) {
+            __detail::_ListNodeBase::_swapNodeBases((this->_base)._node,
+                                            x._base._node);
+
+            size_t x_size = x.size();
+            x._setSize(this->size());
+            this->_setSize(x_size);
+
+            _Node_alloc_traits::_S_on_swap(_base,
+                                           x._base);
         }
 
 

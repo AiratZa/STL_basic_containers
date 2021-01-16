@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o"
   "ft_containers"
   "ft_containers.pdb"
 )
