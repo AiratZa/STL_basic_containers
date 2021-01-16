@@ -23,5 +23,19 @@ void ASSERT_LISTS_EQ(const ft::list<T>& l1, const std::list<T>& l2) {
     }
 }
 
+template <typename T>
+void PRINT_LISTS_ELEMENTS_OPPOSITE(const ft::list<T>& l1, const std::list<T>& l2) {
+    typename ft::list<T>::const_iterator it1 = l1.begin();
+    typename std::list<T>::const_iterator it2 = l2.begin();
+
+    std::cout << "SIZE: " <<  l1.size() << "  |  " << l2.size() << std::endl << std::endl;
+
+    while ( (it1 != l1.end()) || (it2 != l2.end()) ) {
+        std::cout << *it1 << "  |  " << *it2 << std::endl;
+        ++it1;
+        ++it2;
+    }
+}
+
 
 #endif //FT_CONTAINERS_TEST_LIST_HPP

@@ -792,6 +792,89 @@ class list : protected __detail::_ListBase<T, Alloc> {
             }
         }
 
+        // Remove elements with specific value
+        void remove (const value_type& val) {
+            iterator it = this->begin();
+            iterator ite = this->end();
+
+            iterator tmp;
+
+            while (it != ite) {
+                tmp = it;
+                ++tmp;
+                if (*it == val) {
+                    this->_eraseInIteratorPos(it);
+                }
+                it = tmp;
+            }
+        }
+
+        // Remove elements fulfilling condition
+        template <class Predicate>
+        void remove_if (Predicate pred) {
+            iterator it = this->begin();
+            iterator ite = this->end();
+
+            iterator tmp;
+
+            while (it != ite) {
+                tmp = it;
+                ++tmp;
+                if (pred(*it)) {
+                    this->_eraseInIteratorPos(it);
+                }
+                it = tmp;
+            }
+        }
+
+
+        void unique() {
+            iterator _first = begin();
+            iterator _last = end();
+
+            iterator _next = _first;
+            while (++_next != _last)
+            {
+                if (*_first == *_next) {
+                    this->_eraseInIteratorPos(_next);
+                } else {
+                    _first = _next;
+                }
+
+                _next = _first;
+            }
+        }
+
+        template <class BinaryPredicate>
+        void unique (BinaryPredicate binary_pred) {
+            iterator _first = begin();
+            iterator _last = end();
+
+            iterator _next = _first;
+            while (++_next != _last)
+            {
+                if (binary_pred(*_first, *_next)) {
+                    this->_eraseInIteratorPos(_next);
+                } else {
+                    _first = _next;
+                }
+
+                _next = _first;
+            }
+        }
+
+
+
+        void sort() {
+
+        }
+
+
+        template <class Compare>
+        void sort (Compare comp) {
+
+        }
+
 
 
 

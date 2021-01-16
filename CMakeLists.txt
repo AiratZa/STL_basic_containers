@@ -13,7 +13,7 @@ set(SOURCE_FILES
         main.cpp
         source/list.hpp
         source/allocator_traits_wrapper.hpp
-        tests/test_list/test_list_assign.cpp tests/test_list/tests_list_pop_front_back.cpp tests/test_list/tests_list_swap.cpp tests/test_list/test_list_relational_operators.cpp)
+        tests/test_list/test_list_assign.cpp tests/test_list/tests_list_pop_front_back.cpp tests/test_list/tests_list_swap.cpp tests/test_list/test_list_relational_operators.cpp tests/test_list/test_list_remove.cpp tests/test_list/test_list_remove_if.cpp tests/test_list/test_list_unique.cpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
 

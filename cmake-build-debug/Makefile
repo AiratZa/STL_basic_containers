@@ -511,6 +511,60 @@ tests/test_list/test_list_relational_operators.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.s
 .PHONY : tests/test_list/test_list_relational_operators.cpp.s
 
+tests/test_list/test_list_remove.o: tests/test_list/test_list_remove.cpp.o
+
+.PHONY : tests/test_list/test_list_remove.o
+
+# target to build an object file
+tests/test_list/test_list_remove.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o
+.PHONY : tests/test_list/test_list_remove.cpp.o
+
+tests/test_list/test_list_remove.i: tests/test_list/test_list_remove.cpp.i
+
+.PHONY : tests/test_list/test_list_remove.i
+
+# target to preprocess a source file
+tests/test_list/test_list_remove.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.i
+.PHONY : tests/test_list/test_list_remove.cpp.i
+
+tests/test_list/test_list_remove.s: tests/test_list/test_list_remove.cpp.s
+
+.PHONY : tests/test_list/test_list_remove.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_remove.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.s
+.PHONY : tests/test_list/test_list_remove.cpp.s
+
+tests/test_list/test_list_remove_if.o: tests/test_list/test_list_remove_if.cpp.o
+
+.PHONY : tests/test_list/test_list_remove_if.o
+
+# target to build an object file
+tests/test_list/test_list_remove_if.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o
+.PHONY : tests/test_list/test_list_remove_if.cpp.o
+
+tests/test_list/test_list_remove_if.i: tests/test_list/test_list_remove_if.cpp.i
+
+.PHONY : tests/test_list/test_list_remove_if.i
+
+# target to preprocess a source file
+tests/test_list/test_list_remove_if.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.i
+.PHONY : tests/test_list/test_list_remove_if.cpp.i
+
+tests/test_list/test_list_remove_if.s: tests/test_list/test_list_remove_if.cpp.s
+
+.PHONY : tests/test_list/test_list_remove_if.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_remove_if.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.s
+.PHONY : tests/test_list/test_list_remove_if.cpp.s
+
 tests/test_list/test_list_resize.o: tests/test_list/test_list_resize.cpp.o
 
 .PHONY : tests/test_list/test_list_resize.o
@@ -591,6 +645,33 @@ tests/test_list/test_list_splice.s: tests/test_list/test_list_splice.cpp.s
 tests/test_list/test_list_splice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.s
 .PHONY : tests/test_list/test_list_splice.cpp.s
+
+tests/test_list/test_list_unique.o: tests/test_list/test_list_unique.cpp.o
+
+.PHONY : tests/test_list/test_list_unique.o
+
+# target to build an object file
+tests/test_list/test_list_unique.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o
+.PHONY : tests/test_list/test_list_unique.cpp.o
+
+tests/test_list/test_list_unique.i: tests/test_list/test_list_unique.cpp.i
+
+.PHONY : tests/test_list/test_list_unique.i
+
+# target to preprocess a source file
+tests/test_list/test_list_unique.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.i
+.PHONY : tests/test_list/test_list_unique.cpp.i
+
+tests/test_list/test_list_unique.s: tests/test_list/test_list_unique.cpp.s
+
+.PHONY : tests/test_list/test_list_unique.s
+
+# target to generate assembly for a file
+tests/test_list/test_list_unique.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.s
+.PHONY : tests/test_list/test_list_unique.cpp.s
 
 tests/test_list/tests_list_empty_clear_max_size.o: tests/test_list/tests_list_empty_clear_max_size.cpp.o
 
@@ -747,6 +828,12 @@ help:
 	@echo "... tests/test_list/test_list_relational_operators.o"
 	@echo "... tests/test_list/test_list_relational_operators.i"
 	@echo "... tests/test_list/test_list_relational_operators.s"
+	@echo "... tests/test_list/test_list_remove.o"
+	@echo "... tests/test_list/test_list_remove.i"
+	@echo "... tests/test_list/test_list_remove.s"
+	@echo "... tests/test_list/test_list_remove_if.o"
+	@echo "... tests/test_list/test_list_remove_if.i"
+	@echo "... tests/test_list/test_list_remove_if.s"
 	@echo "... tests/test_list/test_list_resize.o"
 	@echo "... tests/test_list/test_list_resize.i"
 	@echo "... tests/test_list/test_list_resize.s"
@@ -756,6 +843,9 @@ help:
 	@echo "... tests/test_list/test_list_splice.o"
 	@echo "... tests/test_list/test_list_splice.i"
 	@echo "... tests/test_list/test_list_splice.s"
+	@echo "... tests/test_list/test_list_unique.o"
+	@echo "... tests/test_list/test_list_unique.i"
+	@echo "... tests/test_list/test_list_unique.s"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.o"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.i"
 	@echo "... tests/test_list/tests_list_empty_clear_max_size.s"

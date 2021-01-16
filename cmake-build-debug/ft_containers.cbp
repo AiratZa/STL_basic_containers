@@ -377,6 +377,12 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_relational_operators.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_remove.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_remove_if.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
@@ -384,6 +390,9 @@
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list_unique.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp">

@@ -308,7 +308,9 @@ list
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_relational_operators.cpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list_unique.cpp
 test_list.hpp
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+math.h
+-
 
