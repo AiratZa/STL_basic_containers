@@ -396,20 +396,57 @@ class list : protected __detail::_ListBase<T, Alloc> {
     private:
         list() { };
 
+        template<typename _Integer>
+        void
+        _initialize_dispatch(_Integer __n, _Integer __x, std::__true_type)
+        { _fill_with_given_value(static_cast<size_type>(__n), __x); }
+
+        template<typename InputIterator>
+        void
+        _initialize_dispatch(InputIterator first, InputIterator last,
+                               std::__false_type)
+        {
+            for (; first != last; ++first)
+                    push_back(*first);
+        }
+
     public:
-        //1. default
+
+// Constructors
+
+        // default (1)
         explicit list (const allocator_type& alloc = allocator_type()) : _Base(_Node_alloc_type(alloc)) { };
 
-        //2. fill
+        // fill (2)
         explicit list (size_type n, const value_type& val = value_type(),
                        const allocator_type& alloc = allocator_type()) : _Base(_Node_alloc_type(alloc)) {
             _fill_with_given_value(n, val);
         }
 
+        // range (3)
+        template <class InputIterator>
+        list (InputIterator first, InputIterator last,
+              const allocator_type& alloc = allocator_type())
+                : _Base(_Node_alloc_type(alloc))
+        {
+            // Check whether it's an integral type.  If so, it's not an iterator.
+            typedef typename std::__is_integer<InputIterator>::__type _Integral;
+            _initialize_dispatch(first, last, _Integral());
+        }
+
+        // copy (4)
+        list (const list& x) {
+
+        }
+
+
+//Destructor
 
         //All destruction inside ListBase
         ~list() { };
 
+
+//Iterators
 
         iterator begin() {
             return iterator (((this->_base)._node._ptrNext));
@@ -487,10 +524,6 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
 //Modifiers:
 
-
-
-
-
     private:
 
         void _insertValueToIterator(iterator _it, const value_type& _val) {
@@ -532,24 +565,16 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
         //fill (2)
         void insert (iterator position, size_type n, const value_type& val) {
-            size_type tmp = 0;
-            iterator iterTmp = position;
-
-            while (tmp < n) {
-                iterTmp = insert(iterTmp, val);
-                tmp++;
-            }
+            list _tmpList(n, val, _Base::_base);
+            splice(position, _tmpList);
         }
 
-        //range (3) todo 1
-//        template <class InputIterator>
-//        void insert (iterator position, InputIterator first, InputIterator last) {
-//            iterator tmpIt;
-//
-//            while (first != last) {
-//                tmpIt = this->insert(position, first)
-//            }
-//        }
+        //range (3)
+        template <class InputIterator>
+        void insert (iterator position, InputIterator first, InputIterator last) {
+            list _tmpList(first, last, _Base::_base);
+            splice(position, _tmpList);
+        }
 
 
 
@@ -595,16 +620,6 @@ class list : protected __detail::_ListBase<T, Alloc> {
         }
 
 
-
-//TODO
-// test splice
-// test resize
-// finish and test third type of insert
-
-
-
-
-
         void clear() {
             _Base::_clearAllNodes();
             _Base::_BaseInit();
@@ -643,7 +658,7 @@ class list : protected __detail::_ListBase<T, Alloc> {
                 (position._nodeBase)->_relinkElementsIteratorBefore(x.begin()._nodeBase, x.end()._nodeBase);
 
                 this->_incrementSize(x.size());
-                _Base::_setSize(0);
+                x._Base::_setSize(0);
             }
         }
 
@@ -684,56 +699,6 @@ class list : protected __detail::_ListBase<T, Alloc> {
 
 
     };
-
-
-
-/**
- *  @brief  Creates a %list with no elements.
- *  @param  __a  An allocator object.
- */
-//    template < class T, class Alloc>
-//    list<T, Alloc>::list(const list<T, Alloc>::allocator_type& alloc)
-//            : _size(0), _allocator(alloc), _head(NULL), _tail(NULL) {
-//                T* tmp = new T();
-//                _end = new ListNode<value_type>(NULL, NULL, tmp);
-//    }
-
-
-
-
-
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::reverse_iterator list<T, Alloc>::rbegin() {
-//        return reverse_iterator (end());
-////        if (_tail) {
-////            return reverse_iterator (_tail->_data);
-////        } else {
-////            return reverse_iterator(_end->_data);
-////        }
-//    }
-//
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::const_reverse_iterator list<T, Alloc>::rbegin() const {
-//        return const_reverse_iterator (end());
-////        if (_tail) {
-////            return const_reverse_iterator(_tail->_data);
-////        } else {
-////            return const_reverse_iterator (_end->_data);
-////        }
-//    }
-//
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::reverse_iterator list<T, Alloc>::rend() {
-//        return reverse_iterator(_end->_data);
-//    }
-//
-//    template<class T, class Alloc>
-//    typename list<T, Alloc>::const_reverse_iterator list<T, Alloc>::rend() const {
-//        return const_reverse_iterator(_end->_data);
-//    }
-
-    // LIST ITSELF ENDS
-
 
 
 

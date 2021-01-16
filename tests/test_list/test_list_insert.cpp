@@ -154,5 +154,45 @@ TEST(List_insert, second_insert_to_more_elements) {
 }
 
 
+//range (3)
+
+TEST(List_insert, range_insert_to_few_elements) {
+    ft::list<int> l1(5, 3);
+    std::list<int> l2(5, 3);
+
+    ft::list<int> l1_2(3, 987);
+    std::list<int> l2_2(3, 987);
+
+    ft::list<int>::iterator ite1 = l1.begin();
+    std::list<int>::iterator ite2 = l2.begin();
+
+
+    ++ite1;
+    ++ite1;
+
+    ++ite2;
+    ++ite2;
+
+    l1.insert(ite1, l1_2.begin(), l1_2.end());
+    l2.insert(ite2, l1_2.begin(), l1_2.end());
+
+    ASSERT_EQ(l1.size(), l2.size());
+    ASSERT_EQ(l1_2.size(), l2_2.size());
+
+    l1.push_back(778855);
+    l2.push_back(778855);
+
+    ft::list<int>::iterator it1 = l1.begin();
+    std::list<int>::iterator it2 = l2.begin();
+
+    ite1 = l1.end();
+    ite2 = l2.end();
+
+    while ((it1 != ite1) || (it2 != ite2)) {
+        ASSERT_EQ(*it1, *it2);
+        ++it1;
+        ++it2;
+    }
+}
 
 
