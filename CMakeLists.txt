@@ -13,14 +13,18 @@ set(SOURCE_FILES
         main.cpp
         source/list.hpp
         source/allocator_traits_wrapper.hpp
-        source/stack.hpp)
+        source/stack.hpp
+        source/queue.hpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
 file(GLOB TEST_STACK_SRC "tests/test_stack/*.hpp" "tests/test_stack/*.cpp")
+file(GLOB TEST_QUEUE_SRC "tests/test_queue/*.hpp" "tests/test_queue/*.cpp")
 
-set_source_files_properties(${SOURCE_FILES} ${TEST_LIST_SRC} ${TEST_STACK_SRC} PROPERTIES COMPILE_FLAGS -Wall -Wextra -Werror)
+set (TEST_FILES ${TEST_LIST_SRC} ${TEST_STACK_SRC} ${TEST_QUEUE_SRC} )
 
-add_executable(ft_containers ${SOURCE_FILES} ${TEST_LIST_SRC} ${TEST_STACK_SRC} )
+set_source_files_properties(${SOURCE_FILES} ${TEST_FILES} PROPERTIES COMPILE_FLAGS -Wall -Wextra -Werror)
+
+add_executable(ft_containers ${SOURCE_FILES} ${TEST_FILES} )
 target_link_libraries(ft_containers gtest )
 
 

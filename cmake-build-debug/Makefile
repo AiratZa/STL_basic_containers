@@ -781,6 +781,33 @@ tests/test_list/tests_list_swap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s
 .PHONY : tests/test_list/tests_list_swap.cpp.s
 
+tests/test_queue/test_queue_constructor.o: tests/test_queue/test_queue_constructor.cpp.o
+
+.PHONY : tests/test_queue/test_queue_constructor.o
+
+# target to build an object file
+tests/test_queue/test_queue_constructor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
+.PHONY : tests/test_queue/test_queue_constructor.cpp.o
+
+tests/test_queue/test_queue_constructor.i: tests/test_queue/test_queue_constructor.cpp.i
+
+.PHONY : tests/test_queue/test_queue_constructor.i
+
+# target to preprocess a source file
+tests/test_queue/test_queue_constructor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.i
+.PHONY : tests/test_queue/test_queue_constructor.cpp.i
+
+tests/test_queue/test_queue_constructor.s: tests/test_queue/test_queue_constructor.cpp.s
+
+.PHONY : tests/test_queue/test_queue_constructor.s
+
+# target to generate assembly for a file
+tests/test_queue/test_queue_constructor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.s
+.PHONY : tests/test_queue/test_queue_constructor.cpp.s
+
 tests/test_stack/test_stack_constructor.o: tests/test_stack/test_stack_constructor.cpp.o
 
 .PHONY : tests/test_stack/test_stack_constructor.o
@@ -885,6 +912,9 @@ help:
 	@echo "... tests/test_list/tests_list_swap.o"
 	@echo "... tests/test_list/tests_list_swap.i"
 	@echo "... tests/test_list/tests_list_swap.s"
+	@echo "... tests/test_queue/test_queue_constructor.o"
+	@echo "... tests/test_queue/test_queue_constructor.i"
+	@echo "... tests/test_queue/test_queue_constructor.s"
 	@echo "... tests/test_stack/test_stack_constructor.o"
 	@echo "... tests/test_stack/test_stack_constructor.i"
 	@echo "... tests/test_stack/test_stack_constructor.s"

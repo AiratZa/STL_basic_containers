@@ -300,6 +300,10 @@ iostream
 allocator_traits_wrapper.hpp
 /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
 
+/home/airat/projects/STL_basic_containers/source/queue.hpp
+list.hpp
+/home/airat/projects/STL_basic_containers/source/list.hpp
+
 /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
 list
 -
@@ -308,9 +312,19 @@ list
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list_unique.cpp
-test_list.hpp
-/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
-math.h
+/home/airat/projects/STL_basic_containers/tests/test_queue/test_queue.hpp
+queue
 -
+list
+-
+../../source/queue.hpp
+/home/airat/projects/STL_basic_containers/source/queue.hpp
+../test_list/test_list.hpp
+/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
+gtest/gtest.h
+-
+
+/home/airat/projects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp
+test_queue.hpp
+/home/airat/projects/STL_basic_containers/tests/test_queue/test_queue.hpp
 
