@@ -5,7 +5,6 @@
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
-
 #include "list.hpp"
 
 namespace ft {

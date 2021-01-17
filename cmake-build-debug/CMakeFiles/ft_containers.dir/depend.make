@@ -47,7 +47,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o: ../tests/test_list/test_list_assign.cpp
@@ -74,7 +74,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../google_te
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o: ../tests/test_list/test_list_begin.cpp
@@ -101,7 +101,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../google_test
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o: ../tests/test_list/test_list_end.cpp
@@ -128,7 +128,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_te
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o: ../tests/test_list/test_list_erase.cpp
@@ -155,7 +155,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o: ../tests/test_list/test_list_insert.cpp
@@ -182,7 +182,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../googl
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o: ../tests/test_list/test_list_push_back.cpp
@@ -209,7 +209,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../goog
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o: ../tests/test_list/test_list_push_front.cpp
@@ -236,7 +236,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o: ../tests/test_list/test_list_rbegin.cpp
@@ -263,7 +263,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.o: ../tests/test_list/test_list_relational_operators.cpp
@@ -290,7 +290,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o: ../tests/test_list/test_list_remove.cpp
@@ -317,7 +317,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../googl
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o: ../tests/test_list/test_list_remove_if.cpp
@@ -344,7 +344,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o: ../tests/test_list/test_list_resize.cpp
@@ -371,7 +371,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../google_tes
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o: ../tests/test_list/test_list_size.cpp
@@ -398,7 +398,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o: ../tests/test_list/test_list_splice.cpp
@@ -425,7 +425,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../google_t
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o: ../tests/test_list/test_list_unique.cpp
@@ -452,7 +452,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp.o: ../tests/test_list/tests_list_empty_clear_max_size.cpp
@@ -479,7 +479,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../goo
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o: ../tests/test_list/tests_list_front_back.cpp
@@ -506,7 +506,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ..
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o: ../tests/test_list/tests_list_pop_front_back.cpp
@@ -533,7 +533,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../google_te
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../tests/test_list/test_list.hpp
 CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o: ../tests/test_list/tests_list_swap.cpp
@@ -560,7 +560,7 @@ CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../g
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../source/queue.hpp
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../tests/test_list/test_list.hpp
@@ -589,7 +589,7 @@ CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../g
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-string.h
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../google_test/googletest/include/gtest/internal/gtest-type-util.h
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../source/allocator_traits_wrapper.hpp
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../source/details/allocator_traits_wrapper.hpp
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../source/list.hpp
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../source/stack.hpp
 CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../tests/test_list/test_list.hpp

@@ -3,8 +3,11 @@
 //
 
 #include <gtest/gtest.h>
+#include <map>
 
 int main(int argc, char* argv[]) {
     testing::InitGoogleTest(&argc, argv);
+    std::map<int, int> m;
+    m.size();
     return RUN_ALL_TESTS();
 }

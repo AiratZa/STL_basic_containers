@@ -48,7 +48,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_assign.cpp
@@ -75,7 +75,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_begin.cpp
@@ -102,7 +102,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_end.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_end.cpp
@@ -129,7 +129,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_erase.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_erase.cpp
@@ -156,7 +156,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_insert.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_insert.cpp
@@ -183,7 +183,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_back.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_back.cpp
@@ -210,7 +210,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_push_front.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_push_front.cpp
@@ -237,7 +237,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_rbegin.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_rbegin.cpp
@@ -264,7 +264,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_relational_operators.cpp.
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_relational_operators.cpp
@@ -291,7 +291,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_remove.cpp
@@ -318,7 +318,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_remove_if.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_remove_if.cpp
@@ -345,7 +345,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_resize.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_resize.cpp
@@ -372,7 +372,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_size.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_size.cpp
@@ -399,7 +399,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_splice.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_splice.cpp
@@ -426,7 +426,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/test_list_unique.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list_unique.cpp
@@ -453,7 +453,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_clear_max_size.cpp
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_empty_clear_max_size.cpp
@@ -480,7 +480,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_front_back.cpp
@@ -507,7 +507,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_pop_front_back.cpp
@@ -534,7 +534,7 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp
@@ -561,7 +561,7 @@ CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/source/queue.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp
@@ -590,7 +590,7 @@ CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-string.h
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
- /home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp
+ /home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
  /home/airat/projects/STL_basic_containers/source/list.hpp
  /home/airat/projects/STL_basic_containers/source/stack.hpp
  /home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp

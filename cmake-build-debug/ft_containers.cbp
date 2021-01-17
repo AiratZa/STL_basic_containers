@@ -341,10 +341,16 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/main.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/projects/STL_basic_containers/source/allocator_traits_wrapper.hpp">
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/details/red_black_tree.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/list.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/map.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/queue.hpp">

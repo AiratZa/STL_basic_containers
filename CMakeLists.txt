@@ -11,10 +11,12 @@ include_directories(google_test/googletest/include)
 
 set(SOURCE_FILES
         main.cpp
+        source/details/allocator_traits_wrapper.hpp
+        source/details/red_black_tree.hpp
         source/list.hpp
-        source/allocator_traits_wrapper.hpp
         source/stack.hpp
-        source/queue.hpp)
+        source/queue.hpp
+        source/map.hpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
 file(GLOB TEST_STACK_SRC "tests/test_stack/*.hpp" "tests/test_stack/*.cpp")

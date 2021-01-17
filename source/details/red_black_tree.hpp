@@ -1,0 +1,8 @@
+//
+// Created by airat on 17.01.2021.
+//
+
+#ifndef FT_CONTAINERS_RED_BLACK_TREE_HPP
+#define FT_CONTAINERS_RED_BLACK_TREE_HPP
+
+#endif //FT_CONTAINERS_RED_BLACK_TREE_HPP
