@@ -416,8 +416,6 @@ class list : protected __detail::_ListBase<T, Alloc> {
         }
 
     private:
-        list() { };
-
         template<typename _Integer>
         void
         _initialize_dispatch(_Integer __n, _Integer __x, std::__true_type)

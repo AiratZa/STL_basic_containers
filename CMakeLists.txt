@@ -13,13 +13,14 @@ set(SOURCE_FILES
         main.cpp
         source/list.hpp
         source/allocator_traits_wrapper.hpp
-        tests/test_list/test_list_assign.cpp tests/test_list/tests_list_pop_front_back.cpp tests/test_list/tests_list_swap.cpp tests/test_list/test_list_relational_operators.cpp tests/test_list/test_list_remove.cpp tests/test_list/test_list_remove_if.cpp tests/test_list/test_list_unique.cpp)
+        source/stack.hpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
+file(GLOB TEST_STACK_SRC "tests/test_stack/*.hpp" "tests/test_stack/*.cpp")
 
-set_source_files_properties(${SOURCE_FILES} ${TEST_LIST_SRC} PROPERTIES COMPILE_FLAGS -Wall -Wextra -Werror)
+set_source_files_properties(${SOURCE_FILES} ${TEST_LIST_SRC} ${TEST_STACK_SRC} PROPERTIES COMPILE_FLAGS -Wall -Wextra -Werror)
 
-add_executable(ft_containers ${SOURCE_FILES} ${TEST_LIST_SRC} )
+add_executable(ft_containers ${SOURCE_FILES} ${TEST_LIST_SRC} ${TEST_STACK_SRC} )
 target_link_libraries(ft_containers gtest )
 
 

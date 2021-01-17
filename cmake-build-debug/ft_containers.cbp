@@ -347,6 +347,9 @@
 		<Unit filename="/home/airat/projects/STL_basic_containers/source/list.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/source/stack.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/test_list.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
@@ -405,6 +408,12 @@
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_list/tests_list_swap.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_stack/test_stack.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/projects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/projects/STL_basic_containers/CMakeLists.txt">
