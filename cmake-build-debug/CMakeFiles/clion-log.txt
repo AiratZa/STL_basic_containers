@@ -1,4 +1,5 @@
-/snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/airat/projects/STL_basic_containers
+/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/airat/projects/STL_basic_containers
+-- Found PythonInterp: /usr/bin/python (found version "3.9.1") 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/airat/projects/STL_basic_containers/cmake-build-debug
