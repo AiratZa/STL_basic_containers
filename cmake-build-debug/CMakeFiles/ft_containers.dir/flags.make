@@ -52,3 +52,5 @@ CXX_INCLUDES = -isystem /home/airat/projects/STL_basic_containers/google_test/go
 
 # Custom flags: CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o_FLAGS = -Wall
 
+# Custom flags: CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o_FLAGS = -Wall
+

@@ -16,13 +16,15 @@ set(SOURCE_FILES
         source/list.hpp
         source/stack.hpp
         source/queue.hpp
+        source/vector.hpp
         source/map.hpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
 file(GLOB TEST_STACK_SRC "tests/test_stack/*.hpp" "tests/test_stack/*.cpp")
 file(GLOB TEST_QUEUE_SRC "tests/test_queue/*.hpp" "tests/test_queue/*.cpp")
+file(GLOB TEST_VECTOR_SRC "tests/test_vector/*.hpp" "tests/test_vector/*.cpp")
 
-set (TEST_FILES ${TEST_LIST_SRC} ${TEST_STACK_SRC} ${TEST_QUEUE_SRC} )
+set (TEST_FILES ${TEST_LIST_SRC} ${TEST_STACK_SRC} ${TEST_QUEUE_SRC} ${TEST_VECTOR_SRC} )
 
 set_source_files_properties(${SOURCE_FILES} ${TEST_FILES} PROPERTIES COMPILE_FLAGS -Wall -Wextra -Werror)
 

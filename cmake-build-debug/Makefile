@@ -835,6 +835,33 @@ tests/test_stack/test_stack_constructor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.s
 .PHONY : tests/test_stack/test_stack_constructor.cpp.s
 
+tests/test_vector/test_vector_constructor.o: tests/test_vector/test_vector_constructor.cpp.o
+
+.PHONY : tests/test_vector/test_vector_constructor.o
+
+# target to build an object file
+tests/test_vector/test_vector_constructor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
+.PHONY : tests/test_vector/test_vector_constructor.cpp.o
+
+tests/test_vector/test_vector_constructor.i: tests/test_vector/test_vector_constructor.cpp.i
+
+.PHONY : tests/test_vector/test_vector_constructor.i
+
+# target to preprocess a source file
+tests/test_vector/test_vector_constructor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.i
+.PHONY : tests/test_vector/test_vector_constructor.cpp.i
+
+tests/test_vector/test_vector_constructor.s: tests/test_vector/test_vector_constructor.cpp.s
+
+.PHONY : tests/test_vector/test_vector_constructor.s
+
+# target to generate assembly for a file
+tests/test_vector/test_vector_constructor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.s
+.PHONY : tests/test_vector/test_vector_constructor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -918,6 +945,9 @@ help:
 	@echo "... tests/test_stack/test_stack_constructor.o"
 	@echo "... tests/test_stack/test_stack_constructor.i"
 	@echo "... tests/test_stack/test_stack_constructor.s"
+	@echo "... tests/test_vector/test_vector_constructor.o"
+	@echo "... tests/test_vector/test_vector_constructor.i"
+	@echo "... tests/test_vector/test_vector_constructor.s"
 .PHONY : help
 
 
