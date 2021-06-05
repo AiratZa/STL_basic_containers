@@ -6,7 +6,7 @@ CXX_FLAGS = -g   -pthread -std=c++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/airat/projects/STL_basic_containers/google_test/googletest/include -isystem /home/airat/projects/STL_basic_containers/google_test/googletest 
+CXX_INCLUDES = -isystem /home/airat/CLionProjects/STL_basic_containers/google_test/googletest/include -isystem /home/airat/CLionProjects/STL_basic_containers/google_test/googletest 
 
 # Custom flags: CMakeFiles/ft_containers.dir/main.cpp.o_FLAGS = -Wall
 

@@ -17,7 +17,7 @@ set(SOURCE_FILES
         source/stack.hpp
         source/queue.hpp
         source/vector.hpp
-        source/map.hpp)
+        source/map.hpp source/details/meta_programming.hpp source/details/iterator.hpp)
 
 file(GLOB TEST_LIST_SRC "tests/test_list/*.hpp" "tests/test_list/*.cpp")
 file(GLOB TEST_STACK_SRC "tests/test_stack/*.hpp" "tests/test_stack/*.cpp")

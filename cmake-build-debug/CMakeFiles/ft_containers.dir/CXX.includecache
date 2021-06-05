@@ -286,23 +286,37 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
 bits/allocator.h
 -
 
-/home/airat/projects/STL_basic_containers/source/vector.hpp
-details/allocator_traits_wrapper.hpp
-/home/airat/projects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
 
-/home/airat/projects/STL_basic_containers/tests/test_vector/test_vector.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
+
+/home/airat/CLionProjects/STL_basic_containers/source/vector.hpp
+limits
+-
+stdexcept
+-
+iterator
+-
+details/allocator_traits_wrapper.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+details/meta_programming.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
+details/iterator.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
+
+/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp
 vector
 -
 ../../source/vector.hpp
-/home/airat/projects/STL_basic_containers/source/vector.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/vector.hpp
 gtest/gtest.h
 -
 
-/home/airat/projects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp
+/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp
 test_vector.hpp
-/home/airat/projects/STL_basic_containers/tests/test_vector/test_vector.hpp
+/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp
 

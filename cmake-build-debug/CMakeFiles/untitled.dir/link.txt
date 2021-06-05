@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/google_tests/test_suites.cpp.o  -o untitled 
