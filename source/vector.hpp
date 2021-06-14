@@ -8,10 +8,12 @@
 #include <limits>
 #include <stdexcept>
 #include <iterator>
+#include <sstream>
 
 #include "details/allocator_traits_wrapper.hpp"
 #include "details/meta_programming.hpp"
 #include "details/iterator.hpp"
+#include "details/base_algorithms.hpp"
 
 namespace ft {
 
@@ -227,15 +229,37 @@ namespace ft {
         return _max_size(this->get_VT_allocator());
     }
 
-//    void resize (size_type n, value_type val = value_type()) {
-//        if (n > size())
-//            _fill_insert(end(), n - size(), val);
-//        else if (n < size())
-//            _erase_at_end(this->core._start + n);
-//    }
+    void resize (size_type n, value_type val = value_type()) {
+        if (n > size())
+            _fill_insert(end(), n - size(), val);
+        else if (n < size())
+            _erase_at_end(this->core._start + n);
+    }
 
     size_type capacity() const {
         return size_type(this->core._end_of_storage - this->core._start);
+    }
+
+    bool empty() const {
+        return begin() != end();
+    }
+
+    void reserve (size_type n) {
+        if (n > this->max_size())
+            throw std::length_error(std::string("vector::reserve"));
+        if (this->capacity() < n)
+        {
+            const size_type __old_size = size();
+            pointer tmp;
+
+            tmp = _allocate_and_copy(n, this->core._start, this->core._finish);
+            ft::details::Destroy(this->core._start, this->core._finish,
+                                 this->get_VT_allocator());
+            _deallocate(this->core._start, this->core._end_of_storage - this->core._start);
+            this->core._start = tmp;
+            this->core._finish = tmp + __old_size;
+            this->core._end_of_storage = this->core._start + n;
+        }
     }
 
 
@@ -284,6 +308,45 @@ namespace ft {
         return *(this->core._start + n);
     }
 
+    reference at (size_type n) {
+        _range_check(n);
+        return (*this)[n];
+    }
+
+    const_reference at (size_type n) const {
+        _range_check(n);
+        return (*this)[n];
+    }
+
+    reference front() {
+        return *(begin());
+    }
+
+    const_reference front() const {
+        return *(begin());
+    }
+
+    reference back() {
+        return *(end() - 1);
+    }
+
+    const_reference back() const {
+        return *(end() - 1);
+    }
+
+    // Modifiers
+
+    // range (1)
+    template <class InputIterator>
+    void assign (InputIterator first, InputIterator last) {
+        typedef typename ft::__details::is_integer<InputIterator>::type Integral;
+        _assign_dispatch(first, last, Integral());
+    }
+
+    // fill (2)
+    void assign (size_type n, const value_type& val) {
+        _fill_assign(n, val);
+    }
 
     void push_back(const value_type& val)
     {
@@ -296,11 +359,267 @@ namespace ft {
             _realloc_insert(end(), val);
     }
 
+    void pop_back(void) {
+        --this->core._finish;
+        _VT_alloc_traits::destroy(this->core, this->core._finish);
+    }
 
-    void clear()
-    { _erase_at_end(this->core._start); }
+
+    // single element (1)
+    iterator insert (iterator position, const value_type& val) {
+        const size_type n = position - begin();
+        if (this->core._finish != this->core._end_of_storage)
+            if (position == end())
+            {
+                _VT_alloc_traits::construct(this->core, this->core._finish, val);
+                ++this->cor._finish;
+            }
+            else
+            {
+                _insert_aux(position, val);
+            }
+        else
+            _realloc_insert(position, val);
+        return iterator(this->core._start + n);
+    }
+
+    // fill (2)
+    void insert (iterator position, size_type n, const value_type& val) {
+        _fill_insert(position, n, val);
+    }
+
+    // range (3)
+    template <class InputIterator>
+    void insert (iterator position, InputIterator first, InputIterator last) {
+        typedef typename ft::__details::is_integer<InputIterator>::type Integral;
+        _insert_dispatch(position, first, last, Integral());
+    }
+
+    iterator erase (iterator position) {
+        return _erase(position);
+    }
+
+    iterator erase (iterator first, iterator last) {
+        return _erase(first, last);
+    }
+
+    void swap (vector& x) {
+        this->core._swap_data(x.core);
+        _VT_alloc_traits ::_S_on_swap(this->get_VT_allocator(),
+                                        x.get_VT_allocator());
+    }
+
+    void clear() {
+        _erase_at_end(this->core._start);
+    }
+
+    allocator_type get_allocator() const {
+        return allocator_type(this->get_VT_allocator());
+    }
 
 private:
+
+    void _range_check(size_type n) const
+    {
+        if (n >= this->size()) {
+            std::stringstream str;
+            str << "vector::_range_check: n (which is " << n << ") >= this->size() (which is "<< this->size << ")";
+            throw std::out_of_range(str.str());
+        }
+    }
+
+    iterator _erase(iterator position) {
+        if (position + 1 != end())
+            std::copy(position + 1, end(), position);
+        --this->core._finish;
+        _VT_alloc_traits ::destroy(this->core, this->core._finish);
+        return position;
+    }
+
+    iterator _erase(iterator first, iterator last) {
+        if (first != last)
+        {
+            if (last != end())
+                std::copy(last, end(), first);
+            _erase_at_end(first.base() + (end() - last));
+        }
+        return first;
+    }
+
+    void _insert_aux(iterator position, const T& x)
+    {
+        _VT_alloc_traits::construct(this->core, this->core._finish, *(this->core._finish - 1));
+        ++this->core._finish;
+        T x_copy = x;
+        ft::details::copy_backward(position.base(),
+                                    this->core._finish - 2,
+                                    this->core._finish - 1);
+        *position = x_copy;
+    }
+
+    template<typename InputIterator>
+    void _range_insert(iterator pos, InputIterator first,
+                       InputIterator last, std::input_iterator_tag)
+    {
+        if (pos == end())
+        {
+            for (; first != last; ++first)
+                insert(end(), *first);
+        }
+        else if (first != last)
+        {
+            vector tmp(first, last, this->get_VT_allocator());
+            insert(pos, tmp.begin(), tmp.end());
+        }
+    }
+
+    template<typename ForwardIterator>
+    void _range_insert(iterator position, ForwardIterator first,
+                       ForwardIterator last, std::forward_iterator_tag)
+    {
+        if (first != last)
+        {
+            const size_type n = std::distance(first, last);
+            if (size_type(this->core._end_of_storage - this->core._finish) >= n)
+            {
+                const size_type elems_after = end() - position;
+                pointer old_finish(this->core._finish);
+                if (elems_after > n)
+                {
+                    ft::details::uninitialized_copy_a(this->core._finish - n,
+                                                        this->core._finish,
+                                                        this->core._finish,
+                                                        this->get_VT_allocator());
+                    this->core._finish += n;
+                    ft::details::copy_backward(position.base(),
+                                                old_finish - n, old_finish);
+                    std::copy(first, last, position);
+                }
+                else
+                {
+                    ForwardIterator mid = first;
+                    std::advance(mid, elems_after);
+                    ft::details::uninitialized_copy_a(mid, last,
+                                                        this->core._finish,
+                                                        this->get_VT_allocator());
+                    this->core._finish += n - elems_after;
+                    ft::details::uninitialized_copy_a(position.base(),
+                                                old_finish,
+                                                this->core._finish,
+                                                this->get_VT_allocator());
+                    this->core._finish += elems_after;
+                    std::copy(first, mid, position);
+                }
+            }
+            else
+            {
+                const size_type len = _check_len(n, "vector::_range_insert");
+                pointer new_start(this->_allocate(len));
+                pointer new_finish(new_start);
+                try
+                {
+                    new_finish = ft::details::uninitialized_copy_a (this->core._start, position.base(),
+                                                                    new_start, this->get_VT_allocator());
+                    new_finish = ft::details::uninitialized_copy_a(first, last,
+                                                                    new_finish, this->get_VT_allocator());
+                    new_finish = ft::details::uninitialized_copy_a(position.base(), this->core._finish,
+                                                                    new_finish, this->get_VT_allocator());
+                }
+                catch(...)
+                {
+                    ft::details::Destroy(new_start, new_finish,
+                                  this->get_VT_allocator());
+                    _deallocate(new_start, len);
+                    throw ;
+                }
+                ft::details::Destroy(this->core._start, this->core._finish,
+                                        this->get_VT_allocator());
+                _deallocate(this->core._start, this->core._end_of_storage - this->core._start);
+                this->core._start = new_start;
+                this->core._finish = new_finish;
+                this->core._end_of_storage = new_start + len;
+            }
+        }
+    }
+
+    template<typename Integer>
+    void _insert_dispatch(iterator pos, Integer n, Integer val,
+                          ft::__details::true_type) {
+        _fill_insert(pos, n, val);
+    }
+
+    template<typename InputIterator>
+    void _insert_dispatch(iterator pos, InputIterator first,
+                       InputIterator last, ft::__details::false_type)
+    {
+        typedef typename std::iterator_traits<InputIterator>::iterator_category it;
+        _range_insert(pos, first, last, it(first));
+    }
+
+
+    void _fill_assign(size_t n, const value_type& val)
+    {
+        if (n > capacity())
+        {
+            vector tmp(n, val, this->get_VT_allocator());
+            tmp.core._swap_data(this->core);
+        }
+        else if (n > size())
+        {
+            ft::details::fill(begin(), end(), val);
+            const size_type add = n - size();
+            this->core._finish = ft::details::uninitialized_fill_n_a(this->core._finish,
+                                                                     add, val, this->get_VT_allocator());
+        }
+        else {
+            size_t i = 0;
+            for(; i < n; ++i)
+                *(this->core._start[i]) = val;
+            _erase_at_end(this->core._start[i]);
+        }
+    }
+
+        template<typename Integer>
+        void _assign_dispatch(Integer n, Integer val, ft::__details::true_type) {
+            _fill_assign(n, val);
+        }
+
+        template<typename InputIterator>
+        void _assign_aux(InputIterator first, InputIterator last,
+                         std::input_iterator_tag)
+        {
+            iterator cur = begin();
+            for (; first != last && cur != end(); ++cur, (void)++first)
+                *cur = *first;
+            if (first == last)
+                _erase_at_end(cur);
+            else
+                insert(end(), first, last);
+        }
+
+        template<typename ForwardIterator>
+        void
+        _assign_aux(ForwardIterator first, ForwardIterator last,
+                    std::forward_iterator_tag)
+        {
+            const size_type len = std::distance(first, last);
+            if (len < size())
+                _erase_at_end(std::copy(first, last, begin()));
+            else
+            {
+                ForwardIterator mid = first;
+                std::advance(mid, size());
+                std::copy(first, mid, begin());
+                insert(end(), mid, last);
+            }
+        }
+
+        template<typename InputIterator>
+        void _assign_dispatch(InputIterator first, InputIterator last,
+                           ft::__details::false_type) {
+            _assign_aux(first, last, std::iterator_traits<InputIterator>::iterator_category);
+        }
+
 
     // Called by the first initialize_dispatch above and by the
     // vector(n,value,a) constructor.
@@ -446,92 +765,86 @@ private:
             }
         }
 
-//    void _fill_insert(iterator position, size_type n, const value_type& x)
-//    {
-//        if (n != 0)
-//        {
-//            if (size_type(this->_M_impl._M_end_of_storage
-//                          - this->_M_impl._M_finish) >= n)
-//            {
-//                value_type __x_copy = __x;
-//
-//                const size_type __elems_after = end() - __position;
-//                pointer __old_finish(this->_M_impl._M_finish);
-//                if (__elems_after > n)
-//                {
-//                    std::__uninitialized_move_a(this->_M_impl._M_finish - n,
-//                                                this->_M_impl._M_finish,
-//                                                this->_M_impl._M_finish,
-//                                                _M_get_Tp_allocator());
-//                    this->_M_impl._M_finish += n;
-//                    _GLIBCXX_MOVE_BACKWARD3(__position.base(),
-//                                            __old_finish - n, __old_finish);
-//                    std::fill(__position.base(), __position.base() + n,
-//                              __x_copy);
-//                }
-//                else
-//                {
-//                    this->_M_impl._M_finish =
-//                            std::__uninitialized_fill_n_a(this->_M_impl._M_finish,
-//                                                          __n - __elems_after,
-//                                                          __x_copy,
-//                                                          _M_get_Tp_allocator());
-//                    std::__uninitialized_move_a(__position.base(), __old_finish,
-//                                                this->_M_impl._M_finish,
-//                                                _M_get_Tp_allocator());
-//                    this->_M_impl._M_finish += __elems_after;
-//                    std::fill(__position.base(), __old_finish, __x_copy);
-//                }
-//            }
-//            else
-//            {
-//                const size_type __len = _check_len(__n, "vector::_M_fill_insert");
-//                const size_type __elems_before = __position - begin();
-//                pointer __new_start(this->_M_allocate(__len));
-//                pointer __new_finish(__new_start);
-//                __try
-//                {
-//                    // See _M_realloc_insert above.
-//                    std::__uninitialized_fill_n_a(__new_start + __elems_before,
-//                                                  __n, __x,
-//                                                  _M_get_Tp_allocator());
-//                    __new_finish = pointer();
-//
-//                    __new_finish
-//                            = std::__uninitialized_move_if_noexcept_a
-//                            (this->_M_impl._M_start, __position.base(),
-//                             __new_start, _M_get_Tp_allocator());
-//
-//                    __new_finish += __n;
-//
-//                    __new_finish
-//                            = std::__uninitialized_move_if_noexcept_a
-//                            (__position.base(), this->_M_impl._M_finish,
-//                             __new_finish, _M_get_Tp_allocator());
-//                }
-//                catch(...)
-//                {
-//                    if (!__new_finish)
-//                        std::_Destroy(__new_start + __elems_before,
-//                                      __new_start + __elems_before + __n,
-//                                      _M_get_Tp_allocator());
-//                    else
-//                        std::_Destroy(__new_start, __new_finish,
-//                                      _M_get_Tp_allocator());
-//                    _M_deallocate(__new_start, __len);
-//                    throw;
-//                }
-//                std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
-//                              _M_get_Tp_allocator());
-//                _M_deallocate(this->_M_impl._M_start,
-//                              this->_M_impl._M_end_of_storage
-//                              - this->_M_impl._M_start);
-//                this->_M_impl._M_start = __new_start;
-//                this->_M_impl._M_finish = __new_finish;
-//                this->_M_impl._M_end_of_storage = __new_start + __len;
-//            }
-//        }
-//    }
+    void _fill_insert(iterator position, size_type n, const value_type& x)
+    {
+        if (n != 0)
+        {
+            if (size_type(this->core._end_of_storage
+                          - this->core._finish) >= n)
+            {
+                value_type x_copy = x;
+
+                const size_type elems_after = end() - position;
+                pointer old_finish(this->core._finish);
+                if (elems_after > n)
+                {
+                    _uninitialized_copy(this->core._finish - n,
+                                        this->core._finish,
+                                        this->core._finish);
+                    this->core._finish += n;
+                    ft::details::copy_backward(position.base(),
+                                               old_finish - n, old_finish);
+                    ft::details::fill(position.base(), position.base() + n,
+                              x_copy);
+                }
+                else
+                {
+                    this->core._finish =
+                            ft::details::uninitialized_fill_n_a(this->core._finish,
+                                                          n - elems_after,
+                                                          x_copy,
+                                                          this->get_VT_allocator());
+                    ft::details::uninitialized_copy_a(position.base(), old_finish,
+                                                this->core._finish,
+                                                this->get_VT_allocator());
+                    this->core._finish += elems_after;
+                    ft::details::fill(position.base(), old_finish, x_copy);
+                }
+            }
+            else
+            {
+                const size_type len = _check_len(n, "vector::_M_fill_insert");
+                const size_type elems_before = position - begin();
+                pointer new_start(this->_allocate(len));
+                pointer new_finish(new_start);
+                try
+                {
+                    // See _M_realloc_insert above.
+                    ft::details::uninitialized_fill_n_a(new_start + elems_before,
+                                                        n, x,
+                                                        this->get_VT_allocator());
+                    new_finish = pointer();
+
+                    new_finish = ft::details::uninitialized_copy_a(this->core._start, position.base(),
+                                                                new_start, this->get_VT_allocator());
+
+                    new_finish += n;
+
+                    new_finish = ft::details::uninitialized_copy_a(position.base(), this->core._finish,
+                                                                    new_finish, this->get_VT_allocator());
+                }
+                catch(...)
+                {
+                    if (!new_finish)
+                        ft::details::Destroy(new_start + elems_before,
+                                      new_start + elems_before + n, this->get_VT_allocator());
+                    else
+                        ft::details::Destroy(new_start, new_finish,
+                                             this->get_VT_allocator());
+                    _deallocate(new_start, len);
+                    throw;
+                }
+                ft::details::Destroy(this->core._start, this->core._finish,
+                                     this->get_VT_allocator());
+                _deallocate(this->core._start,
+                              this->core._end_of_storage
+                              - this->core._start);
+                this->core._start = new_start;
+                this->core._finish = new_finish;
+                this->core._end_of_storage = new_start + len;
+            }
+        }
+    }
 
 
 // Internal erase functions follow.
@@ -545,7 +858,6 @@ private:
             this->core._finish = pos;
         }
     }
-
 
     static size_type _max_size(const _VT_alloc_type& a)
     {
@@ -574,6 +886,35 @@ private:
 
 };
 
+    template<typename T, typename Alloc>
+    inline bool operator==(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return (lhs.size() == rhs.size()
+              && std::equal(lhs.begin(), lhs.end(), rhs.begin())); }
+
+    template<typename T, typename Alloc>
+    inline bool operator<(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return std::lexicographical_compare(lhs.begin(), lhs.end(),
+                                          rhs.begin(), rhs.end()); }
+
+    template<typename T, typename Alloc>
+    inline bool operator!=(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return !(lhs == rhs); }
+
+    template<typename T, typename Alloc>
+    inline bool operator>(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return rhs < lhs; }
+
+    template<typename T, typename Alloc>
+    inline bool operator<=(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return !(rhs < lhs); }
+
+    template<typename T, typename Alloc>
+    inline bool operator>=(const vector<T, Alloc>& lhs, const vector<T, Alloc>& rhs)
+    { return !(lhs < rhs); }
+
+    template <class T, class Alloc>
+    inline void swap (vector<T,Alloc>& x, vector<T,Alloc>& y)
+    { x.swap(y); }
 
 }//namespace ft
 
