@@ -522,7 +522,6 @@ TEST(Map_observers_and_others, operators_of_equality) {
         ASSERT_TRUE(map2 > map1);
         ASSERT_TRUE(map2 >= map1);
     }
-
 }
 
 

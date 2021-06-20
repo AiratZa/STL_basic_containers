@@ -41,12 +41,95 @@ namespace ft {
             typedef false_type type;
         };
 
-        // Thirteen specializations (yes there are eleven standard integer
-        // types; <em>long long</em> and <em>unsigned long long</em> are
-        // supported as extensions).  Up to four target-specific __int<N>
-        // types are supported as well.
+
         template<>
         struct is_integer<bool>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+
+        template<>
+        struct is_integer<char>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<signed char>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<unsigned char>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<wchar_t>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+
+        template<>
+        struct is_integer<short>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<unsigned short>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<int>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<unsigned int>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<long>
+        {
+            enum { value = 1 };
+            typedef is_integer type;
+        };
+
+        template<>
+        struct is_integer<unsigned long>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<long long>
+        {
+            enum { value = 1 };
+            typedef true_type type;
+        };
+
+        template<>
+        struct is_integer<unsigned long long>
         {
             enum { value = 1 };
             typedef true_type type;

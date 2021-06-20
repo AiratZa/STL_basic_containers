@@ -571,7 +571,7 @@ CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o
  /home/airat/CLionProjects/STL_basic_containers/source/map.hpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.cpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.hpp
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o
  ../google_test/googletest/include/gtest/gtest-death-test.h
  ../google_test/googletest/include/gtest/gtest-message.h
  ../google_test/googletest/include/gtest/gtest-param-test.h
@@ -598,9 +598,9 @@ CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
  /home/airat/CLionProjects/STL_basic_containers/source/list.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/queue.hpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_list/test_list.hpp
+ /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.hpp
- /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o
  ../google_test/googletest/include/gtest/gtest-death-test.h
  ../google_test/googletest/include/gtest/gtest-message.h
  ../google_test/googletest/include/gtest/gtest-param-test.h
@@ -627,9 +627,9 @@ CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o
  /home/airat/CLionProjects/STL_basic_containers/source/list.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/stack.hpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_list/test_list.hpp
+ /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.hpp
- /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp
-CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
+CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o
  ../google_test/googletest/include/gtest/gtest-death-test.h
  ../google_test/googletest/include/gtest/gtest-message.h
  ../google_test/googletest/include/gtest/gtest-param-test.h
@@ -657,5 +657,5 @@ CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
  /home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/vector.hpp
+ /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp
- /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp

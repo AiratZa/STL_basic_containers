@@ -446,22 +446,22 @@
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp">
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
-		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp">
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp">
-			<Option target="ft_containers"/>
-		</Unit>
-		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/CMakeLists.txt">

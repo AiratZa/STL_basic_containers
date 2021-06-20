@@ -25,9 +25,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/airat/CLionProjects/STL_basic_containers/tests/test_list/tests_list_pop_front_back.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o"
   "/home/airat/CLionProjects/STL_basic_containers/tests/test_list/tests_list_swap.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o"
   "/home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o"
-  "/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o"
-  "/home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o"
-  "/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o"
+  "/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o"
+  "/home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o"
+  "/home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp" "/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -20,9 +20,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o"
   "CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o"
-  "CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o"
-  "CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o"
-  "CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o"
+  "CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o"
   "ft_containers"
   "ft_containers.pdb"
 )

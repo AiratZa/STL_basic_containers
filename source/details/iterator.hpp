@@ -195,7 +195,7 @@ namespace ft {
             }
 
             NormalIterator operator++(int)
-            { return __normal_iterator(_current++); }
+            { return NormalIterator(_current++); }
 
             // Bidirectional iterator requirements
             NormalIterator& operator--()
@@ -221,17 +221,109 @@ namespace ft {
             { _current -= __n; return *this; }
 
             NormalIterator operator-(difference_type __n) const
-            { return __normal_iterator(_current - __n); }
+            { return NormalIterator(_current - __n); }
 
             const Iterator& base() const
             { return _current; }
         };
+
+
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator==(const NormalIterator<IteratorL, Container>& lhs,
+                   const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() == rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline bool
+        operator==(const NormalIterator<Iterator, Container>& lhs,
+                   const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() == rhs.base(); }
+
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator!=(const NormalIterator<IteratorL, Container>& lhs,
+                   const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() != rhs.base(); }
 
         template<typename Iterator, typename Container>
         inline bool
         operator!=(const NormalIterator<Iterator, Container>& lhs,
                    const NormalIterator<Iterator, Container>& rhs)
         { return lhs.base() != rhs.base(); }
+
+        // Random access iterator requirements
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator<(const NormalIterator<IteratorL, Container>& lhs,
+                  const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() < rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline bool
+        operator<(const NormalIterator<Iterator, Container>& lhs,
+                  const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() < rhs.base(); }
+
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator>(const NormalIterator<IteratorL, Container>& lhs,
+                  const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() > rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline bool
+        operator>(const NormalIterator<Iterator, Container>& lhs,
+                  const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() > rhs.base(); }
+
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator<=(const NormalIterator<IteratorL, Container>& lhs,
+                   const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() <= rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline bool
+        operator<=(const NormalIterator<Iterator, Container>& lhs,
+                   const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() <= rhs.base(); }
+
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline bool
+        operator>=(const NormalIterator<IteratorL, Container>& lhs,
+                   const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() >= rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline bool
+        operator>=(const NormalIterator<Iterator, Container>& lhs,
+                   const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() >= rhs.base(); }
+
+        // _GLIBCXX_RESOLVE_LIB_DEFECTS
+        // According to the resolution of DR179 not only the various comparison
+        // operators but also operator- must accept mixed iterator/const_iterator
+        // parameters.
+        template<typename IteratorL, typename IteratorR, typename Container>
+        inline typename NormalIterator<IteratorL, Container>::difference_type
+        operator-(const NormalIterator<IteratorL, Container>& lhs,
+                  const NormalIterator<IteratorR, Container>& rhs)
+        { return lhs.base() - rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline typename NormalIterator<Iterator, Container>::difference_type
+        operator-(const NormalIterator<Iterator, Container>& lhs,
+                  const NormalIterator<Iterator, Container>& rhs)
+        { return lhs.base() - rhs.base(); }
+
+        template<typename Iterator, typename Container>
+        inline NormalIterator<Iterator, Container>
+        operator+(typename NormalIterator<Iterator, Container>::difference_type
+                  n, const NormalIterator<Iterator, Container>& i)
+        { return NormalIterator<Iterator, Container>(i.base() + n); }
+
+
     }
 }
 

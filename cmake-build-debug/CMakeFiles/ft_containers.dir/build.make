@@ -350,44 +350,44 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_list/tests_list_swap.cpp -o CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s
 
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: CMakeFiles/ft_containers.dir/flags.make
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o: ../tests/test_stack/test_stack_constructor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o: ../tests/test_stack/test_stack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp
 
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp > CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.i
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp > CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.i
 
-CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack_constructor.cpp -o CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.s
+CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_stack/test_stack.cpp -o CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.s
 
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: CMakeFiles/ft_containers.dir/flags.make
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o: ../tests/test_queue/test_queue_constructor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o: ../tests/test_queue/test_queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp
 
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp > CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.i
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp > CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.i
 
-CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue_constructor.cpp -o CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.s
+CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.cpp -o CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.s
 
-CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o: CMakeFiles/ft_containers.dir/flags.make
-CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o: ../tests/test_vector/test_vector_constructor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp
+CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o: CMakeFiles/ft_containers.dir/flags.make
+CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o: ../tests/test_vector/test_vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/airat/CLionProjects/STL_basic_containers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -o CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o -c /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp
 
-CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp > CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.i
+CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -E /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp > CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.i
 
-CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp -o CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.s
+CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wall -S /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.cpp -o CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.s
 
 # Object files for target ft_containers
 ft_containers_OBJECTS = \
@@ -412,9 +412,9 @@ ft_containers_OBJECTS = \
 "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o" \
 "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o" \
 "CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o" \
-"CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o" \
-"CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o" \
-"CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o"
+"CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o" \
+"CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o"
 
 # External object files for target ft_containers
 ft_containers_EXTERNAL_OBJECTS =
@@ -440,9 +440,9 @@ ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_empty_cle
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_front_back.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_pop_front_back.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o
-ft_containers: CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o
-ft_containers: CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
-ft_containers: CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o
+ft_containers: CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o
 ft_containers: CMakeFiles/ft_containers.dir/build.make
 ft_containers: google_test/googlemock/gtest/libgtestd.a
 ft_containers: CMakeFiles/ft_containers.dir/link.txt

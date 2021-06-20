@@ -44,7 +44,7 @@ namespace ft {
             catch(...)
             {
                 for (ForwardIterator tmp = first; tmp != cur; ++tmp)
-                    traits::destroy(alloc, *tmp);
+                    traits::destroy(alloc, std::__addressof(*tmp));
                 throw;
             }
         }
@@ -65,7 +65,7 @@ namespace ft {
             catch(...)
             {
                 for (ForwardIterator tmp = result; tmp != cur; ++tmp)
-                    traits::destroy(alloc, *tmp);
+                    traits::destroy(alloc, std::__addressof(*tmp));
                 throw;
             }
         }

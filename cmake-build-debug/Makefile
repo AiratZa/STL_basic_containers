@@ -808,86 +808,86 @@ tests/test_map/test_map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.s
 .PHONY : tests/test_map/test_map.cpp.s
 
-tests/test_queue/test_queue_constructor.o: tests/test_queue/test_queue_constructor.cpp.o
+tests/test_queue/test_queue.o: tests/test_queue/test_queue.cpp.o
 
-.PHONY : tests/test_queue/test_queue_constructor.o
-
-# target to build an object file
-tests/test_queue/test_queue_constructor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
-.PHONY : tests/test_queue/test_queue_constructor.cpp.o
-
-tests/test_queue/test_queue_constructor.i: tests/test_queue/test_queue_constructor.cpp.i
-
-.PHONY : tests/test_queue/test_queue_constructor.i
-
-# target to preprocess a source file
-tests/test_queue/test_queue_constructor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.i
-.PHONY : tests/test_queue/test_queue_constructor.cpp.i
-
-tests/test_queue/test_queue_constructor.s: tests/test_queue/test_queue_constructor.cpp.s
-
-.PHONY : tests/test_queue/test_queue_constructor.s
-
-# target to generate assembly for a file
-tests/test_queue/test_queue_constructor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.s
-.PHONY : tests/test_queue/test_queue_constructor.cpp.s
-
-tests/test_stack/test_stack_constructor.o: tests/test_stack/test_stack_constructor.cpp.o
-
-.PHONY : tests/test_stack/test_stack_constructor.o
+.PHONY : tests/test_queue/test_queue.o
 
 # target to build an object file
-tests/test_stack/test_stack_constructor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.o
-.PHONY : tests/test_stack/test_stack_constructor.cpp.o
+tests/test_queue/test_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.o
+.PHONY : tests/test_queue/test_queue.cpp.o
 
-tests/test_stack/test_stack_constructor.i: tests/test_stack/test_stack_constructor.cpp.i
+tests/test_queue/test_queue.i: tests/test_queue/test_queue.cpp.i
 
-.PHONY : tests/test_stack/test_stack_constructor.i
+.PHONY : tests/test_queue/test_queue.i
 
 # target to preprocess a source file
-tests/test_stack/test_stack_constructor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.i
-.PHONY : tests/test_stack/test_stack_constructor.cpp.i
+tests/test_queue/test_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.i
+.PHONY : tests/test_queue/test_queue.cpp.i
 
-tests/test_stack/test_stack_constructor.s: tests/test_stack/test_stack_constructor.cpp.s
+tests/test_queue/test_queue.s: tests/test_queue/test_queue.cpp.s
 
-.PHONY : tests/test_stack/test_stack_constructor.s
+.PHONY : tests/test_queue/test_queue.s
 
 # target to generate assembly for a file
-tests/test_stack/test_stack_constructor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack_constructor.cpp.s
-.PHONY : tests/test_stack/test_stack_constructor.cpp.s
+tests/test_queue/test_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_queue/test_queue.cpp.s
+.PHONY : tests/test_queue/test_queue.cpp.s
 
-tests/test_vector/test_vector_constructor.o: tests/test_vector/test_vector_constructor.cpp.o
+tests/test_stack/test_stack.o: tests/test_stack/test_stack.cpp.o
 
-.PHONY : tests/test_vector/test_vector_constructor.o
+.PHONY : tests/test_stack/test_stack.o
 
 # target to build an object file
-tests/test_vector/test_vector_constructor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
-.PHONY : tests/test_vector/test_vector_constructor.cpp.o
+tests/test_stack/test_stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.o
+.PHONY : tests/test_stack/test_stack.cpp.o
 
-tests/test_vector/test_vector_constructor.i: tests/test_vector/test_vector_constructor.cpp.i
+tests/test_stack/test_stack.i: tests/test_stack/test_stack.cpp.i
 
-.PHONY : tests/test_vector/test_vector_constructor.i
+.PHONY : tests/test_stack/test_stack.i
 
 # target to preprocess a source file
-tests/test_vector/test_vector_constructor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.i
-.PHONY : tests/test_vector/test_vector_constructor.cpp.i
+tests/test_stack/test_stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.i
+.PHONY : tests/test_stack/test_stack.cpp.i
 
-tests/test_vector/test_vector_constructor.s: tests/test_vector/test_vector_constructor.cpp.s
+tests/test_stack/test_stack.s: tests/test_stack/test_stack.cpp.s
 
-.PHONY : tests/test_vector/test_vector_constructor.s
+.PHONY : tests/test_stack/test_stack.s
 
 # target to generate assembly for a file
-tests/test_vector/test_vector_constructor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.s
-.PHONY : tests/test_vector/test_vector_constructor.cpp.s
+tests/test_stack/test_stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_stack/test_stack.cpp.s
+.PHONY : tests/test_stack/test_stack.cpp.s
+
+tests/test_vector/test_vector.o: tests/test_vector/test_vector.cpp.o
+
+.PHONY : tests/test_vector/test_vector.o
+
+# target to build an object file
+tests/test_vector/test_vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.o
+.PHONY : tests/test_vector/test_vector.cpp.o
+
+tests/test_vector/test_vector.i: tests/test_vector/test_vector.cpp.i
+
+.PHONY : tests/test_vector/test_vector.i
+
+# target to preprocess a source file
+tests/test_vector/test_vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.i
+.PHONY : tests/test_vector/test_vector.cpp.i
+
+tests/test_vector/test_vector.s: tests/test_vector/test_vector.cpp.s
+
+.PHONY : tests/test_vector/test_vector.s
+
+# target to generate assembly for a file
+tests/test_vector/test_vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_vector/test_vector.cpp.s
+.PHONY : tests/test_vector/test_vector.cpp.s
 
 # Help Target
 help:
@@ -969,15 +969,15 @@ help:
 	@echo "... tests/test_map/test_map.o"
 	@echo "... tests/test_map/test_map.i"
 	@echo "... tests/test_map/test_map.s"
-	@echo "... tests/test_queue/test_queue_constructor.o"
-	@echo "... tests/test_queue/test_queue_constructor.i"
-	@echo "... tests/test_queue/test_queue_constructor.s"
-	@echo "... tests/test_stack/test_stack_constructor.o"
-	@echo "... tests/test_stack/test_stack_constructor.i"
-	@echo "... tests/test_stack/test_stack_constructor.s"
-	@echo "... tests/test_vector/test_vector_constructor.o"
-	@echo "... tests/test_vector/test_vector_constructor.i"
-	@echo "... tests/test_vector/test_vector_constructor.s"
+	@echo "... tests/test_queue/test_queue.o"
+	@echo "... tests/test_queue/test_queue.i"
+	@echo "... tests/test_queue/test_queue.s"
+	@echo "... tests/test_stack/test_stack.o"
+	@echo "... tests/test_stack/test_stack.i"
+	@echo "... tests/test_stack/test_stack.s"
+	@echo "... tests/test_vector/test_vector.o"
+	@echo "... tests/test_vector/test_vector.i"
+	@echo "... tests/test_vector/test_vector.s"
 .PHONY : help
 
 

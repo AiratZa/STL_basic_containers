@@ -78,11 +78,11 @@ namespace ft {
 
     };
 
-// relational operators (stack)
+// relational operators (queue)
 
     template <class T, class Container>
     bool operator== (const queue<T,Container>& lhs, const queue<T,Container>& rhs) {
-        return lhs.ctnr = rhs.ctnr;
+        return lhs.ctnr == rhs.ctnr;
     }
 
     template <class T, class Container>
@@ -97,7 +97,7 @@ namespace ft {
 
     template <class T, class Container>
     bool operator<= (const queue<T,Container>& lhs, const queue<T,Container>& rhs) {
-        return rhs > lhs;
+        return !( rhs < lhs );
     }
 
     template <class T, class Container>
@@ -107,7 +107,7 @@ namespace ft {
 
     template <class T, class Container>
     bool operator>= (const queue<T,Container>& lhs, const queue<T,Container>& rhs) {
-        return !( rhs < lhs );
+        return !( lhs < rhs );
     }
 
 }//namespace ft

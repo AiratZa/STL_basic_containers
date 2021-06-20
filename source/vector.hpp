@@ -91,7 +91,7 @@ namespace ft {
 
 
             ~_VectorBase() {
-                _deallocate(core._start,
+                this->_deallocate(core._start,
                             core._end_of_storage - core._start);
             }
 
@@ -205,13 +205,13 @@ namespace ft {
             {
                 iterator it = std::copy(x.begin(), x.end(), begin());
                 for (iterator tmp = it; tmp != end(); ++tmp)
-                    _VT_alloc_traits::destroy(this->get_VT_allocator(), *tmp);
+                    _VT_alloc_traits::destroy(this->get_VT_allocator(), tmp.base());
             }
             else
             {
                 std::copy(x.core._start, x.core._start + size(),
                           this->core._start);
-                _uninitialized_copy_a(x.core._start + size(),
+                _uninitialized_copy(x.core._start + size(),
                                       x.core._finish,
                                       this->core._finish);
             }
@@ -241,7 +241,7 @@ namespace ft {
     }
 
     bool empty() const {
-        return begin() != end();
+        return begin() == end();
     }
 
     void reserve (size_type n) {
@@ -255,7 +255,7 @@ namespace ft {
             tmp = _allocate_and_copy(n, this->core._start, this->core._finish);
             ft::details::Destroy(this->core._start, this->core._finish,
                                  this->get_VT_allocator());
-            _deallocate(this->core._start, this->core._end_of_storage - this->core._start);
+            this->_deallocate(this->core._start, this->core._end_of_storage - this->core._start);
             this->core._start = tmp;
             this->core._finish = tmp + __old_size;
             this->core._end_of_storage = this->core._start + n;
@@ -372,7 +372,7 @@ namespace ft {
             if (position == end())
             {
                 _VT_alloc_traits::construct(this->core, this->core._finish, val);
-                ++this->cor._finish;
+                ++this->core._finish;
             }
             else
             {
@@ -423,7 +423,7 @@ private:
     {
         if (n >= this->size()) {
             std::stringstream str;
-            str << "vector::_range_check: n (which is " << n << ") >= this->size() (which is "<< this->size << ")";
+            str << "vector::_range_check: n (which is " << n << ") >= this->size() (which is "<< this->size() << ")";
             throw std::out_of_range(str.str());
         }
     }
@@ -529,12 +529,12 @@ private:
                 {
                     ft::details::Destroy(new_start, new_finish,
                                   this->get_VT_allocator());
-                    _deallocate(new_start, len);
+                    this->_deallocate(new_start, len);
                     throw ;
                 }
                 ft::details::Destroy(this->core._start, this->core._finish,
                                         this->get_VT_allocator());
-                _deallocate(this->core._start, this->core._end_of_storage - this->core._start);
+                this->_deallocate(this->core._start, this->core._end_of_storage - this->core._start);
                 this->core._start = new_start;
                 this->core._finish = new_finish;
                 this->core._end_of_storage = new_start + len;
@@ -552,8 +552,7 @@ private:
     void _insert_dispatch(iterator pos, InputIterator first,
                        InputIterator last, ft::details::false_type)
     {
-        typedef typename std::iterator_traits<InputIterator>::iterator_category it;
-        _range_insert(pos, first, last, it(first));
+        _range_insert(pos, first, last, typename std::iterator_traits<InputIterator>::iterator_category());
     }
 
 
@@ -572,10 +571,7 @@ private:
                                                                      add, val, this->get_VT_allocator());
         }
         else {
-            size_t i = 0;
-            for(; i < n; ++i)
-                *(this->core._start[i]) = val;
-            _erase_at_end(this->core._start[i]);
+            _erase_at_end(std::fill_n(this->core._start, n, val));
         }
     }
 
@@ -604,7 +600,7 @@ private:
         {
             const size_type len = std::distance(first, last);
             if (len < size())
-                _erase_at_end(std::copy(first, last, begin()));
+                _erase_at_end(std::copy(first, last, this->core._start));
             else
             {
                 ForwardIterator mid = first;
@@ -617,7 +613,7 @@ private:
         template<typename InputIterator>
         void _assign_dispatch(InputIterator first, InputIterator last,
                            ft::details::false_type) {
-            _assign_aux(first, last, std::iterator_traits<InputIterator>::iterator_category);
+            _assign_aux(first, last, typename std::iterator_traits<InputIterator>::iterator_category());
         }
 
 
@@ -648,13 +644,13 @@ private:
         try
         {
             for (; _first != _last; ++_first, (void)++cur)
-                _VT_alloc_traits::construct(this->get_allocator(), cur, *_first);
+                _VT_alloc_traits::construct(this->get_VT_allocator(), cur, *_first);
              return cur;
         }
         catch(...)
         {
             for (; _start != cur; ++_start)
-                _VT_alloc_traits::destroy(this->get_allocator(), _start);
+                _VT_alloc_traits::destroy(this->get_VT_allocator(), _start);
             throw;
         }
     }
@@ -662,7 +658,7 @@ private:
     template<typename Integer>
     void _initialize_dispatch(Integer n, Integer value, ft::details::true_type)
     {
-        this->_core._start = _M_allocate(_check_init_len(
+        this->core._start = this->_allocate(_check_init_len(
                 static_cast<size_type>(n), this->get_VT_allocator()));
         this->core._end_of_storage =
                 this->core._start + static_cast<size_type>(n);
@@ -674,7 +670,7 @@ private:
                            ft::details::false_type)
     {
         _range_initialize(first, last,
-                          std::iterator_traits<InputIterator>::iterator_category());
+                          typename std::iterator_traits<InputIterator>::iterator_category());
     }
 
     // Called by the second initialize_dispatch above
@@ -713,7 +709,7 @@ private:
         pointer old_finish = this->core._finish;
 
         const size_type elems_before = position - begin();
-        pointer new_start(this->_M_allocate(len));
+        pointer new_start(this->_allocate(len));
         pointer new_finish(new_start);
         try
         {
@@ -734,15 +730,15 @@ private:
             else
             {
                 for (pointer tmp = new_start; tmp != new_finish; ++tmp)
-                    _VT_alloc_traits::destroy(this->get_allocator(), tmp);
+                    _VT_alloc_traits::destroy(this->get_VT_allocator(), tmp);
             }
-            _deallocate(new_start, len);
+            this->_deallocate(new_start, len);
             throw;
         }
         for (pointer tmp = old_start; tmp != old_finish; ++tmp)
-            _VT_alloc_traits::destroy(this->get_allocator(), tmp);
+            _VT_alloc_traits::destroy(this->get_VT_allocator(), tmp);
 
-        _deallocate(old_start, this->core._end_of_storage - old_start);
+        this->_deallocate(old_start, this->core._end_of_storage - old_start);
         this->core._start = new_start;
         this->core._finish = new_finish;
         this->core._end_of_storage = new_start + len;
@@ -755,7 +751,7 @@ private:
             pointer result = this->_allocate(n);
             try
             {
-                _uninitialized_copy_a(first, last, result);
+                _uninitialized_copy(first, last, result);
                 return result;
             }
             catch(...)
@@ -831,12 +827,12 @@ private:
                     else
                         ft::details::Destroy(new_start, new_finish,
                                              this->get_VT_allocator());
-                    _deallocate(new_start, len);
+                    this->_deallocate(new_start, len);
                     throw;
                 }
                 ft::details::Destroy(this->core._start, this->core._finish,
                                      this->get_VT_allocator());
-                _deallocate(this->core._start,
+                this->_deallocate(this->core._start,
                               this->core._end_of_storage
                               - this->core._start);
                 this->core._start = new_start;
