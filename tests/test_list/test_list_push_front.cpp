@@ -6,18 +6,6 @@
 
 #include "test_list.hpp"
 
-TEST(List_push_front, push_front_to_empty) {
-    ft::list<int> l1(0);
-    std::list<int> l2(0);
-
-    ASSERT_EQ(l1.size(), l2.size());
-    l1.push_back(7);
-    l2.push_back(7);
-    ASSERT_EQ(l1.size(), l2.size());
-    ASSERT_EQ(*l1.begin(), *l2.begin());
-    ASSERT_EQ(*l1.end(), *l2.end());
-}
-
 TEST(List_push_back, push_front_more_elements) {
     ft::list<int> l1(128, 32);
     std::list<int> l2(128, 32);

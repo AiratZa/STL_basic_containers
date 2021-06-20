@@ -38,13 +38,13 @@ namespace ft {
             try
             {
                 for (; n > 0; --n, (void) ++cur)
-                    traits::construct(alloc, std::__addressof(*cur), x);
+                    traits::construct(alloc, std::addressof(*cur), x);
                 return cur;
             }
             catch(...)
             {
                 for (ForwardIterator tmp = first; tmp != cur; ++tmp)
-                    traits::destroy(alloc, std::__addressof(*tmp));
+                    traits::destroy(alloc, std::addressof(*tmp));
                 throw;
             }
         }
@@ -59,13 +59,13 @@ namespace ft {
             try
             {
                 for (; first != last; ++first, (void)++cur)
-                    traits::construct(alloc, std::__addressof(*cur), *first);
+                    traits::construct(alloc, std::addressof(*cur), *first);
                 return cur;
             }
             catch(...)
             {
                 for (ForwardIterator tmp = result; tmp != cur; ++tmp)
-                    traits::destroy(alloc, std::__addressof(*tmp));
+                    traits::destroy(alloc, std::addressof(*tmp));
                 throw;
             }
         }
@@ -76,7 +76,7 @@ namespace ft {
         {
             typedef ft::details::alloc_traits_wrapper<Allocator> traits;
             for (; first != last; ++first)
-                traits::destroy(alloc, std::__addressof(*first));
+                traits::destroy(alloc, std::addressof(*first));
         }
 
 

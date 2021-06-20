@@ -10,6 +10,7 @@
 # include <iostream>
 
 #include "details/allocator_traits_wrapper.hpp"
+#include "details/meta_programming.hpp"
 
 namespace ft {
 
@@ -18,7 +19,6 @@ namespace ft {
 
 
     namespace details {
-
 
         struct _ListNodeBase {
             _ListNodeBase* _ptrPrev;
@@ -77,6 +77,18 @@ namespace ft {
                 (second._ptrPrev)->_ptrNext = &second;
             }
 
+
+            void _reverse()
+            {
+                _ListNodeBase* tmp = this;
+                do
+                {
+                    std::swap(tmp->_ptrNext, tmp->_ptrPrev);
+                    // Old next node is now prev.
+                    tmp = tmp->_ptrPrev;
+                }
+                while (tmp != this);
+            }
 
         };
 
@@ -139,8 +151,6 @@ namespace ft {
 
             std::size_t _Base_get_size() { return 0; };
 
-
-
             std::size_t _countNodes() const {
                 return _distanceBetweenNodeBases(_base._node._ptrNext, &(_base._node));
             }
@@ -172,8 +182,8 @@ namespace ft {
         public:
             typedef Alloc allocator_type;
 
-//            _Node_alloc_type& getNodeAllocator() { return this->_base; };
-//            const _Node_alloc_type& getNodeAllocator() const { return this->_base; };
+            _Node_alloc_type& getNodeAllocator() { return this->_base; };
+            const _Node_alloc_type& getNodeAllocator() const { return this->_base; };
 
             _ListBase()  { };
 
@@ -208,7 +218,7 @@ namespace ft {
 
 
 
-    // CUSTOM ITERATORS STARTS
+// CUSTOM ITERATORS STARTS
 
     template<class VT >
 struct _ListIterator
@@ -305,10 +315,6 @@ struct _ListIterator
     explicit _ListConstIterator(const details::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
 
     explicit _ListConstIterator(const iterator& _it) : _nodeBase(_it._nodeBase) { };
-
-//        iterator
-//        _M_const_cast() const
-//        { return iterator(const_cast<details::_ListNodeBase*>(_nodeBase)); }
 
     reference
     operator*() const
@@ -418,13 +424,13 @@ class list : protected details::_ListBase<T, Alloc> {
     private:
         template<typename _Integer>
         void
-        _initialize_dispatch(_Integer __n, _Integer __x, std::__true_type)
+        _initialize_dispatch(_Integer __n, _Integer __x, ft::details::true_type)
         { _fill_with_given_value(static_cast<size_type>(__n), __x); }
 
         template<typename InputIterator>
         void
         _initialize_dispatch(InputIterator first, InputIterator last,
-                               std::__false_type)
+                               ft::details::false_type)
         {
             for (; first != last; ++first)
                     push_back(*first);
@@ -450,14 +456,13 @@ class list : protected details::_ListBase<T, Alloc> {
                 : _Base(_Node_alloc_type(alloc))
         {
             // Check whether it's an integral type.  If so, it's not an iterator.
-            typedef typename std::__is_integer<InputIterator>::__type _Integral;
-            _initialize_dispatch(first, last, _Integral());
+            typedef typename ft::details::is_integer<InputIterator>::type Integral;
+            _initialize_dispatch(first, last, Integral());
         }
 
         // copy (4)
-        list (const list& x) {
-
-        }
+        list (const list& x) : _Base(_Node_alloc_traits::_S_select_on_copy(x.getNodeAllocator()))
+        { _initialize_dispatch(x.begin(), x.end(), ft::details::false_type()); }
 
 
 //Destructor
@@ -576,14 +581,14 @@ class list : protected details::_ListBase<T, Alloc> {
 
         template<typename _Integer>
         void
-        _assign_dispatch(_Integer __n, _Integer __val, std::__true_type)
+        _assign_dispatch(_Integer __n, _Integer __val, ft::details::true_type)
         { this->_fill_with_assignation(__n, __val); }
 
         // Called by the range assign to implement [23.1.1]/9
         template<typename InputIterator>
         void
         _assign_dispatch(InputIterator first, InputIterator last,
-                           std::__false_type) {
+                         ft::details::false_type) {
 
             iterator __curFirst1 = begin();
             iterator __curLast1 = end();
@@ -606,8 +611,8 @@ class list : protected details::_ListBase<T, Alloc> {
         template <class InputIterator>
         void assign (InputIterator first, InputIterator last) {
             // Check whether it's an integral type.  If so, it's not an iterator.
-            typedef typename std::__is_integer<InputIterator>::__type _Integral;
-            _assign_dispatch(first, last, _Integral());
+            typedef typename ft::details::is_integer<InputIterator>::type Integral;
+            _assign_dispatch(first, last, Integral());
 
         }
 
@@ -657,10 +662,6 @@ class list : protected details::_ListBase<T, Alloc> {
             list _tmpList(first, last, _base);
             splice(position, _tmpList);
         }
-
-
-
-
 
         // Removes from the list container either a single element (position) or a range of elements ([first,last)).
 
@@ -727,18 +728,12 @@ class list : protected details::_ListBase<T, Alloc> {
                 }
             }
 
+        // Moves the elements from [first,last) before position.
+        void
+        _transfer(iterator position, iterator first, iterator last)
+        { position._nodeBase->_relinkElementsBefore(first._nodeBase, last._nodeBase); }
 
 //Operations
-
-    private:
-
-        // To implement the splice (and merge) bits of N1599.
-        void
-        _throw_if_non_equal_allocators(list& __x)
-        {
-            if (std::__alloc_neq<typename _Base::_Node_alloc_type>::_S_do_it(this->_base, __x._base))
-                abort();
-        }
 
     public:
 
@@ -746,8 +741,6 @@ class list : protected details::_ListBase<T, Alloc> {
         //The first version (1) transfers all the elements of x into the container.
         void splice (iterator position, list& x) {
             if (!x.empty()) {
-                _throw_if_non_equal_allocators(x);
-
                 (position._nodeBase)->_relinkElementsBefore(x.begin()._nodeBase, x.end()._nodeBase);
 
                 this->_incrementSize(x.size());
@@ -762,10 +755,6 @@ class list : protected details::_ListBase<T, Alloc> {
             ++__j;
             if (position == i || position == __j)
                 return;
-
-            if (this != std::__addressof(x))
-                _throw_if_non_equal_allocators(x);
-
             (position._nodeBase)->_relinkElementsBefore(i._nodeBase, __j._nodeBase);
 
             this->_incrementSize(1);
@@ -777,9 +766,6 @@ class list : protected details::_ListBase<T, Alloc> {
         void splice (iterator position, list& x, iterator first, iterator last) {
             if (first != last)
             {
-                if (this != std::__addressof(x))
-                    _throw_if_non_equal_allocators(x);
-
                 size_t __n = _Base::_distanceBetweenNodeBases(first._nodeBase, last._nodeBase);
                 this->_incrementSize(__n);
                 x._decrementSize(__n);
@@ -861,17 +847,175 @@ class list : protected details::_ListBase<T, Alloc> {
 
 
 
-        void sort() {
+        // (1)
+        void merge (list& x)
+        {
+            if (this != std::addressof(x))
+            {
+                iterator first1 = begin();
+                iterator last1 = end();
+                iterator first2 = x.begin();
+                iterator last2 = x.end();
+                const size_t orig_size = x.size();
+                try
+                {
+                        while (first1 != last1 && first2 != last2)
+                        if (*first2 < *first1)
+                        {
+                            iterator next = first2;
+                            _transfer(first1, first2, ++next);
+                            first2 = next;
+                        }
+                        else
+                        ++first1;
+                        if (first2 != last2)
+                            _transfer(last1, first2, last2);
 
+                        this->_incrementSize(x._getSize());
+                        x._setSize(0);
+                }
+                catch(...)
+                {
+                    const size_t dist = std::distance(first2, last2);
+                    this->_incrementSize(orig_size - dist);
+                    x._setSize(dist);
+                    throw;
+                }
+            }
+        }
+
+        // (2)
+        template <class Compare>
+        void merge (list& x, Compare comp)
+        {
+            if (this != std::addressof(x))
+            {
+                iterator first1 = begin();
+                iterator last1 = end();
+                iterator first2 = x.begin();
+                iterator last2 = x.end();
+                const size_t orig_size = x.size();
+                try
+                {
+                    while (first1 != last1 && first2 != last2)
+                        if (comp(*first2, *first1))
+                        {
+                            iterator next = first2;
+                            _transfer(first1, first2, ++next);
+                            first2 = next;
+                        }
+                        else
+                            ++first1;
+                    if (first2 != last2)
+                        _transfer(last1, first2, last2);
+
+                    this->_incrementSize(x._getSize());
+                    x._setSize(0);
+                }
+                catch(...)
+                {
+                    const size_t dist = std::distance(first2, last2);
+                    this->_incrementSize(orig_size - dist);
+                    x._setSize(dist);
+                    throw;
+                }
+            }
+        }
+
+        void sort()
+        {
+            // Do nothing if the list has length 0 or 1.
+            if (this->_base._node._ptrNext != &this->_base._node
+                && this->_base._node._ptrNext->_ptrNext != &this->_base._node)
+            {
+                list carry;
+                list tmp[64];
+                list * fill = tmp;
+                list * counter;
+                try
+                {
+                    do
+                    {
+                        carry.splice(carry.begin(), *this, begin());
+
+                        for(counter = tmp;
+                            counter != fill && !counter->empty();
+                            ++counter)
+                        {
+                            counter->merge(carry);
+                            carry.swap(*counter);
+                        }
+                        carry.swap(*counter);
+                        if (counter == fill)
+                            ++fill;
+                    }
+                    while ( !empty() );
+
+                    for (counter = tmp + 1; counter != fill; ++counter)
+                        counter->merge(*(counter - 1));
+                    swap( *(fill - 1) );
+                }
+                catch(...)
+                {
+                    this->splice(this->end(), carry);
+                    for (int i = 0; i < sizeof(tmp) / sizeof(tmp[0]); ++i)
+                        this->splice(this->end(), tmp[i]);
+                    throw;
+                }
+            }
         }
 
 
         template <class Compare>
-        void sort (Compare comp) {
+        void sort (Compare comp)
+        {
+            // Do nothing if the list has length 0 or 1.
+            if (this->_base._node._ptrNext != &this->_base._node
+                && this->_base._node._ptrNext->_ptrNext != &this->_base._node)
+            {
+                list carry;
+                list tmp[64];
+                list * fill = tmp;
+                list * counter;
+                try
+                {
+                    do
+                    {
+                        carry.splice(carry.begin(), *this, begin());
 
+                        for(counter = tmp;
+                            counter != fill && !counter->empty();
+                            ++counter)
+                        {
+                            counter->merge(carry, comp);
+                            carry.swap(*counter);
+                        }
+                        carry.swap(*counter);
+                        if (counter == fill)
+                            ++fill;
+                    }
+                    while ( !empty() );
+
+                    for (counter = tmp + 1; counter != fill; ++counter)
+                        counter->merge(*(counter - 1), comp);
+                    swap(*(fill - 1));
+                }
+                catch(...)
+                {
+                    this->splice(this->end(), carry);
+                    for (int i = 0; i < sizeof(tmp) / sizeof(tmp[0]); ++i)
+                        this->splice(this->end(), tmp[i]);
+                    throw;
+                }
+            }
         }
 
+        void reverse()
+        { this->_base._node._reverse(); }
 
+
+        allocator_type get_allocator() const
+        { return allocator_type(_Base::getNodeAllocator()); }
 
 
     };

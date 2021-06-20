@@ -371,7 +371,8 @@ TEST(Map_observers_and_others, find_and_count) {
 
     it1 = mymap1.find('b');
     it2 = mymap2.find('b');
-    ASSERT_EQ(*it1, *it2);
+    ASSERT_EQ(it1, mymap1.end());
+    ASSERT_EQ(it2, mymap2.end());
     ASSERT_EQ(mymap1.count('b'), mymap2.count('b'));
     ASSERT_MAPS_EQ(mymap2, mymap1);
 }

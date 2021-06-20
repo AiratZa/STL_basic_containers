@@ -167,7 +167,8 @@ namespace ft {
     // range (3)
     template <class InputIterator>
     vector (InputIterator first, InputIterator last,
-            const allocator_type& alloc = allocator_type()) {
+            const allocator_type& alloc = allocator_type())
+            : _Base(alloc) {
         typedef typename ft::details::is_integer<InputIterator>::type Integral;
         _initialize_dispatch(first, last, Integral());
     }
@@ -187,7 +188,7 @@ namespace ft {
 
     // copy (1)
     vector& operator= (const vector& x) {
-        if (std::__addressof(x) != this)
+        if (std::addressof(x) != this)
         {
             const size_type x_len = x.size();
             if (x_len > capacity())

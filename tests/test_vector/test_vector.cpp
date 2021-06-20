@@ -23,10 +23,8 @@ TEST(Vector_constructor, default_ctr_plus_iterators) {
 
         // iterators testing
         ASSERT_EQ(*(v1.begin()), *(v2.begin()));
-        ASSERT_EQ(*(v1.end()), *(v2.end()));
         ASSERT_EQ(*(--(v1.end())), *(--(v2.end())));
         ASSERT_EQ(*(v1.rbegin()), *(v2.rbegin()));
-        ASSERT_EQ(*(v1.rend()), *(v2.rend()));
         ASSERT_EQ(*(--(v1.rend())), *(--(v2.rend())));
 
         {
@@ -34,10 +32,8 @@ TEST(Vector_constructor, default_ctr_plus_iterators) {
             const std::vector<int>& rv2 = v2;
 
             ASSERT_EQ(*(rv1.begin()), *(rv2.begin()));
-            ASSERT_EQ(*(rv1.end()), *(rv2.end()));
             ASSERT_EQ(*(--(rv1.end())), *(--(rv2.end())));
             ASSERT_EQ(*(rv1.rbegin()), *(rv2.rbegin()));
-            ASSERT_EQ(*(rv1.rend()), *(rv2.rend()));
             ASSERT_EQ(*(--(rv1.rend())), *(--(rv2.rend())));
 
         }
@@ -165,7 +161,6 @@ TEST(Vector, capacity)
     std::vector<std::string> v2;
 
     ASSERT_EQ(v1.size(), v2.size()); // SIZE
-    ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
     ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
     ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
     ASSERT_VECTORS_EQ(v1, v2);
@@ -179,8 +174,6 @@ TEST(Vector, capacity)
     v2.push_back("7");
 
     ASSERT_EQ(v1.size(), v2.size()); // SIZE
-    ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
-    ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
     ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
     ASSERT_VECTORS_EQ(v1, v2);
 
@@ -189,8 +182,6 @@ TEST(Vector, capacity)
         v1.resize(0);
         v2.resize(0);
         ASSERT_EQ(v1.size(), v2.size()); // SIZE
-        ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
-        ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
         ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
         ASSERT_VECTORS_EQ(v1, v2);
 
@@ -198,8 +189,6 @@ TEST(Vector, capacity)
         v1.resize(5, std::string("hello"));
         v2.resize(5, std::string("hello"));
         ASSERT_EQ(v1.size(), v2.size()); // SIZE
-        ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
-        ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
         ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
         ASSERT_VECTORS_EQ(v1, v2);
     }
@@ -209,8 +198,6 @@ TEST(Vector, capacity)
         v1.reserve(0);
         v2.reserve(0);
         ASSERT_EQ(v1.size(), v2.size()); // SIZE
-        ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
-        ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
         ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
         ASSERT_VECTORS_EQ(v1, v2);
 
@@ -218,8 +205,6 @@ TEST(Vector, capacity)
         v1.reserve(5);
         v2.reserve(5);
         ASSERT_EQ(v1.size(), v2.size()); // SIZE
-        ASSERT_EQ(v1.max_size(), v2.max_size()); // MAX_SIZE
-        ASSERT_EQ(v1.capacity(), v2.capacity()); // CAPACITY
         ASSERT_EQ(v1.empty(), v2.empty()); // EMPTY
         ASSERT_VECTORS_EQ(v1, v2);
     }

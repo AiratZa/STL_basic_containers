@@ -104,10 +104,10 @@ namespace ft {
             Val value_field;
 
             Val* valptr_()
-            { return std::__addressof(value_field); }
+            { return std::addressof(value_field); }
 
             const Val* valptr_() const
-            { return std::__addressof(value_field); }
+            { return std::addressof(value_field); }
         };
 
 

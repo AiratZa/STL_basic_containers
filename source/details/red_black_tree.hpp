@@ -9,14 +9,14 @@
 #include "red_black_tree_parts.hpp"
 #include "red_black_tree_iterators.hpp"
 #include "iterator.hpp"
+#include <algorithm>
 
 namespace ft {
 
 namespace details {
 
 
-    template<typename Key, typename Val, typename KeyOfValue,
-            typename Compare, typename Alloc = std::allocator<Val> >
+    template<typename Key, typename Val, typename Compare, typename Alloc = std::allocator<Val> >
     class Rb_tree
     {
         typedef typename ft::details::alloc_traits_wrapper<Alloc>::template
@@ -103,7 +103,7 @@ namespace details {
 
         static const Key& S_key_(Const_Link_type x)
         {
-            return KeyOfValue()(*x->valptr_());
+            return (*x->valptr_()).first;
         }
 
         static Link_type S_left_(Base_ptr x)
@@ -414,7 +414,7 @@ namespace details {
         iterator insert_(Base_ptr x, Base_ptr p, const value_type& v, NodeGen& node_gen)
         {
             bool insert_left = (x != 0 || p == end_()
-                                  || impl_.key_compare_(KeyOfValue()(v),
+                                  || impl_.key_compare_((v).first,
                                                             S_key_(p)));
 
             Link_type z = node_gen(v);
@@ -513,7 +513,7 @@ namespace details {
         insert_unique(const value_type& x)
         {
             typedef std::pair<iterator, bool> Res;
-            std::pair<Base_ptr, Base_ptr> res = get_insert_unique_pos_(KeyOfValue()(x));
+            std::pair<Base_ptr, Base_ptr> res = get_insert_unique_pos_(x.first);
 
             if (res.second)
             {
@@ -531,7 +531,7 @@ namespace details {
                                 const Val& v,
                                 NodeGen& node_gen)
         {
-            std::pair<Base_ptr, Base_ptr> res = get_insert_hint_unique_pos_(position, KeyOfValue()(v));
+            std::pair<Base_ptr, Base_ptr> res = get_insert_hint_unique_pos_(position, v.first);
 
             if (res.second)
                 return insert_(res.first, res.second,
@@ -743,10 +743,9 @@ namespace details {
 
 
 
-    template<typename Key, typename Val, typename KeyOfValue,
-                typename Compare, typename Alloc>
-    inline void swap(Rb_tree<Key, Val, KeyOfValue, Compare, Alloc>& x,
-                        Rb_tree<Key, Val, KeyOfValue, Compare, Alloc>& y)
+    template<typename Key, typename Val, typename Compare, typename Alloc>
+    inline void swap(Rb_tree<Key, Val, Compare, Alloc>& x,
+                        Rb_tree<Key, Val, Compare, Alloc>& y)
     { x.swap(y); }
 
 

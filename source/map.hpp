@@ -30,8 +30,7 @@ namespace ft {
         typedef typename ft::details::alloc_traits_wrapper<Alloc>::template
                         rebind<value_type>::other Pair_alloc_type_;
 
-        typedef ft::details::Rb_tree<key_type, value_type, std::_Select1st<value_type>,
-                        key_compare, Pair_alloc_type_> Rb_tree_type_;
+        typedef ft::details::Rb_tree<key_type, value_type, key_compare, Pair_alloc_type_> Rb_tree_type_;
 
         typedef ft::details::alloc_traits_wrapper<Pair_alloc_type_> Alloc_traits_;
 
@@ -302,8 +301,6 @@ namespace ft {
     swap(map<Key, T, Compare, Alloc>& x,
          map<Key, T, Compare, Alloc>& y)
     { x.swap(y); }
-
-
 
 }//namespace ft
 

@@ -5,7 +5,7 @@
 #ifndef FT_CONTAINERS_ALLOCATOR_TRAITS_WRAPPER_HPP
 #define FT_CONTAINERS_ALLOCATOR_TRAITS_WRAPPER_HPP
 
-#include <bits/allocator.h>
+//#include <bits/allocator.h>
 
 namespace ft {
 
@@ -36,10 +36,12 @@ namespace details {
 
         static const Alloc &_S_select_on_copy(const Alloc &__a) { return __a; }
 
-        static void _S_on_swap(Alloc &__a, Alloc &__b) {
+        static void _S_on_swap(Alloc &a, Alloc &b) {
             // _GLIBCXX_RESOLVE_LIB_DEFECTS
             // 431. Swapping containers with unequal allocators.
-            std::__alloc_swap<Alloc>::_S_do_it(__a, __b);
+            Alloc tmp = b;
+            b = a;
+            a = tmp;
         }
 
         template<typename VT>
