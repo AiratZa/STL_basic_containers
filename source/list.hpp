@@ -213,159 +213,170 @@ namespace ft {
         };
 
 
+
+
+
+
+
+
+
+
+        // CUSTOM ITERATORS STARTS
+
+        template<class VT >
+        struct _ListIterator
+        {
+            typedef _ListIterator<VT>		_Self;
+            typedef details::_ListNode<VT>			_Node;
+
+            typedef std::ptrdiff_t				difference_type;
+            typedef std::bidirectional_iterator_tag	iterator_category;
+            typedef VT				value_type;
+            typedef VT*				pointer;
+            typedef VT&				reference;
+
+            // The only member points to the %list element.
+            details::_ListNodeBase* _nodeBase;
+
+
+            _ListIterator() : _nodeBase() { }
+
+            explicit _ListIterator(details::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
+
+            _Self
+            _getIteratorCopy() const
+            { return *this; }
+
+            reference
+            operator*() const
+            { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr()); }
+
+            pointer
+            operator->() const
+            { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr());  }
+
+            _Self&
+            operator++()
+            {
+                _nodeBase = _nodeBase->_ptrNext;
+                return *this;
+            }
+
+            _Self
+            operator++(int)
+            {
+                _Self __tmp = *this;
+                _nodeBase = _nodeBase->_ptrNext;
+                return __tmp;
+            }
+
+            _Self&
+            operator--()
+            {
+                _nodeBase = _nodeBase->_ptrPrev;
+                return *this;
+            }
+
+            _Self
+            operator--(int)
+            {
+                _Self __tmp = *this;
+                _nodeBase = _nodeBase->_ptrPrev;
+                return __tmp;
+            }
+
+            friend bool
+            operator==(const _Self& __x, const _Self& __y)
+            { return __x._nodeBase == __y._nodeBase; }
+
+            friend bool
+            operator!=(const _Self& __x, const _Self& __y)
+            { return __x._nodeBase != __y._nodeBase; }
+
+
+        };
+
+
+        template<class VT >
+        struct _ListConstIterator
+        {
+            typedef _ListConstIterator<VT>		_Self;
+            typedef const details::_ListNode<VT>			_Node;
+            typedef _ListIterator<VT>			iterator;
+
+            typedef std::ptrdiff_t				difference_type;
+            typedef std::bidirectional_iterator_tag	iterator_category;
+            typedef VT				value_type;
+            typedef const VT*				pointer;
+            typedef const VT&				reference;
+
+            // The only member points to the %list element.
+            const details::_ListNodeBase* _nodeBase;
+
+            _ListConstIterator() : _nodeBase() { }
+
+            explicit _ListConstIterator(const details::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
+
+            explicit _ListConstIterator(const iterator& _it) : _nodeBase(_it._nodeBase) { };
+
+            reference
+            operator*() const
+            { return (*(static_cast<_Node*>(_nodeBase)->_getDataPtr())); }
+
+            pointer
+            operator->() const
+            { return static_cast<_Node*>(_nodeBase)->_getDataPtr();  }
+
+            _Self&
+            operator++()
+            {
+                _nodeBase = _nodeBase->_ptrNext;
+                return *this;
+            }
+
+            _Self
+            operator++(int)
+            {
+                _Self __tmp = *this;
+                _nodeBase = _nodeBase->_ptrNext;
+                return __tmp;
+            }
+
+            _Self&
+            operator--()
+            {
+                _nodeBase = _nodeBase->_ptrPrev;
+                return *this;
+            }
+
+            _Self
+            operator--(int)
+            {
+                _Self __tmp = *this;
+                _nodeBase = _nodeBase->_ptrPrev;
+                return __tmp;
+            }
+
+            friend bool
+            operator==(const _Self& __x, const _Self& __y)
+            { return __x._nodeBase == __y._nodeBase; }
+
+            friend bool
+            operator!=(const _Self& __x, const _Self& __y)
+            { return __x._nodeBase != __y._nodeBase; }
+
+
+        };
+
+        // CUSTOM ITERATORS ENDS
+
+
+
+
     }
     // INSIDE REALIZTION ENDS
 
 
-
-// CUSTOM ITERATORS STARTS
-
-    template<class VT >
-struct _ListIterator
-{
-    typedef _ListIterator<VT>		_Self;
-    typedef details::_ListNode<VT>			_Node;
-
-    typedef std::ptrdiff_t				difference_type;
-    typedef std::bidirectional_iterator_tag	iterator_category;
-    typedef VT				value_type;
-    typedef VT*				pointer;
-    typedef VT&				reference;
-
-    // The only member points to the %list element.
-    details::_ListNodeBase* _nodeBase;
-
-
-    _ListIterator() : _nodeBase() { }
-
-    explicit _ListIterator(details::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
-
-    _Self
-    _getIteratorCopy() const
-    { return *this; }
-
-    reference
-    operator*() const
-    { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr()); }
-
-    pointer
-    operator->() const
-    { return *(static_cast<_Node*>(_nodeBase)->_getDataPtr());  }
-
-    _Self&
-    operator++()
-    {
-        _nodeBase = _nodeBase->_ptrNext;
-        return *this;
-    }
-
-    _Self
-    operator++(int)
-    {
-        _Self __tmp = *this;
-        _nodeBase = _nodeBase->_ptrNext;
-        return __tmp;
-    }
-
-    _Self&
-    operator--()
-    {
-        _nodeBase = _nodeBase->_ptrPrev;
-        return *this;
-    }
-
-    _Self
-    operator--(int)
-    {
-        _Self __tmp = *this;
-        _nodeBase = _nodeBase->_ptrPrev;
-        return __tmp;
-    }
-
-    friend bool
-    operator==(const _Self& __x, const _Self& __y)
-    { return __x._nodeBase == __y._nodeBase; }
-
-    friend bool
-    operator!=(const _Self& __x, const _Self& __y)
-    { return __x._nodeBase != __y._nodeBase; }
-
-
-};
-
-
-    template<class VT >
-    struct _ListConstIterator
-    {
-        typedef _ListConstIterator<VT>		_Self;
-        typedef const details::_ListNode<VT>			_Node;
-        typedef _ListIterator<VT>			iterator;
-
-        typedef std::ptrdiff_t				difference_type;
-        typedef std::bidirectional_iterator_tag	iterator_category;
-        typedef VT				value_type;
-        typedef const VT*				pointer;
-        typedef const VT&				reference;
-
-        // The only member points to the %list element.
-        const details::_ListNodeBase* _nodeBase;
-
-    _ListConstIterator() : _nodeBase() { }
-
-    explicit _ListConstIterator(const details::_ListNodeBase* nodeBase) : _nodeBase(nodeBase) { };
-
-    explicit _ListConstIterator(const iterator& _it) : _nodeBase(_it._nodeBase) { };
-
-    reference
-    operator*() const
-    { return (*(static_cast<_Node*>(_nodeBase)->_getDataPtr())); }
-
-    pointer
-    operator->() const
-    { return static_cast<_Node*>(_nodeBase)->_getDataPtr();  }
-
-    _Self&
-    operator++()
-    {
-        _nodeBase = _nodeBase->_ptrNext;
-        return *this;
-    }
-
-    _Self
-    operator++(int)
-    {
-        _Self __tmp = *this;
-        _nodeBase = _nodeBase->_ptrNext;
-        return __tmp;
-    }
-
-    _Self&
-    operator--()
-    {
-        _nodeBase = _nodeBase->_ptrPrev;
-        return *this;
-    }
-
-    _Self
-    operator--(int)
-    {
-        _Self __tmp = *this;
-        _nodeBase = _nodeBase->_ptrPrev;
-        return __tmp;
-    }
-
-    friend bool
-    operator==(const _Self& __x, const _Self& __y)
-    { return __x._nodeBase == __y._nodeBase; }
-
-    friend bool
-    operator!=(const _Self& __x, const _Self& __y)
-    { return __x._nodeBase != __y._nodeBase; }
-
-
-};
-
-    // CUSTOM ITERATORS ENDS
 
 
     // LIST ITSELF STARTS
@@ -391,10 +402,10 @@ class list : protected details::_ListBase<T, Alloc> {
         typedef typename std::ptrdiff_t difference_type;
         typedef typename std::size_t size_type;
 
-        typedef _ListIterator<value_type> iterator;
-        typedef _ListConstIterator< const value_type> const_iterator;
-        typedef std::reverse_iterator< _ListIterator<value_type> > reverse_iterator;
-        typedef std::reverse_iterator< _ListConstIterator<const value_type> > const_reverse_iterator;
+        typedef details::_ListIterator<value_type> iterator;
+        typedef details::_ListConstIterator< const value_type> const_iterator;
+        typedef std::reverse_iterator< details::_ListIterator<value_type> > reverse_iterator;
+        typedef std::reverse_iterator< details::_ListConstIterator<const value_type> > const_reverse_iterator;
 
     protected:
         typedef typename details::_ListNode<value_type> _Node;
