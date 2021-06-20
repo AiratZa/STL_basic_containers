@@ -781,6 +781,33 @@ tests/test_list/tests_list_swap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.s
 .PHONY : tests/test_list/tests_list_swap.cpp.s
 
+tests/test_map/test_map.o: tests/test_map/test_map.cpp.o
+
+.PHONY : tests/test_map/test_map.o
+
+# target to build an object file
+tests/test_map/test_map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o
+.PHONY : tests/test_map/test_map.cpp.o
+
+tests/test_map/test_map.i: tests/test_map/test_map.cpp.i
+
+.PHONY : tests/test_map/test_map.i
+
+# target to preprocess a source file
+tests/test_map/test_map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.i
+.PHONY : tests/test_map/test_map.cpp.i
+
+tests/test_map/test_map.s: tests/test_map/test_map.cpp.s
+
+.PHONY : tests/test_map/test_map.s
+
+# target to generate assembly for a file
+tests/test_map/test_map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ft_containers.dir/build.make CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.s
+.PHONY : tests/test_map/test_map.cpp.s
+
 tests/test_queue/test_queue_constructor.o: tests/test_queue/test_queue_constructor.cpp.o
 
 .PHONY : tests/test_queue/test_queue_constructor.o
@@ -939,6 +966,9 @@ help:
 	@echo "... tests/test_list/tests_list_swap.o"
 	@echo "... tests/test_list/tests_list_swap.i"
 	@echo "... tests/test_list/tests_list_swap.s"
+	@echo "... tests/test_map/test_map.o"
+	@echo "... tests/test_map/test_map.i"
+	@echo "... tests/test_map/test_map.s"
 	@echo "... tests/test_queue/test_queue_constructor.o"
 	@echo "... tests/test_queue/test_queue_constructor.i"
 	@echo "... tests/test_queue/test_queue_constructor.s"

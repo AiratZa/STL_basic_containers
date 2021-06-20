@@ -34,7 +34,7 @@ namespace ft {
                                                const T& x, Allocator& alloc)
         {
             ForwardIterator cur = first;
-            typedef ft::__details::alloc_traits_wrapper<Allocator> traits;
+            typedef ft::details::alloc_traits_wrapper<Allocator> traits;
             try
             {
                 for (; n > 0; --n, (void) ++cur)
@@ -55,7 +55,7 @@ namespace ft {
                                              ForwardIterator result, Allocator& alloc)
         {
             ForwardIterator cur = result;
-            typedef ft::__details::alloc_traits_wrapper<Allocator> traits;
+            typedef ft::details::alloc_traits_wrapper<Allocator> traits;
             try
             {
                 for (; first != last; ++first, (void)++cur)
@@ -74,7 +74,7 @@ namespace ft {
         void Destroy(ForwardIterator first, ForwardIterator last,
                  Allocator& alloc)
         {
-            typedef ft::__details::alloc_traits_wrapper<Allocator> traits;
+            typedef ft::details::alloc_traits_wrapper<Allocator> traits;
             for (; first != last; ++first)
                 traits::destroy(alloc, std::__addressof(*first));
         }

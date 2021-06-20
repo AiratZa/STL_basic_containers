@@ -6,7 +6,7 @@
 #define FT_CONTAINERS_META_PROGRAMMING_HPP
 
 namespace ft {
-    namespace __details {
+    namespace details {
         // Define a nested type if some predicate holds.
         template<bool, typename>
         struct enable_if

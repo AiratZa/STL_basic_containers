@@ -290,7 +290,13 @@ acxx_demangle.h
 bits/allocator.h
 -
 
+/home/airat/CLionProjects/STL_basic_containers/source/details/base_algorithms.hpp
+allocator_traits_wrapper.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+
 /home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
+meta_programming.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
 
 /home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
 
@@ -301,12 +307,16 @@ stdexcept
 -
 iterator
 -
+sstream
+-
 details/allocator_traits_wrapper.hpp
 /home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
 details/meta_programming.hpp
 /home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
 details/iterator.hpp
 /home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
+details/base_algorithms.hpp
+/home/airat/CLionProjects/STL_basic_containers/source/details/base_algorithms.hpp
 
 /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp
 vector
@@ -319,4 +329,6 @@ gtest/gtest.h
 /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector_constructor.cpp
 test_vector.hpp
 /home/airat/CLionProjects/STL_basic_containers/tests/test_vector/test_vector.hpp
+vector
+-
 

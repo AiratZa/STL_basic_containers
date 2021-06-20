@@ -10,6 +10,8 @@ CXX_INCLUDES = -isystem /home/airat/CLionProjects/STL_basic_containers/google_te
 
 # Custom flags: CMakeFiles/ft_containers.dir/main.cpp.o_FLAGS = -Wall
 
+# Custom flags: CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o_FLAGS = -Wall
+
 # Custom flags: CMakeFiles/ft_containers.dir/tests/test_list/test_list_assign.cpp.o_FLAGS = -Wall
 
 # Custom flags: CMakeFiles/ft_containers.dir/tests/test_list/test_list_begin.cpp.o_FLAGS = -Wall

@@ -538,6 +538,39 @@ CMakeFiles/ft_containers.dir/tests/test_list/tests_list_swap.cpp.o
  /home/airat/CLionProjects/STL_basic_containers/source/list.hpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_list/test_list.hpp
  /home/airat/CLionProjects/STL_basic_containers/tests/test_list/tests_list_swap.cpp
+CMakeFiles/ft_containers.dir/tests/test_map/test_map.cpp.o
+ ../google_test/googletest/include/gtest/gtest-death-test.h
+ ../google_test/googletest/include/gtest/gtest-message.h
+ ../google_test/googletest/include/gtest/gtest-param-test.h
+ ../google_test/googletest/include/gtest/gtest-printers.h
+ ../google_test/googletest/include/gtest/gtest-test-part.h
+ ../google_test/googletest/include/gtest/gtest-typed-test.h
+ ../google_test/googletest/include/gtest/gtest.h
+ ../google_test/googletest/include/gtest/gtest_pred_impl.h
+ ../google_test/googletest/include/gtest/gtest_prod.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../google_test/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-filepath.h
+ ../google_test/googletest/include/gtest/internal/gtest-internal.h
+ ../google_test/googletest/include/gtest/internal/gtest-linked_ptr.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util-generated.h
+ ../google_test/googletest/include/gtest/internal/gtest-param-util.h
+ ../google_test/googletest/include/gtest/internal/gtest-port-arch.h
+ ../google_test/googletest/include/gtest/internal/gtest-port.h
+ ../google_test/googletest/include/gtest/internal/gtest-string.h
+ ../google_test/googletest/include/gtest/internal/gtest-tuple.h
+ ../google_test/googletest/include/gtest/internal/gtest-type-util.h
+ /home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_iterators.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_parts.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_utils.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/map.hpp
+ /home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.cpp
+ /home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.hpp
 CMakeFiles/ft_containers.dir/tests/test_queue/test_queue_constructor.cpp.o
  ../google_test/googletest/include/gtest/gtest-death-test.h
  ../google_test/googletest/include/gtest/gtest-message.h
@@ -620,6 +653,7 @@ CMakeFiles/ft_containers.dir/tests/test_vector/test_vector_constructor.cpp.o
  ../google_test/googletest/include/gtest/internal/gtest-tuple.h
  ../google_test/googletest/include/gtest/internal/gtest-type-util.h
  /home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp
+ /home/airat/CLionProjects/STL_basic_containers/source/details/base_algorithms.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/details/meta_programming.hpp
  /home/airat/CLionProjects/STL_basic_containers/source/vector.hpp

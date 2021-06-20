@@ -20,7 +20,7 @@ namespace ft {
 
     // INSIDE REALIZTION STARTS
 
-    namespace __details {
+    namespace details {
 
 
         template <typename value_type, typename Alloc>
@@ -121,11 +121,11 @@ namespace ft {
     // VECTOR ITSELF STARTS
 
     template < class T, class Alloc = std::allocator <T> >
-    class vector : protected __details::_VectorBase<T, Alloc> {
+    class vector : protected details::_VectorBase<T, Alloc> {
 
-        typedef typename __details::_VectorBase<T, Alloc> _Base;
+        typedef typename details::_VectorBase<T, Alloc> _Base;
         typedef typename _Base::_VT_alloc_type _VT_alloc_type;
-        typedef __details::alloc_traits_wrapper<_VT_alloc_type>	_VT_alloc_traits;
+        typedef details::alloc_traits_wrapper<_VT_alloc_type>	_VT_alloc_traits;
 
     public:
         typedef T value_type;
@@ -168,7 +168,7 @@ namespace ft {
     template <class InputIterator>
     vector (InputIterator first, InputIterator last,
             const allocator_type& alloc = allocator_type()) {
-        typedef typename ft::__details::is_integer<InputIterator>::type Integral;
+        typedef typename ft::details::is_integer<InputIterator>::type Integral;
         _initialize_dispatch(first, last, Integral());
     }
 
@@ -339,7 +339,7 @@ namespace ft {
     // range (1)
     template <class InputIterator>
     void assign (InputIterator first, InputIterator last) {
-        typedef typename ft::__details::is_integer<InputIterator>::type Integral;
+        typedef typename ft::details::is_integer<InputIterator>::type Integral;
         _assign_dispatch(first, last, Integral());
     }
 
@@ -391,7 +391,7 @@ namespace ft {
     // range (3)
     template <class InputIterator>
     void insert (iterator position, InputIterator first, InputIterator last) {
-        typedef typename ft::__details::is_integer<InputIterator>::type Integral;
+        typedef typename ft::details::is_integer<InputIterator>::type Integral;
         _insert_dispatch(position, first, last, Integral());
     }
 
@@ -544,13 +544,13 @@ private:
 
     template<typename Integer>
     void _insert_dispatch(iterator pos, Integer n, Integer val,
-                          ft::__details::true_type) {
+                          ft::details::true_type) {
         _fill_insert(pos, n, val);
     }
 
     template<typename InputIterator>
     void _insert_dispatch(iterator pos, InputIterator first,
-                       InputIterator last, ft::__details::false_type)
+                       InputIterator last, ft::details::false_type)
     {
         typedef typename std::iterator_traits<InputIterator>::iterator_category it;
         _range_insert(pos, first, last, it(first));
@@ -580,7 +580,7 @@ private:
     }
 
         template<typename Integer>
-        void _assign_dispatch(Integer n, Integer val, ft::__details::true_type) {
+        void _assign_dispatch(Integer n, Integer val, ft::details::true_type) {
             _fill_assign(n, val);
         }
 
@@ -616,7 +616,7 @@ private:
 
         template<typename InputIterator>
         void _assign_dispatch(InputIterator first, InputIterator last,
-                           ft::__details::false_type) {
+                           ft::details::false_type) {
             _assign_aux(first, last, std::iterator_traits<InputIterator>::iterator_category);
         }
 
@@ -660,7 +660,7 @@ private:
     }
 
     template<typename Integer>
-    void _initialize_dispatch(Integer n, Integer value, ft::__details::true_type)
+    void _initialize_dispatch(Integer n, Integer value, ft::details::true_type)
     {
         this->_core._start = _M_allocate(_check_init_len(
                 static_cast<size_type>(n), this->get_VT_allocator()));
@@ -671,7 +671,7 @@ private:
 
     template<typename InputIterator>
     void _initialize_dispatch(InputIterator first, InputIterator last,
-                           ft::__details::false_type)
+                           ft::details::false_type)
     {
         _range_initialize(first, last,
                           std::iterator_traits<InputIterator>::iterator_category());

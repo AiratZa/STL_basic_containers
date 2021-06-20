@@ -9,7 +9,7 @@
 
 namespace ft {
 
-namespace __details {
+namespace details {
 
     template<typename Alloc>
     struct alloc_traits_wrapper {

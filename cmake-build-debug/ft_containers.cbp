@@ -344,6 +344,9 @@
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/allocator_traits_wrapper.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/base_algorithms.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/iterator.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
@@ -351,6 +354,15 @@
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_iterators.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_parts.hpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/details/red_black_tree_utils.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/source/list.hpp">
@@ -426,6 +438,12 @@
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_list/tests_list_swap.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.cpp">
+			<Option target="ft_containers"/>
+		</Unit>
+		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_map/test_map.hpp">
 			<Option target="ft_containers"/>
 		</Unit>
 		<Unit filename="/home/airat/CLionProjects/STL_basic_containers/tests/test_queue/test_queue.hpp">

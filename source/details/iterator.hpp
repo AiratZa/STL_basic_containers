@@ -5,6 +5,8 @@
 #ifndef FT_CONTAINERS_ITERATOR_HPP
 #define FT_CONTAINERS_ITERATOR_HPP
 
+#include "meta_programming.hpp"
+
 namespace ft {
     namespace details {
 
@@ -171,13 +173,12 @@ namespace ft {
             NormalIterator(const Iterator& __i)
                     : _current(__i) { }
 
+
             // Allow iterator to const_iterator conversion
             template<typename _Iter>
             NormalIterator(const NormalIterator<_Iter,
-                    typename ft::__details::enable_if<
-                            (ft::__details::are_same<_Iter, typename Container::pointer>::value),
-                            Container>
-                    ::type>& it)
+                    typename ft::details::enable_if<(ft::details::are_same<_Iter, typename Container::pointer>::value),
+                            Container>::type>& it)
                     : _current(it.base()) { }
 
             // Forward iterator requirements
